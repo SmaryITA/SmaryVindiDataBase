@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Redeemers Table</title>
+  </head>
+  <body>
+    <div class="nav-buttons">
+      <button
+        id="btn-raids-view"
+        class="nav-button"
+        onclick="location.href='RaidsTable.html'"
+      >
+        Raids Table
+      </button>
+      <div class="separator"></div>
+      <button
+        id="btn-redeemers-view"
+        class="nav-button"
+        onclick="location.href='RedeemersTable.html'"
+      >
+        Redeemers Table
+      </button>
+      <div class="separator"></div>
+      <button
+        id="btn-spacetime-view"
+        class="nav-button"
+        onclick="location.href='SpaceTimeTable.html'"
+      >
+        SpaceTime Table
+      </button>
+      <div class="separator"></div>
+      <button
+        id="btn-items-view"
+        class="nav-button"
+        onclick="location.href='AccessoryTable.html'"
+      >
+        Accessory Table
+      </button>
+      <div class="separator"></div>
+      <button
+        id="btn-gear-view"
+        class="nav-button"
+        onclick="location.href='index.html'"
+      >
+        Uaithne Gear Table
+      </button>
+    </div>
+    <div class="made-by">
+      <p>&#9733 Made By Smary &#9733</p>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Preview</th>
+                <th>Name</th>
+                <th>Level</th>
+                <th>Critical Rate</th>
+                <th>Critical Resistance</th>
+                <th>Balance Resistance</th>
+                <th>Attack Cap</th>
+                <th>Items</th>
+              </tr>
+        </thead>
+        <tbody>
+          <!-- Ripeti questo blocco per ciascun gear -->
+          <tr>
+            <td class="gear-id">
+              <img
+                src="icon/Neamhain.png"
+                alt="Gear Image"
+                style="width: 50px; height: 50px"
+              />
+            </td>
+            <td>Neamhain</td>
+            <td>90</td>
+            <td>125</td>
+            <td>90</td>
+            <td>0</td>
+            <td>27.000</td>
+            <td>
+              <button class="accordion">Show/Hide</button>
+              <ul class="panel">
+                <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                  <div class="item-details">
+                    <img
+                      src="icon/Emote.png"
+                      alt="Item Image"
+                      style="width: 30px; height: 30px"
+                    />
+                    <span>Emote: Epidemiologist</span>
+                  </div>
+                </li>
+                <!-- Fine blocco item -->
+                                 <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Efficient SP (80).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Efficient SP (80)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Efficient Stamina (6).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Efficient Stamina (6)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Damage Boost (12).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Damage Boost (12%)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Breakoff DMG (12).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Breakoff DMG (12%)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Cloth Bundle (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Cloth Bundle (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Accessory Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Accessory Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Weapon Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Weapon Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Armor Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Armor Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Element Stone.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Element Stone</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Intermediate Element Stone.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Intermediate Element Stone</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 1.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 1</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 1.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 1</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 2.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 2</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 2.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 2</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 3.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 3</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 3.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 3</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                           <!-- Ripeti questo blocco per ciascun gear -->
+          <tr>
+            <td class="gear-id">
+              <img
+                src="icon/Balor.png"
+                alt="Gear Image"
+                style="width: 50px; height: 50px"
+              />
+            </td>
+            <td>Balor</td>
+            <td>95</td>
+            <td>150</td>
+            <td>123</td>
+            <td>0</td>
+            <td>33.500</td>
+            <td>
+              <button class="accordion">Show/Hide</button>
+              <ul class="panel">
+                <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                  <div class="item-details">
+                    <img
+                      src="icon/Emote.png"
+                      alt="Item Image"
+                      style="width: 30px; height: 30px"
+                    />
+                    <span>Emote: Moonlight Glide</span>
+                  </div>
+                </li>
+                <!-- Fine blocco item -->
+                                 <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Efficient SP (80).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Efficient SP (80)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Efficient Stamina (6).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Efficient Stamina (6)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Damage Boost (12).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Damage Boost (12%)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Breakoff DMG (12).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Breakoff DMG (12%)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Cloth Bundle (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Cloth Bundle (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Accessory Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Accessory Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Weapon Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Weapon Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Armor Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Armor Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Element Stone.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Element Stone</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Intermediate Element Stone.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Intermediate Element Stone</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 1.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 1</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 1.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 1</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 2.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 2</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 2.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 2</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 3.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 3</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 3.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 3</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                           <!-- Ripeti questo blocco per ciascun gear -->
+          <tr>
+            <td class="gear-id">
+              <img
+                src="icon/Brigid.png"
+                alt="Gear Image"
+                style="width: 50px; height: 50px"
+              />
+            </td>
+            <td>Brigid</td>
+            <td>100</td>
+            <td>200</td>
+            <td>150</td>
+            <td>0</td>
+            <td>40.000</td>
+            <td>
+              <button class="accordion">Show/Hide</button>
+              <ul class="panel">
+                <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                  <div class="item-details">
+                    <img
+                      src="icon/Emote.png"
+                      alt="Item Image"
+                      style="width: 30px; height: 30px"
+                    />
+                    <span>Emote: Indomitable Will</span>
+                  </div>
+                </li>
+                <!-- Fine blocco item -->
+                                 <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Efficient SP (80).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Efficient SP (80)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Efficient Stamina (6).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Efficient Stamina (6)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Damage Boost (12).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Damage Boost (12%)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Breakoff DMG (12).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Breakoff DMG (12%)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Cloth Bundle (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Cloth Bundle (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Accessory Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Accessory Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Weapon Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Weapon Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Armor Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Armor Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Element Stone.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Element Stone</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Intermediate Element Stone.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Intermediate Element Stone</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 1.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 1</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 1.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 1</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 2.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 2</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 2.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 2</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 3.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 3</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 3.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 3</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                           <!-- Ripeti questo blocco per ciascun gear -->
+          <tr>
+            <td class="gear-id">
+              <img
+                src="icon/Laura.png"
+                alt="Gear Image"
+                style="width: 50px; height: 50px"
+              />
+            </td>
+            <td>Laura</td>
+            <td>105</td>
+            <td>225</td>
+            <td>185</td>
+            <td>4</td>
+            <td>45.500</td>
+            <td>
+              <button class="accordion">Show/Hide</button>
+              <ul class="panel">
+                <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                  <div class="item-details">
+                    <img
+                      src="icon/Emote.png"
+                      alt="Item Image"
+                      style="width: 30px; height: 30px"
+                    />
+                    <span>Emote: Annihilation Annihilator</span>
+                  </div>
+                </li>
+                <!-- Fine blocco item -->
+                                 <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Efficient SP (80).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Efficient SP (80)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Efficient Stamina (6).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Efficient Stamina (6)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Damage Boost (12).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Damage Boost (12%)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Waking Stone Breakoff DMG (12).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Waking Stone: Breakoff DMG (12%)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Cloth Bundle (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Cloth Bundle (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Accessory Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Accessory Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Weapon Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Weapon Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Elemental Armor Shard (x5).png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Elemental Armor Shard (x5)</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Element Stone.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Element Stone</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Intermediate Element Stone.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Intermediate Element Stone</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 1.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 1</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 1.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 1</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 2.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 2</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 2.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 2</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Mysterious Shard Grade 3.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Mysterious Shard Grade 3</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+                                   <!-- Ripeti questo blocco per ciascun item -->
+                <li>
+                    <div class="item-details">
+                      <img
+                        src="icon/Abyssal Shard Grade 3.png"
+                        alt="Item Image"
+                        style="width: 30px; height: 30px"
+                      />
+                      <span>Abyssal Shard Grade 3</span>
+                    </div>
+                  </li>
+                  <!-- Fine blocco item -->
+    <script src="script.js"></script>
+  </body>
+</html>
