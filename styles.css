@@ -224,9 +224,21 @@ table thead th {
   font-weight: bold;
   vertical-align: middle;
 }
+.advance-button {
+  background-color: rgb(32, 146, 93);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: auto; /* Questo lo posiziona a destra */
+  font-weight: bold;
+  vertical-align: middle;
+}
 
 .tuning-button:hover,
-.surplus-button:hover {
+.surplus-button:hover,
+.advance-button:hover {
   background-color: purple;
 }
 .header-with-button {
