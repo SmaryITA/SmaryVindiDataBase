@@ -251,3 +251,75 @@ table thead th {
   margin: 0;
   padding: 0;
 }
+
+.tabella-scroll {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 colonne */
+  gap: 10px;
+  width: 100%; /* Occupa tutta la larghezza disponibile */
+  max-width: none; /* Rimuove eventuali limiti di larghezza */
+  margin: 0; /* Rimuove margini */
+}
+
+.box-scroll {
+  font-size: 15px;
+  background-color: rgb(80, 27, 80);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: purple;
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.pic-3 {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+
+.panel-scroll {
+  display: none;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+  margin-top: 10px;
+}
+
+.accordion-scroll {
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 10px;
+  border: none;
+  text-align: center;
+  width: 100%;
+  transition: 0.4s;
+  margin-top: 5px;
+}
+
+.accordion-scroll:hover {
+  background-color: rgb(255, 190, 77);
+  color: black;
+}
+
+.icon-title {
+  width: 40px; /* Dimensione dell'icona */
+  height: 40px;
+  vertical-align: middle; /* Allinea l'icona con il testo */
+  margin-right: 8px; /* Spazio tra icona e testo */
+}
+
+.stat-scroll-up {
+  color: greenyellow;
+}
+.stat-scroll-down {
+  color: red;
+}
