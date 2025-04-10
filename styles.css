@@ -323,3 +323,7 @@ table thead th {
 .stat-scroll-down {
   color: red;
 }
+
+.stat-scroll-drop {
+  color: rgb(255, 190, 77);
+}
