@@ -4,10 +4,31 @@ body {
   font-weight: bold;
   color: white;
 }
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 20px;
+}
+
 .made-by {
   text-align: center;
   color: rgb(255, 190, 77);
   font-weight: bold;
+  flex: 1;
+  margin-left: 200px;
+}
+
+.made-by-me {
+  text-align: center;
+  color: rgb(255, 190, 77);
+  font-weight: bold;
+}
+
+.update {
+  color: rgb(255, 190, 77);
+  font-weight: bold;
+  text-align: right;
 }
 
 table {
@@ -245,6 +266,11 @@ table thead th {
   display: flex;
   align-items: center; /* Align items vertically */
   padding: 10px 0;
+}
+.header-with-button-raid {
+  display: flex;
+  align-items: center; /* Align items vertically */
+  padding: 5px 0;
 }
 
 .header-with-button h2 {
