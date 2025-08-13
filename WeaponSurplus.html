@@ -306,15 +306,15 @@ function decreaseValue(stat, decrement, min) {
     valueElement.textContent = currentValue;
 
     if (stat === "surplus1") {
-        materialValues.gold = Math.max(materialValues.gold - 1000000, 0);
+        materialValues.gold = Math.max(materialValues.gold - 700000, 0);
         materialValues.myst = Math.max(materialValues.myst - 3, 0);
         materialValues.nore = Math.max(materialValues.nore - 25, 0);
         materialValues.norb = Math.max(materialValues.norb - 20, 0);
     } else if (stat === "surplus2") {
-        materialValues.gold = Math.max(materialValues.gold - 3000000, 0);
+        materialValues.gold = Math.max(materialValues.gold - 2100000, 0);
         materialValues.mcrystal = Math.max(materialValues.mcrystal - 3, 0);
-        materialValues.ore = Math.max(materialValues.ore - 50, 0);
-        materialValues.orb = Math.max(materialValues.orb - 50, 0);
+        materialValues.ore = Math.max(materialValues.ore - 35, 0);
+        materialValues.orb = Math.max(materialValues.orb - 35, 0);
     }
     updateMaterialValues();
 
@@ -337,15 +337,15 @@ function increaseValue(stat, increment, max) {
     valueElement.textContent = currentValue;
 
     if (stat === "surplus1") {
-        materialValues.gold += 1000000;
+        materialValues.gold += 700000;
         materialValues.myst += 3;
         materialValues.nore += 25;
         materialValues.norb += 20;
     } else if (stat === "surplus2") {
-        materialValues.gold += 3000000;
+        materialValues.gold += 2100000;
         materialValues.mcrystal += 3;
-        materialValues.ore += 50;
-        materialValues.orb += 50;
+        materialValues.ore += 35;
+        materialValues.orb += 35;
     }
 
     updateMaterialValues();
@@ -367,16 +367,16 @@ function setMaxValue(stat, max) {
     if (stat === "surplus1") {
         const numberOfIncrements = increment / 50;
 
-        materialValues.gold += 1000000 * numberOfIncrements;
+        materialValues.gold += 700000 * numberOfIncrements;
         materialValues.myst += 3 * numberOfIncrements;
         materialValues.nore += 25 * numberOfIncrements;
         materialValues.norb += 20 * numberOfIncrements;
     } else if (stat === "surplus2") {
         const numberOfIncrements = increment / 15;
-        materialValues.gold += 3000000 * numberOfIncrements;
+        materialValues.gold += 2100000 * numberOfIncrements;
         materialValues.mcrystal += 3 * numberOfIncrements;
-        materialValues.ore += 50 * numberOfIncrements;
-        materialValues.orb += 50 * numberOfIncrements;
+        materialValues.ore += 35 * numberOfIncrements;
+        materialValues.orb += 35 * numberOfIncrements;
     }
 
     updateMaterialValues();

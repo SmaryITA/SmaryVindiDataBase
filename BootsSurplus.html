@@ -306,15 +306,15 @@ function decreaseValue(stat, decrement, min) {
     valueElement.textContent = currentValue;
 
     if (stat === "surplus1") {
-        materialValues.gold = Math.max(materialValues.gold - 400000, 0);
+        materialValues.gold = Math.max(materialValues.gold - 280000, 0);
         materialValues.aby = Math.max(materialValues.aby - 1, 0);
         materialValues.ncloth = Math.max(materialValues.ncloth - 12, 0);
         materialValues.nleather = Math.max(materialValues.nleather - 12, 0);
     } else if (stat === "surplus2") {
-        materialValues.gold = Math.max(materialValues.gold - 1000000, 0);
+        materialValues.gold = Math.max(materialValues.gold - 700000, 0);
         materialValues.acrystal = Math.max(materialValues.acrystal - 1, 0);
-        materialValues.cloth = Math.max(materialValues.cloth - 25, 0);
-        materialValues.leather = Math.max(materialValues.leather - 25, 0);
+        materialValues.cloth = Math.max(materialValues.cloth - 17, 0);
+        materialValues.leather = Math.max(materialValues.leather - 17, 0);
     }
     updateMaterialValues();
 
@@ -337,15 +337,15 @@ function increaseValue(stat, increment, max) {
     valueElement.textContent = currentValue;
 
     if (stat === "surplus1") {
-        materialValues.gold += 400000;
+        materialValues.gold += 280000;
         materialValues.aby += 1;
         materialValues.ncloth += 12;
         materialValues.nleather += 12;
     } else if (stat === "surplus2") {
-        materialValues.gold += 1000000;
+        materialValues.gold += 700000;
         materialValues.acrystal += 1;
-        materialValues.cloth += 25;
-        materialValues.leather += 25;
+        materialValues.cloth += 17;
+        materialValues.leather += 17;
     }
 
     updateMaterialValues();
@@ -367,16 +367,16 @@ function setMaxValue(stat, max) {
     if (stat === "surplus1") {
         const numberOfIncrements = increment / 14;
 
-        materialValues.gold += 400000 * numberOfIncrements;
+        materialValues.gold += 280000 * numberOfIncrements;
         materialValues.aby += 1 * numberOfIncrements;
         materialValues.ncloth += 12 * numberOfIncrements;
         materialValues.nleather += 12 * numberOfIncrements;
     } else if (stat === "surplus2") {
         const numberOfIncrements = increment / 5;
-        materialValues.gold += 1000000 * numberOfIncrements;
+        materialValues.gold += 700000 * numberOfIncrements;
         materialValues.acrystal += 1 * numberOfIncrements;
-        materialValues.cloth += 25 * numberOfIncrements;
-        materialValues.leather += 25 * numberOfIncrements;
+        materialValues.cloth += 17 * numberOfIncrements;
+        materialValues.leather += 17 * numberOfIncrements;
     }
 
     updateMaterialValues();

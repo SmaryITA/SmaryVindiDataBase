@@ -321,18 +321,18 @@
         valueElement.textContent = currentValue;
 
         if (stat === "defence") {
-          materialValues.gold = Math.max(materialValues.gold - 500000, 0);
-          materialValues.cloth = Math.max(materialValues.cloth - 5, 0);
-          materialValues.leather = Math.max(materialValues.leather - 5, 0);
-          materialValues.ore = Math.max(materialValues.ore - 5, 0);
-          materialValues.orb = Math.max(materialValues.orb - 5, 0);
+          materialValues.gold = Math.max(materialValues.gold - 350000, 0);
+          materialValues.cloth = Math.max(materialValues.cloth - 3, 0);
+          materialValues.leather = Math.max(materialValues.leather - 3, 0);
+          materialValues.ore = Math.max(materialValues.ore - 3, 0);
+          materialValues.orb = Math.max(materialValues.orb - 3, 0);
           materialValues.fragment = Math.max(materialValues.fragment - 25, 0);
         } else if (stat === "cr") {
-          materialValues.gold = Math.max(materialValues.gold - 5000000, 0);
-          materialValues.cloth = Math.max(materialValues.cloth - 20, 0);
-          materialValues.leather = Math.max(materialValues.leather - 20, 0);
-          materialValues.ore = Math.max(materialValues.ore - 20, 0);
-          materialValues.orb = Math.max(materialValues.orb - 20, 0);
+          materialValues.gold = Math.max(materialValues.gold - 3500000, 0);
+          materialValues.cloth = Math.max(materialValues.cloth - 14, 0);
+          materialValues.leather = Math.max(materialValues.leather - 14, 0);
+          materialValues.ore = Math.max(materialValues.ore - 14, 0);
+          materialValues.orb = Math.max(materialValues.orb - 14, 0);
           materialValues.inheritedFragment = Math.max(
             materialValues.inheritedFragment - 200,
             0
@@ -365,18 +365,18 @@
         valueElement.textContent = currentValue;
 
         if (stat === "defence") {
-          materialValues.gold += 500000;
-          materialValues.cloth += 5;
-          materialValues.leather += 5;
-          materialValues.ore += 5;
-          materialValues.orb += 5;
+          materialValues.gold += 350000;
+          materialValues.cloth += 3;
+          materialValues.leather += 3;
+          materialValues.ore += 3;
+          materialValues.orb += 3;
           materialValues.fragment += 25;
         } else if (stat === "cr") {
-          materialValues.gold += 5000000;
-          materialValues.cloth += 20;
-          materialValues.leather += 20;
-          materialValues.ore += 20;
-          materialValues.orb += 20;
+          materialValues.gold += 3500000;
+          materialValues.cloth += 14;
+          materialValues.leather += 14;
+          materialValues.ore += 14;
+          materialValues.orb += 14;
           materialValues.inheritedFragment += 200;
         }
 
@@ -401,18 +401,18 @@
         const increment = max - currentValue;
 
         if (stat === "defence") {
-          materialValues.gold += (500000 * (600 - currentValue)) / 10;
-          materialValues.cloth += (5 * (600 - currentValue)) / 10;
-          materialValues.leather += (5 * (600 - currentValue)) / 10;
-          materialValues.ore += (5 * (600 - currentValue)) / 10;
-          materialValues.orb += (5 * (600 - currentValue)) / 10;
+          materialValues.gold += (350000 * (600 - currentValue)) / 10;
+          materialValues.cloth += (3 * (600 - currentValue)) / 10;
+          materialValues.leather += (3 * (600 - currentValue)) / 10;
+          materialValues.ore += (3 * (600 - currentValue)) / 10;
+          materialValues.orb += (3 * (600 - currentValue)) / 10;
           materialValues.fragment += (25 * (600 - currentValue)) / 10;
         } else if (stat === "cr") {
-          materialValues.gold += 5000000 * increment;
-          materialValues.cloth += 20 * increment;
-          materialValues.leather += 20 * increment;
-          materialValues.ore += 20 * increment;
-          materialValues.orb += 20 * increment;
+          materialValues.gold += 3500000 * increment;
+          materialValues.cloth += 14 * increment;
+          materialValues.leather += 14 * increment;
+          materialValues.ore += 14 * increment;
+          materialValues.orb += 14 * increment;
           materialValues.inheritedFragment += 200 * increment;
         }
 
