@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weapon Surplus</title>
+    <title>Weapon Destruction</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
         body {
@@ -154,7 +154,7 @@
             class="tuning-icon"
             style="width: 40px; height: 40px"
           />
-          <h1>Surplus</h1>
+          <h1>Destruction</h1>
         </div>
         <div class="main-content">
           <img
@@ -173,7 +173,7 @@
               class="stat-icon"
               style="width: 20px; height: 20px"
             />
-            <span style="font-weight: bold">ATT Surplus I</span>
+            <span style="font-weight: bold">Destruction I</span>
             <span style="font-weight: bold" id="surplus1-value">0</span>
             <button class="minus" onclick="decreaseValue('surplus1', 50, 0)">
               -
@@ -192,15 +192,15 @@
               class="stat-icon"
               style="width: 20px; height: 20px"
             />
-            <span style="font-weight: bold">ATT Surplus II</span>
+            <span style="font-weight: bold">Destruction II</span>
             <span style="font-weight: bold" id="surplus2-value">0</span>
-            <button class="minus" onclick="decreaseValue('surplus2', 15, 0)">
+            <button class="minus" onclick="decreaseValue('surplus2', 45, 0)">
               -
             </button>
-            <button id="surplus2-plus" onclick="increaseValue('surplus2', 15, 1500)">
+            <button id="surplus2-plus" onclick="increaseValue('surplus2', 45, 4500)">
               +
             </button>
-            <button id="surplus2-max" onclick="setMaxValue('surplus2', 1500)">
+            <button id="surplus2-max" onclick="setMaxValue('surplus2', 4500)">
               Max
             </button>
           </div>
@@ -245,7 +245,7 @@
       </div>
       </div>
       <div>
-        <p>*Note: To Unlock Surplus II You Need To Complete Surplus I + Max Tuning</p>
+        <p>*Note: To Unlock Destruction II You Need To Complete Destruction I + Max Tuning</p>
       </div>
       <script src="script.js"></script>
       <script>
@@ -372,7 +372,7 @@ function setMaxValue(stat, max) {
         materialValues.nore += 25 * numberOfIncrements;
         materialValues.norb += 20 * numberOfIncrements;
     } else if (stat === "surplus2") {
-        const numberOfIncrements = increment / 15;
+        const numberOfIncrements = increment / 45;
         materialValues.gold += 2100000 * numberOfIncrements;
         materialValues.mcrystal += 3 * numberOfIncrements;
         materialValues.ore += 35 * numberOfIncrements;
