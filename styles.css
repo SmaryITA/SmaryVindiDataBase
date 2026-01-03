@@ -353,3 +353,153 @@ table thead th {
 .stat-scroll-drop {
   color: rgb(255, 190, 77);
 }
+
+.intestazione {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.int-sinistra {
+  flex: 1;
+  margin-top: 3px;
+}
+.int-centro {
+  background: linear-gradient(
+    to right,
+    rgb(70, 143, 58) 25%,
+    rgb(66, 125, 231) 25% 50%,
+    rgb(178, 94, 198) 50% 75%,
+    rgb(205, 87, 69) 75% 100%
+  );
+  border-width: 3px;
+  border-style: solid;
+  border-radius: 5px;
+  border-color: rgb(255, 190, 77);
+  flex: 1;
+}
+.int-destra {
+  flex: 1;
+  margin-top: 3px;
+}
+.titolo {
+  color: rgb(10, 10, 10);
+  font-weight: bold;
+  font-size: 15px;
+  white-space: nowrap;
+  text-decoration: underline;
+}
+.tabella {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 12px;
+  row-gap: 12px;
+}
+
+.riquadro-green {
+  background-color: rgb(70, 143, 58);
+}
+.riquadro-blue {
+  background-color: rgb(66, 125, 231);
+}
+.riquadro-purple {
+  background-color: rgb(178, 94, 198);
+}
+.riquadro-orange {
+  background-color: rgb(205, 87, 69);
+}
+.riquadro-green,
+.riquadro-blue,
+.riquadro-purple,
+.riquadro-orange {
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgb(255, 190, 77);
+  border-radius: 5px;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+}
+.box-pic {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+.testo-nome,
+.testo-statistics {
+  color: rgb(10, 10, 10);
+  font-weight: bold;
+  font-size: 15px;
+  text-align: left;
+  padding: 4px;
+  text-align: center;
+}
+.box-statistics-green,
+.box-cost-green {
+  background-color: rgb(70, 143, 58);
+}
+.box-statistics-blue,
+.box-cost-blue {
+  background-color: rgb(66, 125, 231);
+}
+.box-statistics-purple,
+.box-cost-purple {
+  background-color: rgb(178, 94, 198);
+}
+.box-cost-orange,
+.box-statistics-orange {
+  background-color: rgb(205, 87, 69);
+}
+
+.box-statistics-green,
+.box-statistics-blue,
+.box-statistics-purple,
+.box-statistics-orange {
+  color: rgb(10, 10, 10);
+  font-weight: bold;
+  font-size: 15px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgb(255, 190, 77);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-bottom: 4px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.box-cost-green,
+.box-cost-blue,
+.box-cost-purple,
+.box-cost-orange {
+  color: rgb(10, 10, 10);
+  font-weight: bold;
+  font-size: 15px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgb(255, 190, 77);
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+.testo-costo-upgrade {
+  margin-left: 30px;
+}
+.box-container {
+  padding: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: purple;
+  border-radius: 10px;
+  background-color: rgb(80, 27, 80);
+  margin-bottom: 40px;
+}
