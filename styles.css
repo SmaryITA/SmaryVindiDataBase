@@ -952,3 +952,73 @@ table thead th {
     font-size: 0.8rem;
   }
 }
+/* Stili per i pulsanti toggle delle sezioni raid */
+.raid-section {
+  background-color: rgba(80, 27, 80, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.raid-section:hover {
+  background-color: rgba(80, 27, 80, 0.3);
+}
+
+.toggle-section {
+  background-color: rgb(80, 27, 80) !important;
+  color: rgb(255, 190, 77) !important;
+  border: 2px solid purple !important;
+  font-weight: bold !important;
+  padding: 8px 20px !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+  min-width: 100px;
+}
+
+.toggle-section:hover {
+  background-color: purple !important;
+  color: white !important;
+  border-color: rgb(255, 190, 77) !important;
+}
+
+.toggle-section .toggle-icon {
+  margin-left: 8px;
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.toggle-section[aria-expanded="true"] .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Animazione per il collapse */
+.collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header-with-button-raid {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+
+  .toggle-section {
+    width: 100%;
+    padding: 12px !important;
+  }
+
+  .raid-section {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 576px) {
+  .toggle-section {
+    font-size: 0.9rem;
+    padding: 10px !important;
+  }
+}
