@@ -1,8 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Eriu Advancement Stone Table</title>
   </head>
@@ -11,7 +15,7 @@
       <button
         id="btn-raids-view"
         class="nav-button"
-        onclick="location.href='RaidsTable.html'"
+        onclick="location.href = 'RaidsTable.html'"
       >
         Raids Table
       </button>
@@ -19,7 +23,7 @@
       <button
         id="btn-redeemers-view"
         class="nav-button"
-        onclick="location.href='RedeemersTable.html'"
+        onclick="location.href = 'RedeemersTable.html'"
       >
         Redeemers Table
       </button>
@@ -27,15 +31,15 @@
       <button
         id="btn-spacetime-view"
         class="nav-button"
-        onclick="location.href='SpaceTimeTable.html'"
+        onclick="location.href = 'SpaceTimeTable.html'"
       >
         SpaceTime Table
       </button>
       <div class="separator"></div>
       <button
-        id="btn-spacetime-view"
+        id="btn-rhods-view"
         class="nav-button"
-        onclick="location.href='RhodsBracelets.html'"
+        onclick="location.href = 'RhodsBracelets.html'"
       >
         Rhods/Bracelets Table
       </button>
@@ -43,15 +47,15 @@
       <button
         id="btn-items-view"
         class="nav-button"
-        onclick="location.href='Scrolls.html'"
+        onclick="location.href = 'Scrolls.html'"
       >
         Enchant Scrolls Table
       </button>
       <div class="separator"></div>
       <button
-        id="btn-items-view"
+        id="btn-accessory-view"
         class="nav-button"
-        onclick="location.href='AccessoryTable.html'"
+        onclick="location.href = 'AccessoryTable.html'"
       >
         Accessory Table
       </button>
@@ -59,302 +63,291 @@
       <button
         id="btn-gear-view"
         class="nav-button"
-        onclick="location.href='index.html'"
+        onclick="location.href = 'index.html'"
       >
         Uaithne Gear Table
       </button>
       <div class="separator"></div>
       <button
-        id="btn-gear-view"
+        id="btn-eriu-view"
         class="nav-button"
-        onclick="location.href='EriuGearTable.html'"
+        onclick="location.href = 'EriuGearTable.html'"
       >
         Eriu Gear Table
       </button>
     </div>
-    <div class="footer">
+
+    <!-- INFO BAR -->
+    <div class="info-bar">
       <div class="made-by">
         <p>&#9733; Made By Smary &#9733;</p>
       </div>
       <div class="update">
-        <p>Latest update : 3 January 2026</p>
+        <p>Latest update : 18 February 2026</p>
       </div>
     </div>
 
-    <div class="gear-table-container">
-      <div class="header-with-button">
-        <h2>Eriu Advancement Stone</h2>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Preview</th>
-            <th>Name</th>
-            <th>Artisan-Expertise Needed</th>
-            <th>Items Needed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ripeti questo blocco per ciascuna pietra -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Eriu Advancement Stone Weapon.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>Eriu Advancement Stone Weapon</td>
-            <td>Weaponsmithing-Goldsmithing</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Eriu Fragment Weapon.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x1</span>
-                    <span>Eriu Fragment: Weapon</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Goibhniu's Enhancement Stone2.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Goibhniu's Enhancement Stone+</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Elixir.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x20</span>
-                    <span>Superior Enhancement Elixir</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Rfragment.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x150</span>
-                    <span>Sealed Power: Fragments</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Bfragment.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x150</span>
-                    <span>Inherited Power: Fragments</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-              </ul>
-            </td>
-          </tr>
-          <!-- Fine blocco pietra -->
-          <!-- Ripeti questo blocco per ciascuna pietra -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Eriu Advancement Stone Head Armor.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>Eriu Advancement Stone Head Armor</td>
-            <td>Armorsmithing-Tailoring</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Eriu Fragment Head Armor.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x1</span>
-                    <span>Eriu Fragment: Head Armor</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Goibhniu's Enhancement Stone.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x3</span>
-                    <span>Goibhniu's Enhancement Stone</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Elixir.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x15</span>
-                    <span>Superior Enhancement Elixir</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Rfragment.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x150</span>
-                    <span>Sealed Power: Fragments</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Bfragment.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x150</span>
-                    <span>Inherited Power: Fragments</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-              </ul>
-            </td>
-          </tr>
-          <!-- Fine blocco pietra -->
+    <div class="container-fluid mt-3">
+      <!-- Eriu Advancement Stone Section -->
+      <div class="advancement-section mb-4">
+        <div class="header-with-button-raid">
+          <h2>Eriu Advancement Stone</h2>
+        </div>
 
-          <!-- Ripeti questo blocco per ciascuna pietra -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Eriu Advancement Stone Leg Armor.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>Eriu Advancement Stone Leg Armor</td>
-            <td>Armorsmithing-Tailoring</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Eriu Fragment Leg Armor.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x1</span>
-                    <span>Eriu Fragment: Leg Armor</span>
+        <div class="row g-3">
+          <!-- Card Eriu Advancement Stone Weapon -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gear-card">
+              <div class="card-header d-flex align-items-center">
+                <img
+                  src="icon/Eriu Advancement Stone Weapon.png"
+                  alt="Stone"
+                  class="gear-icon me-2"
+                />
+                <h5 class="mb-0">Eriu Advancement Stone Weapon</h5>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid" style="grid-template-columns: 1fr">
+                  <div class="stat-item">
+                    <span class="stat-label">Artisan-Expertise:</span>
+                    <span class="stat-value">Weaponsmithing-Goldsmithing</span>
                   </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Goibhniu's Enhancement Stone.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x3</span>
-                    <span>Goibhniu's Enhancement Stone</span>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#items-stone-weapon"
+                >
+                  Show/Hide Items
+                </button>
+
+                <div id="items-stone-weapon" class="collapse mt-2">
+                  <ul class="list-unstyled">
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Eriu Fragment Weapon.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x1</span>
+                      <span>Eriu Fragment: Weapon</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Goibhniu's Enhancement Stone2.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Goibhniu's Enhancement Stone+</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Elixir.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x20</span>
+                      <span>Superior Enhancement Elixir</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Rfragment.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x150</span>
+                      <span>Sealed Power: Fragments</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Bfragment.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x150</span>
+                      <span>Inherited Power: Fragments</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Eriu Advancement Stone Head Armor -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gear-card">
+              <div class="card-header d-flex align-items-center">
+                <img
+                  src="icon/Eriu Advancement Stone Head Armor.png"
+                  alt="Stone"
+                  class="gear-icon me-2"
+                />
+                <h5 class="mb-0">Eriu Advancement Stone Head Armor</h5>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid" style="grid-template-columns: 1fr">
+                  <div class="stat-item">
+                    <span class="stat-label">Artisan-Expertise:</span>
+                    <span class="stat-value">Armorsmithing-Tailoring</span>
                   </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Elixir.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x15</span>
-                    <span>Superior Enhancement Elixir</span>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#items-stone-head"
+                >
+                  Show/Hide Items
+                </button>
+
+                <div id="items-stone-head" class="collapse mt-2">
+                  <ul class="list-unstyled">
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Eriu Fragment Head Armor.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x1</span>
+                      <span>Eriu Fragment: Head Armor</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Goibhniu's Enhancement Stone.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x3</span>
+                      <span>Goibhniu's Enhancement Stone</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Elixir.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x15</span>
+                      <span>Superior Enhancement Elixir</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Rfragment.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x150</span>
+                      <span>Sealed Power: Fragments</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Bfragment.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x150</span>
+                      <span>Inherited Power: Fragments</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Eriu Advancement Stone Leg Armor -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gear-card">
+              <div class="card-header d-flex align-items-center">
+                <img
+                  src="icon/Eriu Advancement Stone Leg Armor.png"
+                  alt="Stone"
+                  class="gear-icon me-2"
+                />
+                <h5 class="mb-0">Eriu Advancement Stone Leg Armor</h5>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid" style="grid-template-columns: 1fr">
+                  <div class="stat-item">
+                    <span class="stat-label">Artisan-Expertise:</span>
+                    <span class="stat-value">Armorsmithing-Tailoring</span>
                   </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Rfragment.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x150</span>
-                    <span>Sealed Power: Fragments</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Bfragment.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x150</span>
-                    <span>Inherited Power: Fragments</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-              </ul>
-            </td>
-          </tr>
-          <!-- Fine blocco pietra -->
-        </tbody>
-      </table>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#items-stone-leg"
+                >
+                  Show/Hide Items
+                </button>
+
+                <div id="items-stone-leg" class="collapse mt-2">
+                  <ul class="list-unstyled">
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Eriu Fragment Leg Armor.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x1</span>
+                      <span>Eriu Fragment: Leg Armor</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Goibhniu's Enhancement Stone.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x3</span>
+                      <span>Goibhniu's Enhancement Stone</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Elixir.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x15</span>
+                      <span>Superior Enhancement Elixir</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Rfragment.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x150</span>
+                      <span>Sealed Power: Fragments</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Bfragment.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x150</span>
+                      <span>Inherited Power: Fragments</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Note -->
+        <div class="note-section mt-4">
+          <p class="mb-0">
+            *Note: In Order To Being Able To Craft Any Of This Eriu Advancement
+            Stone You Need The Required Artisan-Expertise + The Recipe Of The
+            Corresponding Item.
+          </p>
+        </div>
+      </div>
     </div>
-    <div>
-      <p>
-        *Note: In Order To Being Able To Craft Any Of This Eriu Advancement
-        Stone You Need The Required Artisan-Expertise + The Recipe Of The
-        Corresponding Item.
-      </p>
-    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

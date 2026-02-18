@@ -3,32 +3,386 @@ body {
   background-color: rgb(40, 40, 40);
   font-weight: bold;
   color: white;
+  margin: 0;
+  padding: 0;
 }
-.footer {
+
+/* Info bar - spostata sopra */
+.info-bar {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  background-color: rgb(80, 27, 80);
+  padding: 15px 25px;
+  margin: 10px 20px 20px 20px;
+  border-radius: 8px;
+  border: 2px solid purple;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-bar .made-by {
+  text-align: left;
+  color: rgb(255, 190, 77);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
+  flex: 1;
+}
+
+.info-bar .update {
+  color: rgb(255, 190, 77);
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: right;
+  margin: 0;
+}
+
+.info-bar p {
+  margin: 0;
+}
+
+/* Stili per le cards */
+.gear-card {
+  background-color: rgb(40, 40, 40);
+  border: 2px solid purple;
+  color: white;
+  height: 100%;
+  transition: transform 0.2s;
+}
+
+.gear-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(128, 0, 128, 0.3);
+}
+
+.gear-card .card-header {
+  background-color: rgb(80, 27, 80);
+  color: white;
+  border-bottom: 2px solid purple;
+  padding: 12px;
+}
+
+.gear-card .card-body {
+  padding: 16px;
+}
+
+.gear-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.item-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+/* Griglia per le statistiche */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background-color: rgba(80, 27, 80, 0.3);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  border-left: 3px solid purple;
+}
+
+.stat-label {
+  color: #aaa;
+  font-weight: normal;
+}
+
+.stat-value {
+  color: rgb(255, 190, 77);
+  font-weight: bold;
+}
+
+/* Stili per gli accordion items */
+.item-details {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(80, 27, 80, 0.5);
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  border: 1px solid purple;
+}
+
+.item-details:hover {
+  background-color: rgba(80, 27, 80, 0.9);
+}
+
+.item-details img {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.item-details span {
+  font-size: 0.95rem;
+}
+
+/* Accordion button style */
+.accordion {
+  color: white;
+  font-weight: bold;
+  background-color: rgb(80, 27, 80);
+  cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  text-align: left;
+  border: 2px solid purple;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.3s;
+  font-size: 1rem;
+}
+
+.accordion:hover {
+  background-color: purple;
+  border-color: rgb(255, 190, 77);
+}
+
+.accordion:focus {
+  box-shadow: 0 0 0 3px rgba(128, 0, 128, 0.3);
+}
+
+/* Navigation buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(80, 27, 80);
+  padding: 6px;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  font-weight: bold;
+  flex: 1;
+  border: none;
+  padding: 20px;
+  background-color: rgb(80, 27, 80);
+  color: white;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  min-width: 120px;
+}
+
+.nav-button.active {
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+  border-bottom: 3px solid rgb(255, 190, 77);
+}
+
+.nav-button:hover {
+  background-color: purple;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-buttons > *:not(:last-child) {
+  border-right: 2px solid purple;
+}
+
+.separator {
+  border-left: 1px solid #fff;
+  height: 100%;
+  margin: 0 10px;
+}
+
+/* Header styles */
+.header-with-button-raid {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  margin-bottom: 20px;
+  border-bottom: 2px solid purple;
+}
+
+.header-with-button-raid h2 {
+  margin: 0;
+  color: rgb(255, 190, 77);
+  font-size: 1.8rem;
+}
+
+/* Container adjustments */
+.container-fluid {
   padding: 0 20px;
 }
 
-.made-by {
-  text-align: center;
-  color: rgb(255, 190, 77);
-  font-weight: bold;
-  flex: 1;
-  margin-left: 200px;
+/* List styles */
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
 }
 
+.list-unstyled li {
+  margin-bottom: 8px;
+}
+
+/* Utility classes */
+.text-warning-custom {
+  color: rgb(255, 190, 77);
+}
+
+.bg-purple {
+  background-color: rgb(80, 27, 80);
+}
+
+.border-purple {
+  border-color: purple;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gear-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Stili per la scrollbar (opzionale) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(40, 40, 40);
+}
+
+::-webkit-scrollbar-thumb {
+  background: purple;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 190, 77);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header-with-button-raid h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+  }
+
+  .nav-button {
+    width: 100%;
+    padding: 15px;
+    border-right: none !important;
+    border-bottom: 1px solid purple;
+  }
+
+  .nav-buttons > *:not(:last-child) {
+    border-right: none;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .header-with-button-raid h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Responsive per info-bar */
+  .info-bar {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    margin: 10px 10px 20px 10px;
+    padding: 12px 15px;
+  }
+
+  .info-bar .made-by,
+  .info-bar .update {
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .gear-card .card-header h5 {
+    font-size: 1.1rem;
+  }
+
+  .stat-item {
+    font-size: 0.85rem;
+    padding: 5px 8px;
+  }
+
+  .item-details span {
+    font-size: 0.85rem;
+  }
+
+  .container-fluid {
+    padding: 0 10px;
+  }
+
+  .header-with-button-raid {
+    padding: 10px 0;
+  }
+
+  .header-with-button-raid h2 {
+    font-size: 1.1rem;
+  }
+
+  .info-bar {
+    margin: 5px 5px 15px 5px;
+    padding: 10px;
+  }
+
+  .info-bar .made-by,
+  .info-bar .update {
+    font-size: 0.9rem;
+  }
+}
+
+/* Manteniamo alcuni stili originali che potrebbero servire per altre pagine */
 .made-by-me {
   text-align: center;
   color: rgb(255, 190, 77);
   font-weight: bold;
-}
-
-.update {
-  color: rgb(255, 190, 77);
-  font-weight: bold;
-  text-align: right;
 }
 
 table {
@@ -51,30 +405,7 @@ th {
 tr:nth-child(even) {
   background-color: #f9f9f9;
 }
-/* Accordion button style */
-.accordion {
-  color: white;
-  font-weight: bold;
-  background-color: rgb(80, 27, 80);
-  cursor: pointer;
-  padding: 10px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  outline: none;
-  transition: background-color 0.3s;
-}
 
-.accordion:hover {
-  background-color: purple;
-}
-
-.panel {
-  display: none;
-  padding: 10px;
-  background-color: rgb(80, 27, 80);
-  overflow: hidden;
-}
 /* item search bar*/
 .header-container {
   margin: 10px;
@@ -128,69 +459,6 @@ tr:nth-child(even) {
 .redeemer-id {
   width: 50px;
 }
-.panel img {
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-  margin-right: 10px;
-}
-
-.panel li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.nav-buttons {
-  display: flex;
-  justify-content: space-around;
-  background-color: rgb(80, 27, 80);
-  padding: 6px;
-  font-weight: bold;
-}
-
-.nav-buttons {
-  display: flex;
-  font-weight: bold;
-}
-
-.nav-button {
-  font-weight: bold;
-  flex: 1;
-  border: none;
-  padding: 20px;
-  background-color: rgb(80, 27, 80);
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-.nav-button.active {
-  background-color: purple;
-  color: white;
-  font-weight: bold;
-}
-
-.nav-button:hover {
-  background-color: purple;
-  color: white;
-  font-weight: bold;
-}
-
-.nav-buttons > *:not(:last-child) {
-  border-right: 2px solid purple;
-  font-weight: bold;
-}
-
-.nav-button:hover:not(.active) {
-  background-color: purple;
-  font-weight: bold;
-}
-
-.separator {
-  border-left: 1px solid #fff;
-  height: 100%;
-  margin: 0 10px;
-}
 
 table thead th {
   position: sticky;
@@ -200,26 +468,6 @@ table thead th {
   color: white;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
   padding: 10px;
-}
-
-.panel li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.panel li img {
-  margin-right: 10px;
-}
-
-.panel li .item-details {
-  display: flex;
-  align-items: center;
-}
-
-.panel li .item-quantity {
-  margin-left: auto;
-  margin-right: 5px; /* Add margin to create space between quantity and name */
 }
 
 .tuning-button {
@@ -252,7 +500,7 @@ table thead th {
   border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
-  margin-left: auto; /* Questo lo posiziona a destra */
+  margin-left: auto;
   font-weight: bold;
   vertical-align: middle;
 }
@@ -262,29 +510,20 @@ table thead th {
 .advance-button:hover {
   background-color: purple;
 }
+
 .header-with-button {
   display: flex;
-  align-items: center; /* Align items vertically */
+  align-items: center;
   padding: 10px 0;
-}
-.header-with-button-raid {
-  display: flex;
-  align-items: center; /* Align items vertically */
-  padding: 5px 0;
-}
-
-.header-with-button h2 {
-  margin: 0;
-  padding: 0;
 }
 
 .tabella-scroll {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 colonne */
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  width: 100%; /* Occupa tutta la larghezza disponibile */
-  max-width: none; /* Rimuove eventuali limiti di larghezza */
-  margin: 0; /* Rimuove margini */
+  width: 100%;
+  max-width: none;
+  margin: 0;
 }
 
 .box-scroll {
@@ -337,10 +576,10 @@ table thead th {
 }
 
 .icon-title {
-  width: 40px; /* Dimensione dell'icona */
+  width: 40px;
   height: 40px;
-  vertical-align: middle; /* Allinea l'icona con il testo */
-  margin-right: 8px; /* Spazio tra icona e testo */
+  vertical-align: middle;
+  margin-right: 8px;
 }
 
 .stat-scroll-up {
@@ -502,4 +741,214 @@ table thead th {
   border-radius: 10px;
   background-color: rgb(80, 27, 80);
   margin-bottom: 40px;
+}
+/* Note section */
+.note-section {
+  background-color: rgb(80, 27, 80);
+  border: 2px solid purple;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 30px 0 20px 0;
+  color: rgb(255, 190, 77);
+  font-size: 0.95rem;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.note-section p {
+  margin: 0;
+}
+
+/* Spaziatura tra le sezioni */
+.mb-5 {
+  margin-bottom: 3rem !important;
+}
+
+/* Migliorie per mobile */
+@media (max-width: 768px) {
+  .note-section {
+    font-size: 0.85rem;
+    padding: 12px 15px;
+    margin: 20px 0 15px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .note-section {
+    font-size: 0.8rem;
+    padding: 10px 12px;
+  }
+}
+/* Rhod Cards specific styles */
+.rhod-card .card-header {
+  font-size: 0.9rem;
+  padding: 10px;
+}
+
+.rhod-card .card-header h6 {
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+.rhod-card .stats-grid {
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+
+.rhod-card .stat-item {
+  padding: 4px 8px;
+  font-size: 0.85rem;
+}
+
+/* Note sections */
+.note-section {
+  background-color: rgb(80, 27, 80);
+  border: 2px solid purple;
+  border-radius: 8px;
+  padding: 15px;
+  color: white;
+}
+
+.gem-details,
+.dismantle-details {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.gem-details p,
+.dismantle-details p {
+  margin-bottom: 5px;
+  color: rgb(255, 190, 77);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .rhod-card .card-header h6 {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .note-section {
+    font-size: 0.9rem;
+    padding: 12px;
+  }
+
+  .gem-details,
+  .dismantle-details {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .rhod-card .card-header {
+    padding: 8px;
+  }
+
+  .rhod-card .card-header h6 {
+    font-size: 0.8rem;
+  }
+
+  .note-section {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+
+  .gem-details,
+  .dismantle-details {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+}
+/* Scroll Cards specific styles */
+.scroll-card .card-header {
+  background-color: rgb(80, 27, 80);
+  padding: 10px;
+}
+
+.scroll-card .card-header h5 {
+  font-size: 1rem;
+}
+
+.best-choice-badge {
+  background-color: rgb(255, 190, 77);
+  color: black;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.alternative-badge {
+  background-color: purple;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.scroll-details {
+  background-color: rgba(80, 27, 80, 0.5);
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid purple;
+}
+
+.stat-up {
+  color: rgb(144, 238, 144);
+  font-weight: bold;
+  margin-bottom: 2px;
+  font-size: 0.9rem;
+}
+
+.stat-down {
+  color: rgb(255, 99, 71);
+  font-weight: bold;
+  margin-bottom: 2px;
+  font-size: 0.9rem;
+}
+
+.stat-drop {
+  color: rgb(255, 190, 77);
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 0.9rem;
+  border-top: 1px solid purple;
+  padding-top: 5px;
+}
+
+.section-title {
+  color: rgb(255, 190, 77);
+  font-size: 1.5rem;
+  border-bottom: 2px solid purple;
+  padding-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .scroll-card .card-header h5 {
+    font-size: 0.9rem;
+  }
+
+  .best-choice-badge,
+  .alternative-badge {
+    font-size: 0.8rem;
+  }
+
+  .stat-up,
+  .stat-down,
+  .stat-drop {
+    font-size: 0.8rem;
+  }
 }

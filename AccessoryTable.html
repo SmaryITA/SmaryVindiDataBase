@@ -1,8 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Accessory Table</title>
   </head>
@@ -11,7 +15,7 @@
       <button
         id="btn-raids-view"
         class="nav-button"
-        onclick="location.href='RaidsTable.html'"
+        onclick="location.href = 'RaidsTable.html'"
       >
         Raids Table
       </button>
@@ -19,7 +23,7 @@
       <button
         id="btn-redeemers-view"
         class="nav-button"
-        onclick="location.href='RedeemersTable.html'"
+        onclick="location.href = 'RedeemersTable.html'"
       >
         Redeemers Table
       </button>
@@ -27,15 +31,15 @@
       <button
         id="btn-spacetime-view"
         class="nav-button"
-        onclick="location.href='SpaceTimeTable.html'"
+        onclick="location.href = 'SpaceTimeTable.html'"
       >
         SpaceTime Table
       </button>
       <div class="separator"></div>
       <button
-        id="btn-spacetime-view"
+        id="btn-rhods-view"
         class="nav-button"
-        onclick="location.href='RhodsBracelets.html'"
+        onclick="location.href = 'RhodsBracelets.html'"
       >
         Rhods/Bracelets Table
       </button>
@@ -43,15 +47,15 @@
       <button
         id="btn-items-view"
         class="nav-button"
-        onclick="location.href='Scrolls.html'"
+        onclick="location.href = 'Scrolls.html'"
       >
         Enchant Scrolls Table
       </button>
       <div class="separator"></div>
       <button
-        id="btn-items-view"
+        id="btn-accessory-view"
         class="nav-button"
-        onclick="location.href='AccessoryTable.html'"
+        onclick="location.href = 'AccessoryTable.html'"
       >
         Accessory Table
       </button>
@@ -59,7 +63,7 @@
       <button
         id="btn-gear-view"
         class="nav-button"
-        onclick="location.href='index.html'"
+        onclick="location.href = 'index.html'"
       >
         Uaithne Gear Table
       </button>
@@ -67,895 +71,918 @@
       <button
         id="btn-gear-view"
         class="nav-button"
-        onclick="location.href='EriuGearTable.html'"
+        onclick="location.href = 'EriuGearTable.html'"
       >
         Eriu Gear Table
       </button>
     </div>
-    <div class="footer">
+
+    <!-- INFO BAR -->
+    <div class="info-bar">
       <div class="made-by">
         <p>&#9733; Made By Smary &#9733;</p>
       </div>
       <div class="update">
-        <p>Latest update : 3 January 2026</p>
+        <p>Latest update : 18 February 2026</p>
       </div>
     </div>
-    <div class="gear-table-container">
-      <div class="header-with-button">
-        <h2>Eriu Book (Lv.125)</h2>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Preview</th>
-            <th>Attack/M.Attack</th>
-            <th>Defence</th>
-            <th>STR</th>
-            <th>AGI</th>
-            <th>INT</th>
-            <th>WIL</th>
-            <th>Attack Speed</th>
-            <th>Critical Rate</th>
-            <th>Critical Resistance</th>
-            <th>Items Needed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Eriu Book.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>+1910</td>
-            <td>+3590</td>
-            <td>+180</td>
-            <td>+90</td>
-            <td>+243</td>
-            <td>+80</td>
-            <td>+3</td>
-            <td>+13</td>
-            <td>+20</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Lucian's Essence.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Lucian's Essence</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Eriu Fragment Auxiliary Equipment.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Eriu Fragment: Auxiliary Equipment</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Solid Eriu Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Solid Eriu Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-              </ul>
-            </td>
-          </tr>
-          <!-- Fine blocco gear -->
-        </tbody>
-      </table>
-    </div>
-    <div class="gear-table-container">
-      <div class="header-with-button">
-        <h2>Roots Of Abundance (Lv.125)</h2>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Preview</th>
-            <th>Attack/M.Attack</th>
-            <th>Critical Rate</th>
-            <th>STR</th>
-            <th>AGI</th>
-            <th>INT</th>
-            <th>WIL</th>
-            <th>Stamina</th>
-            <th>Def Pen</th>
-            <th>Items Needed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Roots Of Abundance.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>+0(Up To +320)</td>
-            <td>+15</td>
-            <td>+125</td>
-            <td>+50</td>
-            <td>+167</td>
-            <td>+58</td>
-            <td>+4</td>
-            <td>+0(Up To +130)</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Semias's Essence.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Semias's Essence</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Eriu Fragment Roots Of Abundance.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Eriu Fragment: Roots Of Abundance</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Solid Eriu Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Solid Eriu Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Smooth Eriu Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Smooth Eriu Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Orb.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x35</span>
-                    <span>Enhanced New Era Orb</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Cloth.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x20</span>
-                    <span>Enhanced New Era Cloth</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Ore.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x60</span>
-                    <span>Enhanced New Era Ore</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-              </ul>
-            </td>
-          </tr>
-          <!-- Fine blocco gear -->
-        </tbody>
-      </table>
-    </div>
-    <div class="gear-table-container">
-      <div class="header-with-button">
-        <h2>The Book Of Uaithne (Lv.120)</h2>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Preview</th>
-            <th>Attack/M.Attack</th>
-            <th>Defence</th>
-            <th>STR</th>
-            <th>AGI</th>
-            <th>INT</th>
-            <th>WIL</th>
-            <th>Attack Speed</th>
-            <th>Critical Rate</th>
-            <th>Critical Resistance</th>
-            <th>Items Needed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/The Book Of Uaithne.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>+1410</td>
-            <td>+3090</td>
-            <td>+180</td>
-            <td>+90</td>
-            <td>+243</td>
-            <td>+80</td>
-            <td>+3</td>
-            <td>+10</td>
-            <td>+17</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Sreng's Essence.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Sreng's Essence</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Uaithne Fragment Auxiliary Equipment.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Uaithne Fragment: Auxiliary Equipment</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Solid Uaithne Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Solid Uaithne Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-              </ul>
-            </td>
-          </tr>
-          <!-- Fine blocco gear -->
-        </tbody>
-      </table>
-    </div>
-    <div class="gear-table-container">
-      <div class="header-with-button">
-        <h2>The Sun's Wish (Lv.120)</h2>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Preview</th>
-            <th>Attack/M.Attack</th>
-            <th>Critical Rate</th>
-            <th>STR</th>
-            <th>AGI</th>
-            <th>INT</th>
-            <th>WIL</th>
-            <th>Stamina</th>
-            <th>Def Pen</th>
-            <th>Items Needed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/The Sun's Wish.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>+0(Up To +300)</td>
-            <td>+11</td>
-            <td>+125</td>
-            <td>+50</td>
-            <td>+167</td>
-            <td>+58</td>
-            <td>+4</td>
-            <td>+0(Up To +110)</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Spinos's Essence.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Spinos's Essence</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Uaithne Fragment The Sun's Wish.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Uaithne Fragment: The Sun's Wish</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Solid Uaithne Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Solid Uaithne Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Smooth Uaithne Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Smooth Uaithne Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Orb.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x35</span>
-                    <span>Enhanced New Era Orb</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Cloth.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x20</span>
-                    <span>Enhanced New Era Cloth</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Ore.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x60</span>
-                    <span>Enhanced New Era Ore</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-              </ul>
-            </td>
-          </tr>
-          <!-- Fine blocco gear -->
-        </tbody>
-      </table>
-    </div>
-    <!-- inizio accessorio -->
-    <div class="gear-table-container">
-      <div class="header-with-button">
-        <h2>The Cursed Belt (Lv.120)</h2>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Preview</th>
-            <th>Attack/M.Attack</th>
-            <th>Balance</th>
-            <th>STR</th>
-            <th>AGI</th>
-            <th>INT</th>
-            <th>WIL</th>
-            <th>Def Pen</th>
-            <th>Items Needed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Cursed Belt.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>+0(Up To +300)</td>
-            <td>+12</td>
-            <td>+145</td>
-            <td>+95</td>
-            <td>+193</td>
-            <td>+105</td>
-            <td>+0(Up To +110)</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Gorbas's Essence.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Gorbas's Essence</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Uaithne Fragment Cursed Belt.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Uaithne Fragment: The Cursed Belt</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Robust Uaithne Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Robust Uaithne Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Smooth Uaithne Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Smooth Uaithne Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Orb.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x35</span>
-                    <span>Enhanced New Era Orb</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Leather.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x25</span>
-                    <span>Enhanced New Era Leather</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Ore.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x60</span>
-                    <span>Enhanced New Era Ore</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- Fine blocco accessorio -->
-    <!-- inizio accessorio -->
-    <div class="gear-table-container">
-      <div class="header-with-button">
-        <h2>Token Of Silence (Lv.120)</h2>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Preview</th>
-            <th>Attack/M.Attack</th>
-            <th>Balance</th>
-            <th>Critical Rate</th>
-            <th>STR</th>
-            <th>AGI</th>
-            <th>INT</th>
-            <th>WIL</th>
-            <th>HP</th>
-            <th>Def Pen</th>
-            <th>Items Needed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Token Of Silence.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>+0(Up To +300)</td>
-            <td>+8</td>
-            <td>+6</td>
-            <td>+140</td>
-            <td>+70</td>
-            <td>+180</td>
-            <td>+80</td>
-            <td>+125</td>
-            <td>+0(Up To +110)</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Morgant's Essence.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Morgant's Essence</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Uaithne Fragment Token Of Silence.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Uaithne Fragment: Token Of Silence</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Robust Uaithne Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Robust Uaithne Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Unrelenting Uaithne Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Unrelenting Uaithne Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Orb.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x35</span>
-                    <span>Enhanced New Era Orb</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Cloth.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x50</span>
-                    <span>Enhanced New Era Cloth</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Ore.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x50</span>
-                    <span>Enhanced New Era Ore</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <!-- Fine blocco accessorio -->
-    <!-- inizio accessorio -->
-    <div class="gear-table-container">
-      <div class="header-with-button">
-        <h2>Token Of Quiet (Lv.120)</h2>
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Preview</th>
-            <th>Attack/M.Attack</th>
-            <th>Balance</th>
-            <th>Critical Rate</th>
-            <th>STR</th>
-            <th>AGI</th>
-            <th>INT</th>
-            <th>WIL</th>
-            <th>HP</th>
-            <th>Def Pen</th>
-            <th>Items Needed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Token Of Quiet.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>+0(Up To +300)</td>
-            <td>+6</td>
-            <td>+8</td>
-            <td>+140</td>
-            <td>+70</td>
-            <td>+180</td>
-            <td>+80</td>
-            <td>+125</td>
-            <td>+0(Up To +110)</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Morgant's Essence.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Morgant's Essence</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Uaithne Fragment Token Of Quiet.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x2</span>
-                    <span>Uaithne Fragment: Token Of Quiet</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Robust Uaithne Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Robust Uaithne Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Unrelenting Uaithne Crystal.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x10</span>
-                    <span>Unrelenting Uaithne Crystal</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Orb.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x35</span>
-                    <span>Enhanced New Era Orb</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Cloth.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x50</span>
-                    <span>Enhanced New Era Cloth</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Ore.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span class="item-quantity">x50</span>
-                    <span>Enhanced New Era Ore</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-              </ul>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p>
-      *Note : Rings will provide a set bonus "+3 critical rate" if both
-      equipped.
-    </p>
-    <!-- Fine blocco accessorio -->
 
+    <div class="container-fluid mt-3">
+      <!-- Eriu Book Section -->
+      <div class="accessory-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>Eriu Book (Lv.125)</h2>
+        </div>
+
+        <div class="row g-3">
+          <!-- Card Eriu Book -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gear-card">
+              <div class="card-header d-flex align-items-center">
+                <img
+                  src="icon/Eriu Book.png"
+                  alt="Gear Image"
+                  class="gear-icon me-2"
+                />
+                <h5 class="mb-0">Eriu Book</h5>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">Attack/M.Attack:</span>
+                    <span class="stat-value">+1910</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Defence:</span>
+                    <span class="stat-value">+3590</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">STR:</span>
+                    <span class="stat-value">+180</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">AGI:</span>
+                    <span class="stat-value">+90</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">INT:</span>
+                    <span class="stat-value">+243</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">WIL:</span>
+                    <span class="stat-value">+80</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Attack Speed:</span>
+                    <span class="stat-value">+3</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+13</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Resistance:</span>
+                    <span class="stat-value">+20</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#items-eriu-book"
+                >
+                  Show/Hide Items
+                </button>
+
+                <div id="items-eriu-book" class="collapse mt-2">
+                  <ul class="list-unstyled">
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Lucian's Essence.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Lucian's Essence</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Eriu Fragment Auxiliary Equipment.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Eriu Fragment: Auxiliary Equipment</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Solid Eriu Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Solid Eriu Crystal</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Roots Of Abundance Section -->
+      <div class="accessory-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>Roots Of Abundance (Lv.125)</h2>
+        </div>
+
+        <div class="row g-3">
+          <!-- Card Roots Of Abundance -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gear-card">
+              <div class="card-header d-flex align-items-center">
+                <img
+                  src="icon/Roots Of Abundance.png"
+                  alt="Gear Image"
+                  class="gear-icon me-2"
+                />
+                <h5 class="mb-0">Roots Of Abundance</h5>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">Attack/M.Attack:</span>
+                    <span class="stat-value">+0(Up To +320)</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+15</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">STR:</span>
+                    <span class="stat-value">+125</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">AGI:</span>
+                    <span class="stat-value">+50</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">INT:</span>
+                    <span class="stat-value">+167</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">WIL:</span>
+                    <span class="stat-value">+58</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Stamina:</span>
+                    <span class="stat-value">+4</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Def Pen:</span>
+                    <span class="stat-value">+0(Up To +130)</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#items-roots"
+                >
+                  Show/Hide Items
+                </button>
+
+                <div id="items-roots" class="collapse mt-2">
+                  <ul class="list-unstyled">
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Semias's Essence.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Semias's Essence</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Eriu Fragment Roots Of Abundance.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Eriu Fragment: Roots Of Abundance</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Solid Eriu Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Solid Eriu Crystal</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Smooth Eriu Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Smooth Eriu Crystal</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Orb.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x35</span>
+                      <span>Enhanced New Era Orb</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Cloth.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x20</span>
+                      <span>Enhanced New Era Cloth</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Ore.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x60</span>
+                      <span>Enhanced New Era Ore</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Book Of Uaithne Section -->
+      <div class="accessory-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>The Book Of Uaithne (Lv.120)</h2>
+        </div>
+
+        <div class="row g-3">
+          <!-- Card The Book Of Uaithne -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gear-card">
+              <div class="card-header d-flex align-items-center">
+                <img
+                  src="icon/The Book Of Uaithne.png"
+                  alt="Gear Image"
+                  class="gear-icon me-2"
+                />
+                <h5 class="mb-0">The Book Of Uaithne</h5>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">Attack/M.Attack:</span>
+                    <span class="stat-value">+1410</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Defence:</span>
+                    <span class="stat-value">+3090</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">STR:</span>
+                    <span class="stat-value">+180</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">AGI:</span>
+                    <span class="stat-value">+90</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">INT:</span>
+                    <span class="stat-value">+243</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">WIL:</span>
+                    <span class="stat-value">+80</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Attack Speed:</span>
+                    <span class="stat-value">+3</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+10</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Resistance:</span>
+                    <span class="stat-value">+17</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#items-uaithne-book"
+                >
+                  Show/Hide Items
+                </button>
+
+                <div id="items-uaithne-book" class="collapse mt-2">
+                  <ul class="list-unstyled">
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Sreng's Essence.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Sreng's Essence</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Uaithne Fragment Auxiliary Equipment.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Uaithne Fragment: Auxiliary Equipment</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Solid Uaithne Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Solid Uaithne Crystal</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Sun's Wish Section -->
+      <div class="accessory-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>The Sun's Wish (Lv.120)</h2>
+        </div>
+
+        <div class="row g-3">
+          <!-- Card The Sun's Wish -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gear-card">
+              <div class="card-header d-flex align-items-center">
+                <img
+                  src="icon/The Sun's Wish.png"
+                  alt="Gear Image"
+                  class="gear-icon me-2"
+                />
+                <h5 class="mb-0">The Sun's Wish</h5>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">Attack/M.Attack:</span>
+                    <span class="stat-value">+0(Up To +300)</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+11</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">STR:</span>
+                    <span class="stat-value">+125</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">AGI:</span>
+                    <span class="stat-value">+50</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">INT:</span>
+                    <span class="stat-value">+167</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">WIL:</span>
+                    <span class="stat-value">+58</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Stamina:</span>
+                    <span class="stat-value">+4</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Def Pen:</span>
+                    <span class="stat-value">+0(Up To +110)</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#items-sun-wish"
+                >
+                  Show/Hide Items
+                </button>
+
+                <div id="items-sun-wish" class="collapse mt-2">
+                  <ul class="list-unstyled">
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Spinos's Essence.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Spinos's Essence</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Uaithne Fragment The Sun's Wish.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Uaithne Fragment: The Sun's Wish</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Solid Uaithne Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Solid Uaithne Crystal</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Smooth Uaithne Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Smooth Uaithne Crystal</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Orb.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x35</span>
+                      <span>Enhanced New Era Orb</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Cloth.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x20</span>
+                      <span>Enhanced New Era Cloth</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Ore.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x60</span>
+                      <span>Enhanced New Era Ore</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Cursed Belt Section -->
+      <div class="accessory-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>The Cursed Belt (Lv.120)</h2>
+        </div>
+
+        <div class="row g-3">
+          <!-- Card The Cursed Belt -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gear-card">
+              <div class="card-header d-flex align-items-center">
+                <img
+                  src="icon/Cursed Belt.png"
+                  alt="Gear Image"
+                  class="gear-icon me-2"
+                />
+                <h5 class="mb-0">The Cursed Belt</h5>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">Attack/M.Attack:</span>
+                    <span class="stat-value">+0(Up To +300)</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Balance:</span>
+                    <span class="stat-value">+12</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">STR:</span>
+                    <span class="stat-value">+145</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">AGI:</span>
+                    <span class="stat-value">+95</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">INT:</span>
+                    <span class="stat-value">+193</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">WIL:</span>
+                    <span class="stat-value">+105</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Def Pen:</span>
+                    <span class="stat-value">+0(Up To +110)</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#items-cursed-belt"
+                >
+                  Show/Hide Items
+                </button>
+
+                <div id="items-cursed-belt" class="collapse mt-2">
+                  <ul class="list-unstyled">
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Gorbas's Essence.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Gorbas's Essence</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Uaithne Fragment Cursed Belt.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Uaithne Fragment: The Cursed Belt</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Robust Uaithne Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Robust Uaithne Crystal</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Smooth Uaithne Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Smooth Uaithne Crystal</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Orb.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x35</span>
+                      <span>Enhanced New Era Orb</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Leather.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x25</span>
+                      <span>Enhanced New Era Leather</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Ore.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x60</span>
+                      <span>Enhanced New Era Ore</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Token Of Silence Section -->
+      <div class="accessory-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>Token Of Silence (Lv.120)</h2>
+        </div>
+
+        <div class="row g-3">
+          <!-- Card Token Of Silence -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gear-card">
+              <div class="card-header d-flex align-items-center">
+                <img
+                  src="icon/Token Of Silence.png"
+                  alt="Gear Image"
+                  class="gear-icon me-2"
+                />
+                <h5 class="mb-0">Token Of Silence</h5>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">Attack/M.Attack:</span>
+                    <span class="stat-value">+0(Up To +300)</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Balance:</span>
+                    <span class="stat-value">+8</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+6</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">STR:</span>
+                    <span class="stat-value">+140</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">AGI:</span>
+                    <span class="stat-value">+70</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">INT:</span>
+                    <span class="stat-value">+180</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">WIL:</span>
+                    <span class="stat-value">+80</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">HP:</span>
+                    <span class="stat-value">+125</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Def Pen:</span>
+                    <span class="stat-value">+0(Up To +110)</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#items-silence"
+                >
+                  Show/Hide Items
+                </button>
+
+                <div id="items-silence" class="collapse mt-2">
+                  <ul class="list-unstyled">
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Morgant's Essence.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Morgant's Essence</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Uaithne Fragment Token Of Silence.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Uaithne Fragment: Token Of Silence</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Robust Uaithne Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Robust Uaithne Crystal</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Unrelenting Uaithne Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Unrelenting Uaithne Crystal</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Orb.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x35</span>
+                      <span>Enhanced New Era Orb</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Cloth.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x50</span>
+                      <span>Enhanced New Era Cloth</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Ore.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x50</span>
+                      <span>Enhanced New Era Ore</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Token Of Quiet Section -->
+      <div class="accessory-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>Token Of Quiet (Lv.120)</h2>
+        </div>
+
+        <div class="row g-3">
+          <!-- Card Token Of Quiet -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card gear-card">
+              <div class="card-header d-flex align-items-center">
+                <img
+                  src="icon/Token Of Quiet.png"
+                  alt="Gear Image"
+                  class="gear-icon me-2"
+                />
+                <h5 class="mb-0">Token Of Quiet</h5>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">Attack/M.Attack:</span>
+                    <span class="stat-value">+0(Up To +300)</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Balance:</span>
+                    <span class="stat-value">+6</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+8</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">STR:</span>
+                    <span class="stat-value">+140</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">AGI:</span>
+                    <span class="stat-value">+70</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">INT:</span>
+                    <span class="stat-value">+180</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">WIL:</span>
+                    <span class="stat-value">+80</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">HP:</span>
+                    <span class="stat-value">+125</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Def Pen:</span>
+                    <span class="stat-value">+0(Up To +110)</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#items-quiet"
+                >
+                  Show/Hide Items
+                </button>
+
+                <div id="items-quiet" class="collapse mt-2">
+                  <ul class="list-unstyled">
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Morgant's Essence.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Morgant's Essence</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Uaithne Fragment Token Of Quiet.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x2</span>
+                      <span>Uaithne Fragment: Token Of Quiet</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Robust Uaithne Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Robust Uaithne Crystal</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Unrelenting Uaithne Crystal.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x10</span>
+                      <span>Unrelenting Uaithne Crystal</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Orb.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x35</span>
+                      <span>Enhanced New Era Orb</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Cloth.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x50</span>
+                      <span>Enhanced New Era Cloth</span>
+                    </li>
+                    <li class="item-details mb-2">
+                      <img
+                        src="icon/Ore.png"
+                        alt="Item"
+                        class="item-icon me-2"
+                      />
+                      <span class="item-quantity me-2">x50</span>
+                      <span>Enhanced New Era Ore</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Note -->
+      <div class="note-section mt-3 mb-4">
+        <p class="mb-0">
+          *Note : Rings will provide a set bonus "+3 critical rate" if both
+          equipped.
+        </p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

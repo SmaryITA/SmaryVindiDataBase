@@ -4,418 +4,568 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eriu Greaves Destruction</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <style>
-        body {
-          background-color: #1c1c1c;
-          color: white;
-          font-family: Arial, sans-serif;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          margin: 0;
-          flex-direction: column;
+      body {
+        background-color: rgb(40, 40, 40);
+        color: white;
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .destruction-container {
+        max-width: 600px;
+        margin: 20px auto;
+      }
+
+      .destruction-card {
+        background-color: rgb(40, 40, 40);
+        border: 2px solid purple;
+        border-radius: 10px;
+        padding: 25px;
+      }
+
+      .return-button {
+        background-color: darkred;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        margin-bottom: 15px;
+        width: auto;
+      }
+
+      .return-button:hover {
+        background-color: purple;
+      }
+
+      .tuning-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .tuning-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .tuning-header h1 {
+        color: rgb(255, 190, 77);
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .main-content {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .main-image {
+        width: 90px;
+        height: 90px;
+        border: 2px solid purple;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: rgb(80, 27, 80);
+      }
+
+      .item-name {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: rgb(255, 190, 77);
+      }
+
+      .stats {
+        margin-bottom: 20px;
+      }
+
+      .stat {
+        background-color: rgba(80, 27, 80, 0.3);
+        border: 1px solid purple;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .stat-left {
+        display: flex;
+        align-items: center;
+        flex: 2;
+        min-width: 150px;
+      }
+
+      .stat-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+
+      .stat-label {
+        font-weight: bold;
+        color: white;
+      }
+
+      .stat-value {
+        font-weight: bold;
+        color: rgb(255, 190, 77);
+        font-size: 1.1rem;
+        min-width: 60px;
+        text-align: center;
+      }
+
+      .stat-buttons {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        flex: 1;
+      }
+
+      .stat-buttons button {
+        background-color: rgb(80, 27, 80);
+        color: white;
+        border: 1px solid purple;
+        border-radius: 5px;
+        padding: 8px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s;
+        min-width: 45px;
+      }
+
+      .stat-buttons button:hover:not(:disabled) {
+        background-color: purple;
+        border-color: rgb(255, 190, 77);
+      }
+
+      .stat-buttons button:disabled {
+        background-color: #333;
+        border-color: #555;
+        color: #777;
+        cursor: not-allowed;
+      }
+
+      .stat-buttons .max-btn {
+        background-color: rgb(80, 27, 80);
+        min-width: 60px;
+      }
+
+      .materials-container {
+        background-color: rgb(80, 27, 80);
+        border: 2px solid purple;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .materials-container h2 {
+        color: rgb(255, 190, 77);
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .material {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 6px;
+        margin-bottom: 8px;
+        border-left: 3px solid purple;
+      }
+
+      .material img {
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+        object-fit: contain;
+      }
+
+      .material span:first-of-type {
+        flex: 1;
+        font-weight: bold;
+        color: white;
+      }
+
+      .material span:last-of-type {
+        font-weight: bold;
+        color: rgb(255, 190, 77);
+        font-size: 1.1rem;
+        min-width: 80px;
+        text-align: right;
+      }
+
+      .note-section {
+        background-color: rgba(80, 27, 80, 0.5);
+        border: 1px solid purple;
+        border-radius: 8px;
+        padding: 12px 15px;
+        margin: 20px 0 10px;
+        color: rgb(255, 190, 77);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .note-section p {
+        margin: 0;
+      }
+
+      .made-by-me {
+        text-align: center;
+        color: rgb(255, 190, 77);
+        font-weight: bold;
+        margin: 20px 0 10px;
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 576px) {
+        .destruction-container {
+          margin: 10px;
         }
-  
-        .container {
-          text-align: center;
-          background-color: #333;
-          padding: 20px;
-          border-radius: 10px;
-          width: 500px;
-        }
-  
-        .tuning-header {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-  
-        .tuning-icon {
-          width: 30px;
-          height: 30px;
-          margin-right: 10px;
-        }
-  
-        .main-content {
-          margin-top: 20px;
-        }
-  
-        .main-image {
-          width: 100px;
-          height: 100px;
-        }
-  
-        .item-name {
-          margin-top: 10px;
-          font-size: 18px;
-          font-weight: bold;
-        }
-  
-        .stats {
-          margin-top: 20px;
-        }
-  
+        
         .stat {
-          display: flex;
-          align-items: center;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        
+        .stat-left {
+          width: 100%;
+        }
+        
+        .stat-value {
+          text-align: left;
+          margin-left: 34px;
+        }
+        
+        .stat-buttons {
+          width: 100%;
           justify-content: space-between;
-          margin-bottom: 15px;
+          margin-top: 10px;
         }
-  
-        .stat-icon {
-          width: 20px;
-          height: 20px;
-          margin-right: 5px;
-        }
-  
-        .stat span {
+        
+        .stat-buttons button {
           flex: 1;
-          text-align: left;
         }
-  
-        button {
-          background-color: #555;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          padding: 5px 10px;
-          cursor: pointer;
-          margin-left: 5px;
+        
+        .tuning-header h1 {
+          font-size: 1.5rem;
         }
-  
-        button:hover {
-          background-color: #777;
-        }
-  
-        .return-button {
-          background-color: darkred;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          padding: 10px 20px;
-          font-size: 14px;
-          cursor: pointer;
-          margin-bottom: 10px;
-          font-weight: bold;
-        }
-  
-        .return-button:hover {
-          background-color: purple;
-        }
-  
-        .materials-container {
-          margin-top: 20px;
-          background-color: #2b2b2b;
-          padding: 10px;
-          border-radius: 10px;
-          display: none;
-        }
-  
-        .material {
-          display: flex;
-          align-items: center;
-          margin-bottom: 10px;
-          font-weight: bold;
-        }
-  
-        .material img {
-          width: 20px;
-          height: 20px;
-          margin-right: 10px;
-        }
-  
-        .material span {
-          flex: 1;
-          text-align: left;
-        }
-  
-        .disabled {
-          background-color: #333;
-          cursor: not-allowed;
-        }
-      </style>
-    </head>
-    <body>
-        <div class="made-by-me">
-            <p>&#9733 Made By Smary &#9733</p>
-          </div>
-      <div class="container">
-        <button
-          class="return-button"
-          onclick="location.href='EriuGearTable.html'"
-        >&#9664 &#9664 Return To Eriu Gear
-        </button>
+      }
+    </style>
+  </head>
+  <body>
+    <div class="made-by-me">
+      <p>&#9733 Made By Smary &#9733</p>
+    </div>
+    
+    <div class="container destruction-container">
+      <button
+        class="return-button"
+        onclick="location.href='EriuGearTable.html'"
+      >&#9664 &#9664 Return To Eriu Gear
+      </button>
+      
+      <div class="destruction-card">
         <div class="tuning-header">
           <img
             src="icon/Tuning.png"
             alt="Tuning Icon"
             class="tuning-icon"
-            style="width: 40px; height: 40px"
           />
           <h1>Destruction</h1>
         </div>
+        
         <div class="main-content">
           <img
             src="icon/e_greaves_1.png"
             alt="Main Image"
             class="main-image"
-            style="width: 90px; height: 90px"
           />
           <p class="item-name">Eriu Greaves</p>
         </div>
+        
         <div class="stats">
+          <!-- Destruction I -->
           <div class="stat">
-            <img
-              src="icon/att_surplus.png"
-              alt="Surplus I Icon"
-              class="stat-icon"
-              style="width: 20px; height: 20px"
-            />
-            <span style="font-weight: bold">Destruction I</span>
-            <span style="font-weight: bold" id="surplus1-value">0</span>
-            <button class="minus" onclick="decreaseValue('surplus1', 14, 0)">
-              -
-            </button>
-            <button id="surplus1-plus" onclick="increaseValue('surplus1', 14, 1050)">
-              +
-            </button>
-            <button id="surplus1-max" onclick="setMaxValue('surplus1', 1050)">
-              Max
-            </button>
+            <div class="stat-left">
+              <img
+                src="icon/att_surplus.png"
+                alt="Surplus I Icon"
+                class="stat-icon"
+              />
+              <span class="stat-label">Destruction I</span>
+            </div>
+            <span class="stat-value" id="surplus1-value">0</span>
+            <div class="stat-buttons">
+              <button class="minus" onclick="decreaseValue('surplus1', 14, 0)">-</button>
+              <button id="surplus1-plus" onclick="increaseValue('surplus1', 14, 1050)">+</button>
+              <button id="surplus1-max" class="max-btn" onclick="setMaxValue('surplus1', 1050)">Max</button>
+            </div>
           </div>
+          
+          <!-- Destruction II -->
           <div class="stat">
-            <img
-              src="icon/att_surplus.png"
-              alt="Surplus II Icon"
-              class="stat-icon"
-              style="width: 20px; height: 20px"
-            />
-            <span style="font-weight: bold">Destruction II</span>
-            <span style="font-weight: bold" id="surplus2-value">0</span>
-            <button class="minus" onclick="decreaseValue('surplus2', 15, 0)">
-              -
-            </button>
-            <button id="surplus2-plus" onclick="increaseValue('surplus2', 15, 4440)">
-              +
-            </button>
-            <button id="surplus2-max" onclick="setMaxValue('surplus2', 4440)">
-              Max
-            </button>
+            <div class="stat-left">
+              <img
+                src="icon/att_surplus.png"
+                alt="Surplus II Icon"
+                class="stat-icon"
+              />
+              <span class="stat-label">Destruction II</span>
+            </div>
+            <span class="stat-value" id="surplus2-value">0</span>
+            <div class="stat-buttons">
+              <button class="minus" onclick="decreaseValue('surplus2', 15, 0)">-</button>
+              <button id="surplus2-plus" onclick="increaseValue('surplus2', 15, 4440)">+</button>
+              <button id="surplus2-max" class="max-btn" onclick="setMaxValue('surplus2', 4440)">Max</button>
+            </div>
           </div>
-        <div class="materials-container" id="materials-container">
+        </div>
+        
+        <!-- Materials Container -->
+        <div class="materials-container" id="materials-container" style="display: none;">
           <h2>Required Materials</h2>
-          <div class="material">
+          
+          <div class="material" id="material-gold" style="display: none;">
             <img src="icon/Gold.png" alt="Gold Icon" />
             <span>Gold</span>
             <span id="gold-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/Abyssal Shard Grade 3.png" alt="aby Icon" />
+          
+          <div class="material" id="material-aby" style="display: none;">
+            <img src="icon/Abyssal Shard Grade 3.png" alt="Abyssal Shard Icon" />
             <span>Abyssal Shard Grade 3</span>
             <span id="aby-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/ncloth.png" alt="ncloth Icon" />
+          
+          <div class="material" id="material-ncloth" style="display: none;">
+            <img src="icon/ncloth.png" alt="New Era Cloth Icon" />
             <span>New Era Cloth</span>
             <span id="ncloth-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/nleather.png" alt="nleather Icon" />
+          
+          <div class="material" id="material-nleather" style="display: none;">
+            <img src="icon/nleather.png" alt="New Era Leather Icon" />
             <span>New Era Leather</span>
             <span id="nleather-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/Abyssal Crystal.png" alt="acrystal Icon" />
+          
+          <div class="material" id="material-acrystal" style="display: none;">
+            <img src="icon/Abyssal Crystal.png" alt="Abyssal Crystal Icon" />
             <span>Abyssal Crystal</span>
             <span id="acrystal-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/Cloth.png" alt="Cloth Icon" />
+          
+          <div class="material" id="material-cloth" style="display: none;">
+            <img src="icon/Cloth.png" alt="Enhanced Cloth Icon" />
             <span>Enhanced New Era Cloth</span>
             <span id="cloth-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/Leather.png" alt="Leather Icon" />
+          
+          <div class="material" id="material-leather" style="display: none;">
+            <img src="icon/Leather.png" alt="Enhanced Leather Icon" />
             <span>Enhanced New Era Leather</span>
             <span id="leather-value">0</span>
           </div>
         </div>
+        
+        <!-- Note -->
+        <div class="note-section">
+          <p>*Note: To Unlock Destruction II You Need To Complete Destruction I + Max Tuning</p>
+        </div>
       </div>
     </div>
-    <div>
-      <p>*Note: To Unlock Destruction II You Need To Complete Destruction I + Max Tuning</p>
-    </div>
-      <script src="script.js"></script>
-      <script>
-        let materialValues = {
-            gold: 0,
-            aby: 0,
-            ncloth: 0,
-            nleather: 0,
-            acrystal: 0,
-            cloth: 0,
-            leather: 0,
-        };
 
-        function formatInteger(number) {
-    return number.toLocaleString("en-US");
-}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let materialValues = {
+        gold: 0,
+        aby: 0,
+        ncloth: 0,
+        nleather: 0,
+        acrystal: 0,
+        cloth: 0,
+        leather: 0,
+      };
 
-function updateMaterialValues() {
-    document.getElementById("gold-value").textContent = formatInteger(materialValues.gold);
-    document.getElementById("aby-value").textContent = formatInteger(materialValues.aby);
-    document.getElementById("ncloth-value").textContent = formatInteger(materialValues.ncloth);
-    document.getElementById("nleather-value").textContent = formatInteger(materialValues.nleather);
-    document.getElementById("acrystal-value").textContent = formatInteger(materialValues.acrystal);
-    document.getElementById("cloth-value").textContent = formatInteger(materialValues.cloth);
-    document.getElementById("leather-value").textContent = formatInteger(materialValues.leather);
-}
+      function formatInteger(number) {
+        return number.toLocaleString("en-US");
+      }
 
-function updateButtons(stat, value, max) {
-    const plusButton = document.getElementById(`${stat}-plus`);
-    const maxButton = document.getElementById(`${stat}-max`);
+      function updateMaterialValues() {
+        // Update text values
+        document.getElementById("gold-value").textContent = formatInteger(materialValues.gold);
+        document.getElementById("aby-value").textContent = formatInteger(materialValues.aby);
+        document.getElementById("ncloth-value").textContent = formatInteger(materialValues.ncloth);
+        document.getElementById("nleather-value").textContent = formatInteger(materialValues.nleather);
+        document.getElementById("acrystal-value").textContent = formatInteger(materialValues.acrystal);
+        document.getElementById("cloth-value").textContent = formatInteger(materialValues.cloth);
+        document.getElementById("leather-value").textContent = formatInteger(materialValues.leather);
 
-    if (value >= max) {
-        plusButton.disabled = true;
-        plusButton.classList.add("disabled");
-    } else {
-        plusButton.disabled = false;
-        plusButton.classList.remove("disabled");
-    }
+        // Show/hide material containers
+        const materials = [
+          { id: "gold", value: materialValues.gold },
+          { id: "aby", value: materialValues.aby },
+          { id: "ncloth", value: materialValues.ncloth },
+          { id: "nleather", value: materialValues.nleather },
+          { id: "acrystal", value: materialValues.acrystal },
+          { id: "cloth", value: materialValues.cloth },
+          { id: "leather", value: materialValues.leather },
+        ];
 
-    if (value >= max) {
-        maxButton.disabled = true;
-        maxButton.classList.add("disabled");
-    } else {
-        maxButton.disabled = false;
-        maxButton.classList.remove("disabled");
-    }
-}
+        materials.forEach((material) => {
+          const materialElement = document.getElementById(`material-${material.id}`);
+          if (material.value > 0) {
+            materialElement.style.display = "flex";
+          } else {
+            materialElement.style.display = "none";
+          }
+        });
 
-function decreaseValue(stat, decrement, min) {
-    const valueElement = document.getElementById(`${stat}-value`);
-    let currentValue = parseInt(valueElement.textContent);
-
-    if (currentValue <= min) return;
-
-    currentValue -= decrement;
-    if (currentValue < min) currentValue = min;
-
-    valueElement.textContent = currentValue;
-
-    if (stat === "surplus1") {
-        materialValues.gold = Math.max(materialValues.gold - 280000, 0);
-        materialValues.aby = Math.max(materialValues.aby - 1, 0);
-        materialValues.ncloth = Math.max(materialValues.ncloth - 12, 0);
-        materialValues.nleather = Math.max(materialValues.nleather - 12, 0);
-    } else if (stat === "surplus2") {
-        materialValues.gold = Math.max(materialValues.gold - 700000, 0);
-        materialValues.acrystal = Math.max(materialValues.acrystal - 1, 0);
-        materialValues.cloth = Math.max(materialValues.cloth - 17, 0);
-        materialValues.leather = Math.max(materialValues.leather - 17, 0);
-    }
-    updateMaterialValues();
-
-if (currentValue === min) {
-    document.getElementById("materials-container").style.display = "none";
-}
-
-updateButtons(stat, currentValue, parseInt(valueElement.getAttribute('max')));
-}
-
-function increaseValue(stat, increment, max) {
-    const valueElement = document.getElementById(`${stat}-value`);
-    let currentValue = parseInt(valueElement.textContent);
-
-    if (currentValue >= max) return;
-
-    currentValue += increment;
-    if (currentValue > max) currentValue = max;
-
-    valueElement.textContent = currentValue;
-
-    if (stat === "surplus1") {
-        materialValues.gold += 280000;
-        materialValues.aby += 1;
-        materialValues.ncloth += 12;
-        materialValues.nleather += 12;
-    } else if (stat === "surplus2") {
-        materialValues.gold += 700000;
-        materialValues.acrystal += 1;
-        materialValues.cloth += 17;
-        materialValues.leather += 17;
-    }
-
-    updateMaterialValues();
-
-    if (materialValues.gold > 0) {
-        document.getElementById("materials-container").style.display = "block";
-    }
-
-    updateButtons(stat, currentValue, max);
-}
-function setMaxValue(stat, max) {
-    const valueElement = document.getElementById(`${stat}-value`);
-    let currentValue = parseInt(valueElement.textContent);
-
-    if (currentValue >= max) return;
-
-    const increment = max - currentValue;
-
-    if (stat === "surplus1") {
-        const numberOfIncrements = increment / 14;
-
-        materialValues.gold += 280000 * numberOfIncrements;
-        materialValues.aby += 1 * numberOfIncrements;
-        materialValues.ncloth += 12 * numberOfIncrements;
-        materialValues.nleather += 12 * numberOfIncrements;
-    } else if (stat === "surplus2") {
-        const numberOfIncrements = increment / 15;
-        materialValues.gold += 700000 * numberOfIncrements;
-        materialValues.acrystal += 1 * numberOfIncrements;
-        materialValues.cloth += 17 * numberOfIncrements;
-        materialValues.leather += 17 * numberOfIncrements;
-    }
-
-    updateMaterialValues();
-
-    if (materialValues.gold > 0) {
-        document.getElementById("materials-container").style.display = "block";
-    }
-
-    valueElement.textContent = max;
-
-    updateButtons(stat, max, max);
-}
-
-updateButtons("surplus1", parseInt(document.getElementById("surplus1-value").textContent), 1050);
-updateButtons("surplus2", parseInt(document.getElementById("surplus2-value").textContent), 440);
-
-function updateMaterialValues() {
-    const materials = [
-        { id: "gold", value: materialValues.gold },
-        { id: "aby", value: materialValues.aby },
-        { id: "ncloth", value: materialValues.ncloth },
-        { id: "nleather", value: materialValues.nleather },
-        { id: "acrystal", value: materialValues.acrystal },
-        { id: "cloth", value: materialValues.cloth },
-        { id: "leather", value: materialValues.leather },
-    ];
-
-    materials.forEach((material) => {
-        const materialElement = document.getElementById(`${material.id}-value`);
-        materialElement.textContent = formatInteger(material.value);
-
-        const materialContainer = materialElement.closest(".material");
-        if (material.value === 0) {
-            materialContainer.style.display = "none";
+        // Show/hide main container
+        const materialsContainer = document.getElementById("materials-container");
+        if (materialValues.gold > 0 || materialValues.aby > 0 || materialValues.ncloth > 0 || 
+            materialValues.nleather > 0 || materialValues.acrystal > 0 || materialValues.cloth > 0 || 
+            materialValues.leather > 0) {
+          materialsContainer.style.display = "block";
         } else {
-            materialContainer.style.display = "flex";
+          materialsContainer.style.display = "none";
         }
-    });
-}
-        </script>
-    </body>
+      }
+
+      function updateButtons(stat, value, max) {
+        const plusButton = document.getElementById(`${stat}-plus`);
+        const maxButton = document.getElementById(`${stat}-max`);
+
+        if (value >= max) {
+          plusButton.disabled = true;
+        } else {
+          plusButton.disabled = false;
+        }
+
+        if (value >= max) {
+          maxButton.disabled = true;
+        } else {
+          maxButton.disabled = false;
+        }
+      }
+
+      function decreaseValue(stat, decrement, min) {
+        const valueElement = document.getElementById(`${stat}-value`);
+        let currentValue = parseInt(valueElement.textContent);
+
+        if (currentValue <= min) return;
+
+        currentValue -= decrement;
+        if (currentValue < min) currentValue = min;
+
+        valueElement.textContent = currentValue;
+
+        if (stat === "surplus1") {
+          materialValues.gold = Math.max(materialValues.gold - 280000, 0);
+          materialValues.aby = Math.max(materialValues.aby - 1, 0);
+          materialValues.ncloth = Math.max(materialValues.ncloth - 12, 0);
+          materialValues.nleather = Math.max(materialValues.nleather - 12, 0);
+        } else if (stat === "surplus2") {
+          materialValues.gold = Math.max(materialValues.gold - 700000, 0);
+          materialValues.acrystal = Math.max(materialValues.acrystal - 1, 0);
+          materialValues.cloth = Math.max(materialValues.cloth - 17, 0);
+          materialValues.leather = Math.max(materialValues.leather - 17, 0);
+        }
+        
+        updateMaterialValues();
+
+        if (currentValue === min) {
+          document.getElementById("materials-container").style.display = "none";
+        }
+
+        updateButtons(stat, currentValue, parseInt(valueElement.getAttribute('max')));
+      }
+
+      function increaseValue(stat, increment, max) {
+        const valueElement = document.getElementById(`${stat}-value`);
+        let currentValue = parseInt(valueElement.textContent);
+
+        if (currentValue >= max) return;
+
+        currentValue += increment;
+        if (currentValue > max) currentValue = max;
+
+        valueElement.textContent = currentValue;
+
+        if (stat === "surplus1") {
+          materialValues.gold += 280000;
+          materialValues.aby += 1;
+          materialValues.ncloth += 12;
+          materialValues.nleather += 12;
+        } else if (stat === "surplus2") {
+          materialValues.gold += 700000;
+          materialValues.acrystal += 1;
+          materialValues.cloth += 17;
+          materialValues.leather += 17;
+        }
+
+        updateMaterialValues();
+
+        if (materialValues.gold > 0) {
+          document.getElementById("materials-container").style.display = "block";
+        }
+
+        updateButtons(stat, currentValue, max);
+      }
+
+      function setMaxValue(stat, max) {
+        const valueElement = document.getElementById(`${stat}-value`);
+        let currentValue = parseInt(valueElement.textContent);
+
+        if (currentValue >= max) return;
+
+        const increment = max - currentValue;
+
+        if (stat === "surplus1") {
+          const numberOfIncrements = increment / 14;
+          materialValues.gold += 280000 * numberOfIncrements;
+          materialValues.aby += 1 * numberOfIncrements;
+          materialValues.ncloth += 12 * numberOfIncrements;
+          materialValues.nleather += 12 * numberOfIncrements;
+        } else if (stat === "surplus2") {
+          const numberOfIncrements = increment / 15;
+          materialValues.gold += 700000 * numberOfIncrements;
+          materialValues.acrystal += 1 * numberOfIncrements;
+          materialValues.cloth += 17 * numberOfIncrements;
+          materialValues.leather += 17 * numberOfIncrements;
+        }
+
+        valueElement.textContent = max;
+        updateMaterialValues();
+
+        if (materialValues.gold > 0) {
+          document.getElementById("materials-container").style.display = "block";
+        }
+
+        updateButtons(stat, max, max);
+      }
+
+      // Initialize buttons - nota: surplus2 max è 4440
+      updateButtons("surplus1", parseInt(document.getElementById("surplus1-value").textContent), 1050);
+      updateButtons("surplus2", parseInt(document.getElementById("surplus2-value").textContent), 4440);
+    </script>
+  </body>
 </html>

@@ -1,8 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <title>Space Time Table</title>
   </head>
@@ -11,7 +15,7 @@
       <button
         id="btn-raids-view"
         class="nav-button"
-        onclick="location.href='RaidsTable.html'"
+        onclick="location.href = 'RaidsTable.html'"
       >
         Raids Table
       </button>
@@ -19,7 +23,7 @@
       <button
         id="btn-redeemers-view"
         class="nav-button"
-        onclick="location.href='RedeemersTable.html'"
+        onclick="location.href = 'RedeemersTable.html'"
       >
         Redeemers Table
       </button>
@@ -27,7 +31,7 @@
       <button
         id="btn-spacetime-view"
         class="nav-button"
-        onclick="location.href='SpaceTimeTable.html'"
+        onclick="location.href = 'SpaceTimeTable.html'"
       >
         SpaceTime Table
       </button>
@@ -35,7 +39,7 @@
       <button
         id="btn-spacetime-view"
         class="nav-button"
-        onclick="location.href='RhodsBracelets.html'"
+        onclick="location.href = 'RhodsBracelets.html'"
       >
         Rhods/Bracelets Table
       </button>
@@ -43,15 +47,15 @@
       <button
         id="btn-items-view"
         class="nav-button"
-        onclick="location.href='Scrolls.html'"
+        onclick="location.href = 'Scrolls.html'"
       >
-      Enchant Scrolls Table
+        Enchant Scrolls Table
       </button>
       <div class="separator"></div>
       <button
         id="btn-items-view"
         class="nav-button"
-        onclick="location.href='AccessoryTable.html'"
+        onclick="location.href = 'AccessoryTable.html'"
       >
         Accessory Table
       </button>
@@ -59,7 +63,7 @@
       <button
         id="btn-gear-view"
         class="nav-button"
-        onclick="location.href='index.html'"
+        onclick="location.href = 'index.html'"
       >
         Uaithne Gear Table
       </button>
@@ -67,1057 +71,952 @@
       <button
         id="btn-gear-view"
         class="nav-button"
-        onclick="location.href='EriuGearTable.html'"
+        onclick="location.href = 'EriuGearTable.html'"
       >
         Eriu Gear Table
       </button>
     </div>
-    <div class="footer">
+
+    <!-- INFO BAR -->
+    <div class="info-bar">
       <div class="made-by">
         <p>&#9733; Made By Smary &#9733;</p>
       </div>
       <div class="update">
-        <p>Latest update : 3 January 2026</p>
+        <p>Latest update : 18 February 2026</p>
       </div>
     </div>
-    
-    <table>
-        <thead>
-            <tr>
-                <th>Preview</th>
-                <th>Name</th>
-                <th>Level</th>
-                <th>Critical Rate</th>
-                <th>Critical Resistance</th>
-                <th>Balance Resistance</th>
-                <th>Attack Entry</th>
-                <th>Defense Entry</th>
-                <th>Critical Entry</th>
-                <th>Balance Entry</th>
-                <th>Add Entry</th>
-                <th>Def Pen Entry</th>
-                <th>Destruction Entry</th>
-                <th>Items</th>
-              </tr>
-        </thead>
-        <tbody>
-          <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
+
+    <div class="container-fluid mt-3">
+      <!-- Space Time Grid -->
+      <div class="row g-3">
+        <!-- Card Taros (Lv. 110) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card gear-card">
+            <div class="card-header d-flex align-items-center">
               <img
                 src="icon/Taros.png"
                 alt="Gear Image"
-                style="width: 50px; height: 50px"
+                class="gear-icon me-2"
               />
-            </td>
-            <td>Taros</td>
-            <td>110</td>
-            <td>290</td>
-            <td>229</td>
-            <td>34</td>
-            <td>50.000</td>
-            <td>28.000</td>
-            <td>220</td>
-            <td>110</td>
-            <td>6.700</td>
-            <td>230</td>
-            <td>2.000</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+              <h5 class="mb-0">Taros</h5>
+            </div>
+            <div class="card-body">
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-label">Level:</span>
+                  <span class="stat-value">110</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Rate:</span>
+                  <span class="stat-value">290</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Resistance:</span>
+                  <span class="stat-value">229</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Balance Resistance:</span>
+                  <span class="stat-value">34</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Attack Entry:</span>
+                  <span class="stat-value">50.000</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Defense Entry:</span>
+                  <span class="stat-value">28.000</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Entry:</span>
+                  <span class="stat-value">220</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Balance Entry:</span>
+                  <span class="stat-value">110</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Add Entry:</span>
+                  <span class="stat-value">6.700</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Def Pen Entry:</span>
+                  <span class="stat-value">230</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Destruction Entry:</span>
+                  <span class="stat-value">2.000</span>
+                </div>
+              </div>
+
+              <button
+                class="accordion w-100 mt-3"
+                data-bs-toggle="collapse"
+                data-bs-target="#items-taros"
+              >
+                Show/Hide Items
+              </button>
+
+              <div id="items-taros" class="collapse mt-2">
+                <ul class="list-unstyled">
+                  <li class="item-details mb-2">
                     <img
                       src="icon/Jardin Steel.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
                     <span>Jardin Steel</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Mysterious Shard Grade 2.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Mysterious Shard Grade 2</span>
-                    </div>
                   </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Abyssal Shard Grade 2.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Abyssal Shard Grade 2</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Mysterious Shard Grade 3.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Mysterious Shard Grade 3</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Abyssal Shard Grade 3.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Abyssal Shard Grade 3</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Gray Twilight Brooch.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Gray Twilight Brooch</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Calm Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Calm Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Concerted Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Concerted Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Peaceful Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Peaceful Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Dash Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Dash Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Outburst Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Outburst Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Quiet Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Quiet Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Resolved Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Resolved Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Meditating Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Meditating Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Stroll Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Stroll Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Ardor Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Ardor Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Usurper's Rusty Rhod Compass.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Usurper's Rusty Rhod Compass</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Usurper's Rhod Compass.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Usurper's Rhod Compass</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Usurper's Shiny Rhod Compass.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Usurper's Shiny Rhod Compass</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                           <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Eisen.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>Eisen</td>
-            <td>115</td>
-            <td>320</td>
-            <td>254</td>
-            <td>59</td>
-            <td>58.850</td>
-            <td>33.000</td>
-            <td>281</td>
-            <td>139</td>
-            <td>7.300</td>
-            <td>280</td>
-            <td>6.000</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                  <li class="item-details mb-2">
                     <img
-                      src="icon/Elixir.png"
+                      src="icon/Mysterious Shard Grade 2.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
-                    <span>Superior Enhancement Elixir</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                                                  <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Mysterious Shard Grade 2.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Mysterious Shard Grade 2</span>
-                    </div>
+                    <span>Mysterious Shard Grade 2</span>
                   </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Abyssal Shard Grade 2.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Abyssal Shard Grade 2</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Mysterious Shard Grade 3.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Mysterious Shard Grade 3</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Abyssal Shard Grade 3.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Abyssal Shard Grade 3</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Calm Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Calm Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Concerted Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Concerted Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Peaceful Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Peaceful Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Dash Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Dash Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Outburst Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Outburst Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->                                   
-                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Space Time Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Space Time Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                      <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Shrewd Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Shrewd Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                      <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Stern Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Stern Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                      <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Concentrated Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Concentrated Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                      <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Charging Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Charging Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                      <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Clash Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Clash Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                      <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Fallen One's Rusty Rhod Compass.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Fallen One's Rusty Rhod Compass</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                      <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Fallen One's Rhod Compass.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Fallen One's Rhod Compass</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                      <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Fallen One's Shiny Rhod Compass.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Fallen One's Shiny Rhod Compass</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                              <li>
-                <div class="item-details">
-                  <img src="icon/Uaithne Crystal.png" alt="Item Image" style="width: 30px; height: 30px" />
-                  <span>(Core Boost) Uaithne Crystal</span>
-                </div>
-              </li>
-                <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Jordra.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>Jordra</td>
-            <td>120</td>
-            <td>365</td>
-            <td>305</td>
-            <td>100</td>
-            <td>65.000</td>
-            <td>35.000</td>
-            <td>332</td>
-            <td>172</td>
-            <td>8.100</td>
-            <td>370</td>
-            <td>11.250</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                  <li class="item-details mb-2">
                     <img
-                      src="icon/Petrify Enchant Scroll.png"
+                      src="icon/Abyssal Shard Grade 2.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
-                    <span>Petrify Enchant Scroll</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Impaling Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Impaling Enchant Scroll</span>
-                    </div>
+                    <span>Abyssal Shard Grade 2</span>
                   </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Destructive Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Destructive Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Fading Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Fading Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Consume Enchant Scroll.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Consume Enchant Scroll</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Rusty Werewolf Paw.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Rusty Werewolf Paw</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Werewolf Paw.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Werewolf Paw</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Shining Werewolf Paw.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Shining Werewolf Paw</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Rusty Succubus Fang.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Rusty Succubus Fang</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Succubus Fang.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Succubus Fang</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Glowing Succubus Fang.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Glowing Succubus Fang</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Rusty War Goddess Statue.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Rusty War Goddess Statue</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s War Goddess Statue.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's War Goddess Statue</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Shining War Goddess Statue.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Shining War Goddess Statue</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Rusty Mysterious Cat Statue.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Rusty Mysterious Cat Statue</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Mysterious Cat Statue.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Mysterious Cat Statue</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/The Watcher s Glowing Mysterious Cat Statue.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>The Watcher's Glowing Mysterious Cat Statue</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Mysterious Shard Grade 3.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Mysterious Shard Grade 3</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Abyssal Shard Grade 3.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Abyssal Shard Grade 3</span>
-                    </div>
-                  </li>
-                  <!-- Fine blocco item -->
-                                                      <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                  <li class="item-details mb-2">
                     <img
-                      src="icon/Elixir.png"
+                      src="icon/Mysterious Shard Grade 3.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
-                    <span>Superior Enhancement Elixir</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                              <li>
-                <div class="item-details">
-                  <img src="icon/Uaithne Crystal.png" alt="Item Image" style="width: 30px; height: 30px" />
-                  <span>(Core Boost) Uaithne Crystal</span>
-                </div>
-              </li>
-              <!-- Fine blocco item -->
-              <!-- Ripeti questo blocco per ciascun gear -->
-          <tr>
-            <td class="gear-id">
-              <img
-                src="icon/Taros.png"
-                alt="Gear Image"
-                style="width: 50px; height: 50px"
-              />
-            </td>
-            <td>Spirit Lord Taros</td>
-            <td>125</td>
-            <td>460</td>
-            <td>340</td>
-            <td>145</td>
-            <td>74.000</td>
-            <td>43.000</td>
-            <td>367</td>
-            <td>217</td>
-            <td>9.350</td>
-            <td>460</td>
-            <td>13.000</td>
-            <td>
-              <button class="accordion">Show/Hide</button>
-              <ul class="panel">
-                <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                    <span>Mysterious Shard Grade 3</span>
+                  </li>
+                  <li class="item-details mb-2">
                     <img
-                      src="icon/Petrify Enchant Scroll.png"
+                      src="icon/Abyssal Shard Grade 3.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
-                    <span>Escalating Enchant Scroll</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                    <span>Abyssal Shard Grade 3</span>
+                  </li>
+                  <li class="item-details mb-2">
                     <img
-                      src="icon/Petrify Enchant Scroll.png"
+                      src="icon/Gray Twilight Brooch.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
-                    <span>Indomitable Enchant Scroll</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                    <span>Gray Twilight Brooch</span>
+                  </li>
+                  <li class="item-details mb-2">
                     <img
-                      src="icon/Petrify Enchant Scroll.png"
+                      src="icon/Calm Enchant Scroll.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
-                    <span>Cyclical Enchant Scroll</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                    <span>Calm Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
                     <img
-                      src="icon/Petrify Enchant Scroll.png"
+                      src="icon/Concerted Enchant Scroll.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
-                    <span>Amplified Enchant Scroll</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                    <span>Concerted Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
                     <img
-                      src="icon/Petrify Enchant Scroll.png"
+                      src="icon/Peaceful Enchant Scroll.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
-                    <span>Executing Enchant Scroll</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
-                    <img
-                      src="icon/Petrify Enchant Scroll.png"
-                      alt="Item Image"
-                      style="width: 30px; height: 30px"
-                    />
-                    <span>Transcendent Enchant Scroll</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                    <span>Peaceful Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
                     <img
                       src="icon/Dash Enchant Scroll.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
+                    />
+                    <span>Dash Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Outburst Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Outburst Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Quiet Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Quiet Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Resolved Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Resolved Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Meditating Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Meditating Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Stroll Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Stroll Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Ardor Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Ardor Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Usurper's Rusty Rhod Compass.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Usurper's Rusty Rhod Compass</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Usurper's Rhod Compass.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Usurper's Rhod Compass</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Usurper's Shiny Rhod Compass.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Usurper's Shiny Rhod Compass</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Eisen (Lv. 115) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card gear-card">
+            <div class="card-header d-flex align-items-center">
+              <img
+                src="icon/Eisen.png"
+                alt="Gear Image"
+                class="gear-icon me-2"
+              />
+              <h5 class="mb-0">Eisen</h5>
+            </div>
+            <div class="card-body">
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-label">Level:</span>
+                  <span class="stat-value">115</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Rate:</span>
+                  <span class="stat-value">320</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Resistance:</span>
+                  <span class="stat-value">254</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Balance Resistance:</span>
+                  <span class="stat-value">59</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Attack Entry:</span>
+                  <span class="stat-value">58.850</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Defense Entry:</span>
+                  <span class="stat-value">33.000</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Entry:</span>
+                  <span class="stat-value">281</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Balance Entry:</span>
+                  <span class="stat-value">139</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Add Entry:</span>
+                  <span class="stat-value">7.300</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Def Pen Entry:</span>
+                  <span class="stat-value">280</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Destruction Entry:</span>
+                  <span class="stat-value">6.000</span>
+                </div>
+              </div>
+
+              <button
+                class="accordion w-100 mt-3"
+                data-bs-toggle="collapse"
+                data-bs-target="#items-eisen"
+              >
+                Show/Hide Items
+              </button>
+
+              <div id="items-eisen" class="collapse mt-2">
+                <ul class="list-unstyled">
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Elixir.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Superior Enhancement Elixir</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Mysterious Shard Grade 2.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Mysterious Shard Grade 2</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Abyssal Shard Grade 2.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Abyssal Shard Grade 2</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Mysterious Shard Grade 3.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Mysterious Shard Grade 3</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Abyssal Shard Grade 3.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Abyssal Shard Grade 3</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Calm Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Calm Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Concerted Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Concerted Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Peaceful Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Peaceful Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Dash Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Dash Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Outburst Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Outburst Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Space Time Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Space Time Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Shrewd Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Shrewd Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Stern Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Stern Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Concentrated Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Concentrated Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Charging Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Charging Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Clash Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Clash Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Fallen One's Rusty Rhod Compass.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Fallen One's Rusty Rhod Compass</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Fallen One's Rhod Compass.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Fallen One's Rhod Compass</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Fallen One's Shiny Rhod Compass.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Fallen One's Shiny Rhod Compass</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Uaithne Crystal.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>(Core Boost) Uaithne Crystal</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Jordra (Lv. 120) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card gear-card">
+            <div class="card-header d-flex align-items-center">
+              <img
+                src="icon/Jordra.png"
+                alt="Gear Image"
+                class="gear-icon me-2"
+              />
+              <h5 class="mb-0">Jordra</h5>
+            </div>
+            <div class="card-body">
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-label">Level:</span>
+                  <span class="stat-value">120</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Rate:</span>
+                  <span class="stat-value">365</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Resistance:</span>
+                  <span class="stat-value">305</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Balance Resistance:</span>
+                  <span class="stat-value">100</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Attack Entry:</span>
+                  <span class="stat-value">65.000</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Defense Entry:</span>
+                  <span class="stat-value">35.000</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Entry:</span>
+                  <span class="stat-value">332</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Balance Entry:</span>
+                  <span class="stat-value">172</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Add Entry:</span>
+                  <span class="stat-value">8.100</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Def Pen Entry:</span>
+                  <span class="stat-value">370</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Destruction Entry:</span>
+                  <span class="stat-value">11.250</span>
+                </div>
+              </div>
+
+              <button
+                class="accordion w-100 mt-3"
+                data-bs-toggle="collapse"
+                data-bs-target="#items-jordra"
+              >
+                Show/Hide Items
+              </button>
+
+              <div id="items-jordra" class="collapse mt-2">
+                <ul class="list-unstyled">
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Petrify Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Petrify Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Impaling Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Impaling Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Destructive Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Destructive Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Fading Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Fading Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Consume Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Consume Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Rusty Werewolf Paw.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Rusty Werewolf Paw</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Werewolf Paw.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Werewolf Paw</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Shining Werewolf Paw.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Shining Werewolf Paw</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Rusty Succubus Fang.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Rusty Succubus Fang</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Succubus Fang.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Succubus Fang</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Glowing Succubus Fang.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Glowing Succubus Fang</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Rusty War Goddess Statue.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Rusty War Goddess Statue</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s War Goddess Statue.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's War Goddess Statue</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Shining War Goddess Statue.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Shining War Goddess Statue</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Rusty Mysterious Cat Statue.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Rusty Mysterious Cat Statue</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Mysterious Cat Statue.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Mysterious Cat Statue</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/The Watcher s Glowing Mysterious Cat Statue.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>The Watcher's Glowing Mysterious Cat Statue</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Mysterious Shard Grade 3.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Mysterious Shard Grade 3</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Abyssal Shard Grade 3.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Abyssal Shard Grade 3</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Elixir.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Superior Enhancement Elixir</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Uaithne Crystal.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>(Core Boost) Uaithne Crystal</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Spirit Lord Taros (Lv. 125) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card gear-card">
+            <div class="card-header d-flex align-items-center">
+              <img
+                src="icon/Taros.png"
+                alt="Gear Image"
+                class="gear-icon me-2"
+              />
+              <h5 class="mb-0">Spirit Lord Taros</h5>
+            </div>
+            <div class="card-body">
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <span class="stat-label">Level:</span>
+                  <span class="stat-value">125</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Rate:</span>
+                  <span class="stat-value">460</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Resistance:</span>
+                  <span class="stat-value">340</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Balance Resistance:</span>
+                  <span class="stat-value">145</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Attack Entry:</span>
+                  <span class="stat-value">74.000</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Defense Entry:</span>
+                  <span class="stat-value">43.000</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Critical Entry:</span>
+                  <span class="stat-value">367</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Balance Entry:</span>
+                  <span class="stat-value">217</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Add Entry:</span>
+                  <span class="stat-value">9.350</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Def Pen Entry:</span>
+                  <span class="stat-value">460</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Destruction Entry:</span>
+                  <span class="stat-value">13.000</span>
+                </div>
+              </div>
+
+              <button
+                class="accordion w-100 mt-3"
+                data-bs-toggle="collapse"
+                data-bs-target="#items-spirit-taros"
+              >
+                Show/Hide Items
+              </button>
+
+              <div id="items-spirit-taros" class="collapse mt-2">
+                <ul class="list-unstyled">
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Petrify Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Escalating Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Petrify Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Indomitable Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Petrify Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Cyclical Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Petrify Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Amplified Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Petrify Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Executing Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Petrify Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Transcendent Enchant Scroll</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Dash Enchant Scroll.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
                     />
                     <span>Advent Enchant Scroll</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                  </li>
+                  <li class="item-details mb-2">
                     <img
                       src="icon/Lord's Rusty Obsidian Bracelet.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
                     <span>Lord's Rusty Obsidian Bracelet</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                  </li>
+                  <li class="item-details mb-2">
                     <img
                       src="icon/Lord's Obsidian Bracelet.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
                     <span>Lord's Obsidian Bracelet</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                  </li>
+                  <li class="item-details mb-2">
                     <img
                       src="icon/Lord's Glowing Obsidian Bracelet.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
                     <span>Lord's Glowing Obsidian Bracelet</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                  </li>
+                  <li class="item-details mb-2">
                     <img
                       src="icon/Complete Bracelet Diamond.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
                     <span>Complete Bracelet Diamond</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                  </li>
+                  <li class="item-details mb-2">
                     <img
                       src="icon/Complete Bracelet Sapphire.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
                     <span>Complete Bracelet Sapphire</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                  </li>
+                  <li class="item-details mb-2">
                     <img
                       src="icon/Complete Bracelet Emerald.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
                     <span>Complete Bracelet Emerald</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-                 <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                  <div class="item-details">
+                  </li>
+                  <li class="item-details mb-2">
                     <img
                       src="icon/Complete Bracelet Ruby.png"
                       alt="Item Image"
-                      style="width: 30px; height: 30px"
+                      class="item-icon me-2"
                     />
                     <span>Complete Bracelet Ruby</span>
-                  </div>
-                </li>
-                <!-- Fine blocco item -->
-<!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Mysterious Shard Grade 3.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Mysterious Shard Grade 3</span>
-                    </div>
                   </li>
-                  <!-- Fine blocco item -->
-                                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Abyssal Shard Grade 3.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Abyssal Shard Grade 3</span>
-                    </div>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Mysterious Shard Grade 3.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Mysterious Shard Grade 3</span>
                   </li>
-                  <!-- Fine blocco item -->
-                   <!-- Ripeti questo blocco per ciascun item -->
-                <li>
-                    <div class="item-details">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item Image"
-                        style="width: 30px; height: 30px"
-                      />
-                      <span>Tarian Steel</span>
-                    </div>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Abyssal Shard Grade 3.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Abyssal Shard Grade 3</span>
                   </li>
-                  <!-- Fine blocco item -->
-                   <!-- Ripeti questo blocco per ciascun item -->
-                              <li>
-                <div class="item-details">
-                  <img src="icon/Uaithne Crystal.png" alt="Item Image" style="width: 30px; height: 30px" />
-                  <span>(Core Boost) Uaithne Crystal</span>
-                </div>
-              </li>
-              <!-- Fine blocco item -->
-                <script src="script.js"></script>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Tarian Steel.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>Tarian Steel</span>
+                  </li>
+                  <li class="item-details mb-2">
+                    <img
+                      src="icon/Uaithne Crystal.png"
+                      alt="Item Image"
+                      class="item-icon me-2"
+                    />
+                    <span>(Core Boost) Uaithne Crystal</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

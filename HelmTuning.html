@@ -4,89 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Helm Tuning</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <style>
       body {
-        background-color: #1c1c1c;
+        background-color: rgb(40, 40, 40);
         color: white;
         font-family: Arial, sans-serif;
+        min-height: 100vh;
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
         flex-direction: column;
       }
 
-      .container {
-        text-align: center;
-        background-color: #333;
-        padding: 20px;
+      .tuning-container {
+        max-width: 600px;
+        margin: 20px auto;
+      }
+
+      .tuning-card {
+        background-color: rgb(40, 40, 40);
+        border: 2px solid purple;
         border-radius: 10px;
-        width: 500px;
-      }
-
-      .tuning-header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .tuning-icon {
-        width: 30px;
-        height: 30px;
-        margin-right: 10px;
-      }
-
-      .main-content {
-        margin-top: 20px;
-      }
-
-      .main-image {
-        width: 100px;
-        height: 100px;
-      }
-
-      .item-name {
-        margin-top: 10px;
-        font-size: 18px;
-        font-weight: bold;
-      }
-
-      .stats {
-        margin-top: 20px;
-      }
-
-      .stat {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 15px;
-      }
-
-      .stat-icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 5px;
-      }
-
-      .stat span {
-        flex: 1;
-        text-align: left;
-      }
-
-      button {
-        background-color: #555;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
-        margin-left: 5px;
-      }
-
-      button:hover {
-        background-color: #777;
+        padding: 25px;
       }
 
       .return-button {
@@ -97,43 +36,222 @@
         padding: 10px 20px;
         font-size: 14px;
         cursor: pointer;
-        margin-bottom: 10px;
         font-weight: bold;
+        transition: background-color 0.3s;
+        margin-bottom: 15px;
+        width: auto;
       }
 
       .return-button:hover {
         background-color: purple;
       }
 
-      .materials-container {
-        margin-top: 20px;
-        background-color: #2b2b2b;
-        padding: 10px;
+      .tuning-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .tuning-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .tuning-header h1 {
+        color: rgb(255, 190, 77);
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .main-content {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .main-image {
+        width: 90px;
+        height: 90px;
+        border: 2px solid purple;
         border-radius: 10px;
-        display: none;
+        padding: 5px;
+        background-color: rgb(80, 27, 80);
+      }
+
+      .item-name {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: rgb(255, 190, 77);
+      }
+
+      .stats {
+        margin-bottom: 20px;
+      }
+
+      .stat {
+        background-color: rgba(80, 27, 80, 0.3);
+        border: 1px solid purple;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .stat-left {
+        display: flex;
+        align-items: center;
+        flex: 2;
+        min-width: 150px;
+      }
+
+      .stat-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+
+      .stat-label {
+        font-weight: bold;
+        color: white;
+      }
+
+      .stat-value {
+        font-weight: bold;
+        color: rgb(255, 190, 77);
+        font-size: 1.1rem;
+        min-width: 60px;
+        text-align: center;
+      }
+
+      .stat-buttons {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        flex: 1;
+      }
+
+      .stat-buttons button {
+        background-color: rgb(80, 27, 80);
+        color: white;
+        border: 1px solid purple;
+        border-radius: 5px;
+        padding: 8px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s;
+        min-width: 45px;
+      }
+
+      .stat-buttons button:hover:not(:disabled) {
+        background-color: purple;
+        border-color: rgb(255, 190, 77);
+      }
+
+      .stat-buttons button:disabled {
+        background-color: #333;
+        border-color: #555;
+        color: #777;
+        cursor: not-allowed;
+      }
+
+      .stat-buttons .max-btn {
+        background-color: rgb(80, 27, 80);
+        min-width: 60px;
+      }
+
+      .materials-container {
+        background-color: rgb(80, 27, 80);
+        border: 2px solid purple;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .materials-container h2 {
+        color: rgb(255, 190, 77);
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        text-align: center;
       }
 
       .material {
         display: flex;
         align-items: center;
-        margin-bottom: 10px;
-        font-weight: bold;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 6px;
+        margin-bottom: 8px;
+        border-left: 3px solid purple;
       }
 
       .material img {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+        object-fit: contain;
       }
 
-      .material span {
+      .material span:first-of-type {
         flex: 1;
-        text-align: left;
+        font-weight: bold;
+        color: white;
       }
 
-      .disabled {
-        background-color: #333;
-        cursor: not-allowed;
+      .material span:last-of-type {
+        font-weight: bold;
+        color: rgb(255, 190, 77);
+        font-size: 1.1rem;
+        min-width: 80px;
+        text-align: right;
+      }
+
+      .made-by-me {
+        text-align: center;
+        color: rgb(255, 190, 77);
+        font-weight: bold;
+        margin: 20px 0 10px;
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 576px) {
+        .tuning-container {
+          margin: 10px;
+        }
+        
+        .stat {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        
+        .stat-left {
+          width: 100%;
+        }
+        
+        .stat-value {
+          text-align: left;
+          margin-left: 34px;
+        }
+        
+        .stat-buttons {
+          width: 100%;
+          justify-content: space-between;
+          margin-top: 10px;
+        }
+        
+        .stat-buttons button {
+          flex: 1;
+        }
+        
+        .tuning-header h1 {
+          font-size: 1.5rem;
+        }
       }
     </style>
   </head>
@@ -141,104 +259,121 @@
     <div class="made-by-me">
       <p>&#9733 Made By Smary &#9733</p>
     </div>
-    <div class="container">
+    
+    <div class="container tuning-container">
       <button
         class="return-button"
         onclick="location.href='index.html'"
       >&#9664 &#9664 Return To Uaithne Gear
       </button>
-      <div class="tuning-header">
-        <img
-          src="icon/Tuning.png"
-          alt="Tuning Icon"
-          class="tuning-icon"
-          style="width: 40px; height: 40px"
-        />
-        <h1>Tuning</h1>
-      </div>
-      <div class="main-content">
-        <img
-          src="icon/Helm_1.png"
-          alt="Main Image"
-          class="main-image"
-          style="width: 90px; height: 90px"
-        />
-        <p class="item-name">Uaithne Helm</p>
-      </div>
-      <div class="stats">
-        <div class="stat">
+      
+      <div class="tuning-card">
+        <div class="tuning-header">
           <img
-            src="icon/defence.png"
-            alt="Defence Icon"
-            class="stat-icon"
-            style="width: 20px; height: 20px"
+            src="icon/Tuning.png"
+            alt="Tuning Icon"
+            class="tuning-icon"
           />
-          <span style="font-weight: bold">Defence</span>
-          <span style="font-weight: bold" id="defence-value">0</span>
-          <button class="minus" onclick="decreaseValue('defence', 10, 0)">
-            -
-          </button>
-          <button id="defence-plus" onclick="increaseValue('defence', 10, 479)">
-            +
-          </button>
-          <button id="defence-max" onclick="setMaxValue('defence', 479)">
-            Max
-          </button>
+          <h1>Tuning</h1>
         </div>
-        <div class="stat">
+        
+        <div class="main-content">
           <img
-            src="icon/critical_resistance.png"
-            alt="Critical Resistance Icon"
-            class="stat-icon"
-            style="width: 20px; height: 20px"
+            src="icon/Helm_1.png"
+            alt="Main Image"
+            class="main-image"
           />
-          <span style="font-weight: bold">Critical Resistance</span>
-          <span style="font-weight: bold" id="cr-value">0</span>
-          <button class="minus" onclick="decreaseValue('cr', 1, 0)">-</button>
-          <button id="cr-plus" onclick="increaseValue('cr', 1, 3)">+</button>
-          <button id="cr-max" onclick="setMaxValue('cr', 3)">Max</button>
+          <p class="item-name">Uaithne Helm</p>
         </div>
-      </div>
-      <div class="materials-container" id="materials-container">
-        <h2>Required Materials</h2>
-        <div class="material">
-          <img src="icon/Gold.png" alt="Gold Icon" />
-          <span>Gold</span>
-          <span id="gold-value">0</span>
+        
+        <div class="stats">
+          <!-- Defence -->
+          <div class="stat">
+            <div class="stat-left">
+              <img
+                src="icon/defence.png"
+                alt="Defence Icon"
+                class="stat-icon"
+              />
+              <span class="stat-label">Defence</span>
+            </div>
+            <span class="stat-value" id="defence-value">0</span>
+            <div class="stat-buttons">
+              <button class="minus" onclick="decreaseValue('defence', 10, 0)">-</button>
+              <button id="defence-plus" onclick="increaseValue('defence', 10, 479)">+</button>
+              <button id="defence-max" class="max-btn" onclick="setMaxValue('defence', 479)">Max</button>
+            </div>
+          </div>
+          
+          <!-- Critical Resistance -->
+          <div class="stat">
+            <div class="stat-left">
+              <img
+                src="icon/critical_resistance.png"
+                alt="Critical Resistance Icon"
+                class="stat-icon"
+              />
+              <span class="stat-label">Critical Resistance</span>
+            </div>
+            <span class="stat-value" id="cr-value">0</span>
+            <div class="stat-buttons">
+              <button class="minus" onclick="decreaseValue('cr', 1, 0)">-</button>
+              <button id="cr-plus" onclick="increaseValue('cr', 1, 3)">+</button>
+              <button id="cr-max" class="max-btn" onclick="setMaxValue('cr', 3)">Max</button>
+            </div>
+          </div>
         </div>
-        <div class="material">
-          <img src="icon/Cloth.png" alt="Cloth Icon" />
-          <span>Enhanced New Era Cloth</span>
-          <span id="cloth-value">0</span>
-        </div>
-        <div class="material">
-          <img src="icon/Leather.png" alt="Leather Icon" />
-          <span>Enhanced New Era Leather</span>
-          <span id="leather-value">0</span>
-        </div>
-        <div class="material">
-          <img src="icon/Ore.png" alt="Ore Icon" />
-          <span>Enhanced New Era Ore</span>
-          <span id="ore-value">0</span>
-        </div>
-        <div class="material">
-          <img src="icon/Orb.png" alt="Orb Icon" />
-          <span>Enhanced New Era Orb</span>
-          <span id="orb-value">0</span>
-        </div>
-        <div class="material">
-          <img src="icon/Rfragment.png" alt="Fragment Icon" />
-          <span>Sealed Power: Fragment</span>
-          <span id="fragment-value">0</span>
-        </div>
-        <div class="material">
-          <img src="icon/Bfragment.png" alt="Fragment Icon" />
-          <span>Inherited Power: Fragments</span>
-          <span id="inherited-fragment-value">0</span>
+        
+        <!-- Materials Container -->
+        <div class="materials-container" id="materials-container" style="display: none;">
+          <h2>Required Materials</h2>
+          
+          <div class="material" id="material-gold" style="display: none;">
+            <img src="icon/Gold.png" alt="Gold Icon" />
+            <span>Gold</span>
+            <span id="gold-value">0</span>
+          </div>
+          
+          <div class="material" id="material-cloth" style="display: none;">
+            <img src="icon/Cloth.png" alt="Cloth Icon" />
+            <span>Enhanced New Era Cloth</span>
+            <span id="cloth-value">0</span>
+          </div>
+          
+          <div class="material" id="material-leather" style="display: none;">
+            <img src="icon/Leather.png" alt="Leather Icon" />
+            <span>Enhanced New Era Leather</span>
+            <span id="leather-value">0</span>
+          </div>
+          
+          <div class="material" id="material-ore" style="display: none;">
+            <img src="icon/Ore.png" alt="Ore Icon" />
+            <span>Enhanced New Era Ore</span>
+            <span id="ore-value">0</span>
+          </div>
+          
+          <div class="material" id="material-orb" style="display: none;">
+            <img src="icon/Orb.png" alt="Orb Icon" />
+            <span>Enhanced New Era Orb</span>
+            <span id="orb-value">0</span>
+          </div>
+          
+          <div class="material" id="material-fragment" style="display: none;">
+            <img src="icon/Rfragment.png" alt="Fragment Icon" />
+            <span>Sealed Power: Fragment</span>
+            <span id="fragment-value">0</span>
+          </div>
+          
+          <div class="material" id="material-inherited-fragment" style="display: none;">
+            <img src="icon/Bfragment.png" alt="Fragment Icon" />
+            <span>Inherited Power: Fragments</span>
+            <span id="inherited-fragment-value">0</span>
+          </div>
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       let initialDefenceDecrement = false;
       let materialValues = {
@@ -256,26 +391,44 @@
       }
 
       function updateMaterialValues() {
-        document.getElementById("gold-value").textContent = formatInteger(
-          materialValues.gold
-        );
-        document.getElementById("cloth-value").textContent = formatInteger(
-          materialValues.cloth
-        );
-        document.getElementById("leather-value").textContent = formatInteger(
-          materialValues.leather
-        );
-        document.getElementById("ore-value").textContent = formatInteger(
-          materialValues.ore
-        );
-        document.getElementById("orb-value").textContent = formatInteger(
-          materialValues.orb
-        );
-        document.getElementById("fragment-value").textContent = formatInteger(
-          materialValues.fragment
-        );
-        document.getElementById("inherited-fragment-value").textContent =
-          formatInteger(materialValues.inheritedFragment);
+        // Update text values
+        document.getElementById("gold-value").textContent = formatInteger(materialValues.gold);
+        document.getElementById("cloth-value").textContent = formatInteger(materialValues.cloth);
+        document.getElementById("leather-value").textContent = formatInteger(materialValues.leather);
+        document.getElementById("ore-value").textContent = formatInteger(materialValues.ore);
+        document.getElementById("orb-value").textContent = formatInteger(materialValues.orb);
+        document.getElementById("fragment-value").textContent = formatInteger(materialValues.fragment);
+        document.getElementById("inherited-fragment-value").textContent = formatInteger(materialValues.inheritedFragment);
+
+        // Show/hide material containers
+        const materials = [
+          { id: "gold", value: materialValues.gold },
+          { id: "cloth", value: materialValues.cloth },
+          { id: "leather", value: materialValues.leather },
+          { id: "ore", value: materialValues.ore },
+          { id: "orb", value: materialValues.orb },
+          { id: "fragment", value: materialValues.fragment },
+          { id: "inherited-fragment", value: materialValues.inheritedFragment },
+        ];
+
+        materials.forEach((material) => {
+          const materialElement = document.getElementById(`material-${material.id}`);
+          if (material.value > 0) {
+            materialElement.style.display = "flex";
+          } else {
+            materialElement.style.display = "none";
+          }
+        });
+
+        // Show/hide main container
+        const materialsContainer = document.getElementById("materials-container");
+        if (materialValues.gold > 0 || materialValues.cloth > 0 || materialValues.leather > 0 || 
+            materialValues.ore > 0 || materialValues.orb > 0 || materialValues.fragment > 0 || 
+            materialValues.inheritedFragment > 0) {
+          materialsContainer.style.display = "block";
+        } else {
+          materialsContainer.style.display = "none";
+        }
       }
 
       function updateButtons(stat, value, max) {
@@ -284,18 +437,14 @@
 
         if (value >= max) {
           plusButton.disabled = true;
-          plusButton.classList.add("disabled");
         } else {
           plusButton.disabled = false;
-          plusButton.classList.remove("disabled");
         }
 
         if (value >= max) {
           maxButton.disabled = true;
-          maxButton.classList.add("disabled");
         } else {
           maxButton.disabled = false;
-          maxButton.classList.remove("disabled");
         }
       }
 
@@ -383,8 +532,7 @@
         updateMaterialValues();
 
         if (materialValues.gold > 0) {
-          document.getElementById("materials-container").style.display =
-            "block";
+          document.getElementById("materials-container").style.display = "block";
         }
 
         updateButtons(stat, currentValue, max);
@@ -416,52 +564,19 @@
           materialValues.inheritedFragment += 200 * increment;
         }
 
+        valueElement.textContent = max;
         updateMaterialValues();
 
         if (materialValues.gold > 0) {
-          document.getElementById("materials-container").style.display =
-            "block";
+          document.getElementById("materials-container").style.display = "block";
         }
-
-        valueElement.textContent = max;
 
         updateButtons(stat, max, max);
       }
 
-      updateButtons(
-        "defence",
-        parseInt(document.getElementById("defence-value").textContent),
-        479
-      );
-      updateButtons(
-        "cr",
-        parseInt(document.getElementById("cr-value").textContent),
-        3
-      );
-
-      function updateMaterialValues() {
-    const materials = [
-        { id: "gold", value: materialValues.gold },
-        { id: "cloth", value: materialValues.cloth },
-        { id: "leather", value: materialValues.leather },
-        { id: "ore", value: materialValues.ore },
-        { id: "orb", value: materialValues.orb },
-        { id: "fragment", value: materialValues.fragment },
-        { id: "inherited-fragment", value: materialValues.inheritedFragment },
-    ];
-
-    materials.forEach((material) => {
-        const materialElement = document.getElementById(`${material.id}-value`);
-        materialElement.textContent = formatInteger(material.value);
-
-        const materialContainer = materialElement.closest(".material");
-        if (material.value === 0) {
-            materialContainer.style.display = "none";
-        } else {
-            materialContainer.style.display = "flex";
-        }
-    });
-}
+      // Initialize buttons
+      updateButtons("defence", parseInt(document.getElementById("defence-value").textContent), 479);
+      updateButtons("cr", parseInt(document.getElementById("cr-value").textContent), 3);
     </script>
   </body>
 </html>

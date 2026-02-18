@@ -1,17 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <title>Space Time Table</title>
+    <title>Rhods/Bracelets Table</title>
   </head>
   <body>
     <div class="nav-buttons">
       <button
         id="btn-raids-view"
         class="nav-button"
-        onclick="location.href='RaidsTable.html'"
+        onclick="location.href = 'RaidsTable.html'"
       >
         Raids Table
       </button>
@@ -19,7 +23,7 @@
       <button
         id="btn-redeemers-view"
         class="nav-button"
-        onclick="location.href='RedeemersTable.html'"
+        onclick="location.href = 'RedeemersTable.html'"
       >
         Redeemers Table
       </button>
@@ -27,15 +31,15 @@
       <button
         id="btn-spacetime-view"
         class="nav-button"
-        onclick="location.href='SpaceTimeTable.html'"
+        onclick="location.href = 'SpaceTimeTable.html'"
       >
         SpaceTime Table
       </button>
       <div class="separator"></div>
       <button
-        id="btn-spacetime-view"
+        id="btn-rhods-view"
         class="nav-button"
-        onclick="location.href='RhodsBracelets.html'"
+        onclick="location.href = 'RhodsBracelets.html'"
       >
         Rhods/Bracelets Table
       </button>
@@ -43,7 +47,7 @@
       <button
         id="btn-items-view"
         class="nav-button"
-        onclick="location.href='Scrolls.html'"
+        onclick="location.href = 'Scrolls.html'"
       >
         Enchant Scrolls Table
       </button>
@@ -51,7 +55,7 @@
       <button
         id="btn-items-view"
         class="nav-button"
-        onclick="location.href='AccessoryTable.html'"
+        onclick="location.href = 'AccessoryTable.html'"
       >
         Accessory Table
       </button>
@@ -59,7 +63,7 @@
       <button
         id="btn-gear-view"
         class="nav-button"
-        onclick="location.href='index.html'"
+        onclick="location.href = 'index.html'"
       >
         Uaithne Gear Table
       </button>
@@ -67,1137 +71,1415 @@
       <button
         id="btn-gear-view"
         class="nav-button"
-        onclick="location.href='EriuGearTable.html'"
+        onclick="location.href = 'EriuGearTable.html'"
       >
         Eriu Gear Table
       </button>
     </div>
-    <div class="footer">
+
+    <!-- INFO BAR -->
+    <div class="info-bar">
       <div class="made-by">
         <p>&#9733; Made By Smary &#9733;</p>
       </div>
       <div class="update">
-        <p>Latest update : 3 January 2026</p>
+        <p>Latest update : 18 February 2026</p>
       </div>
     </div>
-    <div class="box-container">
-      <!-- Intestazione Lord's Obsidian Bracelet -->
-      <div class="intestazione">
-        <div class="int-sinistra">
-          <img
-            class="pic"
-            src="icon/Lord's Rusty Obsidian Bracelet.png"
-            alt="Item Image"
-            style="width: 44px; height: 44px"
-          />
+
+    <div class="container-fluid mt-3">
+      <!-- Lord's Obsidian Bracelet Section -->
+      <div class="rhod-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>Lord's Obsidian Bracelet</h2>
         </div>
-        <div class="int-centro">
-          <p class="titolo">Lord's Obsidian Bracelet</p>
+
+        <div class="row g-3">
+          <!-- Card Rusty -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(70, 143, 58)"
+              >
+                <img
+                  src="icon/Lord's Rusty Obsidian Bracelet.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Lord's Rusty Obsidian Bracelet</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+500</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+1</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+0</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-rusty-bracelet"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-rusty-bracelet" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power Usurper's Throne.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power Usurper's Throne x 14 (From Green To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Normal -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(66, 125, 231)"
+              >
+                <img
+                  src="icon/Lord's Obsidian Bracelet.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Lord's Obsidian Bracelet</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+500</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+3</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+0</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-normal-bracelet"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-normal-bracelet" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power Usurper's Throne.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power Usurper's Throne x 11 (From Blue To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Shiny -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(178, 94, 198)"
+              >
+                <img
+                  src="icon/Lord's Glowing Obsidian Bracelet.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Lord's Glowing Obsidian Bracelet</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+1000</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+3</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+200</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-shiny-bracelet"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-shiny-bracelet" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power Usurper's Throne.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power Usurper's Throne x 8 (From Purple To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Complete -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(205, 87, 69)"
+              >
+                <img
+                  src="icon/Lord's Complete Obsidian Bracelet.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Lord's Complete Obsidian Bracelet</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+1000</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+5</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+400</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#passive-bracelet"
+                >
+                  Show Passive Bonus
+                </button>
+
+                <div id="passive-bracelet" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Space Time Fragment Usurper's Throne.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Equip Or Have It In Your Inventory Guarantees + 2 Space
+                      Time Fragment Usurper's Throne</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="int-destra">
-          <img
-            class="pic"
-            src="icon/Lord's Complete Obsidian Bracelet.png"
-            alt="Item Image"
-            style="width: 44px; height: 44px"
-          />
+
+        <!-- Gem System Note -->
+        <div class="note-section mt-3">
+          <p class="mb-2">
+            *Gem System: You Can Set:
+            <img
+              src="icon/Complete Bracelet Diamond.png"
+              alt="Diamond"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            <img
+              src="icon/Complete Bracelet Sapphire.png"
+              alt="Sapphire"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            Diamond/Sapphire/Emerald/Ruby
+            <img
+              src="icon/Complete Bracelet Emerald.png"
+              alt="Emerald"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            <img
+              src="icon/Complete Bracelet Ruby.png"
+              alt="Ruby"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            Gems On Your Bracelets
+            <img
+              src="icon/Lord's Glowing Obsidian Bracelet.png"
+              alt="Bracelet"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+          </p>
+          <div class="gem-details mt-2">
+            <p class="mb-1">
+              <img
+                src="icon/Complete Bracelet Diamond.png"
+                alt="Diamond"
+                style="
+                  width: 25px;
+                  height: 25px;
+                  vertical-align: middle;
+                  margin-right: 5px;
+                "
+              />
+              Complete Diamond = ATT + 550~950 M.ATT + 50~150 DEF + 50~150 HP +
+              50~150 DES + 50
+            </p>
+            <p class="mb-1">
+              <img
+                src="icon/Complete Bracelet Sapphire.png"
+                alt="Sapphire"
+                style="
+                  width: 25px;
+                  height: 25px;
+                  vertical-align: middle;
+                  margin-right: 5px;
+                "
+              />
+              Complete Sapphire = ATT + 50~150 M.ATT + 550~950 DEF + 50~150 HP +
+              50~150 DES + 50
+            </p>
+            <p class="mb-1">
+              <img
+                src="icon/Complete Bracelet Emerald.png"
+                alt="Emerald"
+                style="
+                  width: 25px;
+                  height: 25px;
+                  vertical-align: middle;
+                  margin-right: 5px;
+                "
+              />
+              Complete Emerald = ATT + 50~150 M.ATT + 50~150 DEF + 550~950 HP +
+              50~150 DES + 50
+            </p>
+            <p class="mb-1">
+              <img
+                src="icon/Complete Bracelet Ruby.png"
+                alt="Ruby"
+                style="
+                  width: 25px;
+                  height: 25px;
+                  vertical-align: middle;
+                  margin-right: 5px;
+                "
+              />
+              Complete Ruby = ATT + 50~150 M.ATT + 50~150 DEF + 50~150 HP +
+              550~950 DES + 50
+            </p>
+          </div>
         </div>
       </div>
-      <!-- Tabella Lord's Obsidian Bracelet-->
-      <div class="tabella">
-        <!-- Riquadro 1 -->
-        <div class="riquadro-green">
-          <div class="testo-nome">Lord's Rusty Obsidian Bracelet</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/Lord's Rusty Obsidian Bracelet.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
+
+      <!-- The Watcher's Artifact Section -->
+      <div class="rhod-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>The Watcher's Artifact</h2>
+        </div>
+
+        <div class="row g-3">
+          <!-- Card Rusty -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(70, 143, 58)"
+              >
+                <img
+                  src="icon/The Watcher s Rusty War Goddess Statue.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">The Watcher's Rusty Artifact</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+500</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Balance:</span>
+                    <span class="stat-value">+1</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+0</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-rusty-watcher"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-rusty-watcher" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power The Watcher's Temple.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power The Watcher's Temple x 25 (From Green To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-green">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+500</div>
-              <div class="testo">+1</div>
-              <div class="testo">+0</div>
+
+          <!-- Card Normal -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(66, 125, 231)"
+              >
+                <img
+                  src="icon/The Watcher s War Goddess Statue.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">The Watcher's Artifact</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+500</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Balance:</span>
+                    <span class="stat-value">+3</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+0</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-normal-watcher"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-normal-watcher" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power The Watcher's Temple.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power The Watcher's Temple x 20 (From Blue To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-green">
-            <div>
-              <img
-                src="icon/Magic Power Usurper's Throne.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
+
+          <!-- Card Shiny -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(178, 94, 198)"
+              >
+                <img
+                  src="icon/The Watcher s Shining War Goddess Statue.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">The Watcher's Shining Artifact</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+1000</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Balance:</span>
+                    <span class="stat-value">+3</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+150</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-shiny-watcher"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-shiny-watcher" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power The Watcher's Temple.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power The Watcher's Temple x 16 (From Purple To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="testo-costo-upgrade">
-              Magic Power Usurper's Throne x 14
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Green To Orange)
+          </div>
+
+          <!-- Card Complete -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(205, 87, 69)"
+              >
+                <img
+                  src="icon/The Watcher's Complete Artifact.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">The Watcher's Complete Artifact</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+1000</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Balance:</span>
+                    <span class="stat-value">+5</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+300</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#passive-watcher"
+                >
+                  Show Passive Bonus
+                </button>
+
+                <div id="passive-watcher" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Space Time Fragment The Watcher's Temple.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Equip Or Have It In Your Inventory Guarantees + 2 Space
+                      Time Fragment The Watcher's Temple And + 1 Extra Departure
+                      For The Watcher's Temple</span
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <!-- Riquadro 2 -->
-        <div class="riquadro-blue">
-          <div class="testo-nome">Lord's Obsidian Bracelet</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/Lord's Obsidian Bracelet.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-blue">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+500</div>
-              <div class="testo">+3</div>
-              <div class="testo">+0</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-blue">
-            <div>
-              <img
-                src="icon/Magic Power Usurper's Throne.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Magic Power Usurper's Throne x 11
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Blue To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 3 -->
-        <div class="riquadro-purple">
-          <div class="testo-nome">Lord's Glowing Obsidian Bracelet</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/Lord's Glowing Obsidian Bracelet.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-purple">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+1000</div>
-              <div class="testo">+3</div>
-              <div class="testo">+200</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-purple">
-            <div>
-              <img
-                src="icon/Magic Power Usurper's Throne.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              &nbsp;&nbsp;Magic Power Usurper's Throne x 8
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Purple To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 4 -->
-        <div class="riquadro-orange">
-          <div class="testo-nome">Lord's Complete Obsidian Bracelet</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/Lord's Complete Obsidian Bracelet.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-orange">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+1000</div>
-              <div class="testo">+5</div>
-              <div class="testo">+400</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Passive Bonus</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-orange">
-            <div>
-              <img
-                src="icon/Space Time Fragment Usurper's Throne.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Equip Or Have It In Your Inventory Guarantees + 2 Space Time
-              Fragment Usurper's Throne
-            </div>
-          </div>
-        </div>
-      </div>
-      <p style="font-size: 20px">
-        *Gem System: You Can Set:<img
-          src="icon/Complete Bracelet Diamond.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        /><img
-          src="icon/Complete Bracelet Sapphire.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        Diamond/Sapphire/Emerald/Ruby<img
-          src="icon/Complete Bracelet Emerald.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        /><img
-          src="icon/Complete Bracelet Ruby.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        Gems On Your Bracelets<img
-          src="icon/Lord's Glowing Obsidian Bracelet.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-      </p>
-      <p style="font-size: 18px">
-        -
-        <img
-          src="icon/Complete Bracelet Diamond.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        Complete Diamond =&nbsp;&nbsp; ATT + 550~950 M.ATT + &nbsp;50~150 DEF +
-        &nbsp;50~150 HP + &nbsp;50~150 DES + 50
-        <br />
-        -
-        <img
-          src="icon/Complete Bracelet Sapphire.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        Complete Sapphire =&nbsp;&nbsp; ATT + &nbsp;50~150 M.ATT + 550~950 DEF +
-        &nbsp;50~150 HP + &nbsp;50~150 DES + 50
-        <br />
-        -
-        <img
-          src="icon/Complete Bracelet Emerald.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        Complete Emerald &nbsp;=&nbsp;&nbsp; ATT + &nbsp;50~150 M.ATT +
-        &nbsp;50~150 DEF + 550~950 HP + &nbsp;50~150 DES + 50
-        <br />
-        -
-        <img
-          src="icon/Complete Bracelet Ruby.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        Complete Ruby&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp;&nbsp; ATT +
-        &nbsp;50~150 M.ATT + &nbsp;50~150 DEF + &nbsp;50~150 HP + 550~950 DES +
-        50
-      </p>
-    </div>
-    <div class="box-container">
-      <!-- Intestazione The Watcher's Artifact -->
-      <div class="intestazione">
-        <div class="int-sinistra">
-          <img
-            class="pic"
-            src="icon/The Watcher s Rusty War Goddess Statue.png"
-            alt="Item Image"
-            style="width: 44px; height: 44px"
-          />
-        </div>
-        <div class="int-centro">
-          <p class="titolo">The Watcher's Artifact</p>
-        </div>
-        <div class="int-destra">
-          <img
-            class="pic"
-            src="icon/The Watcher's Complete Artifact.png"
-            alt="Item Image"
-            style="width: 44px; height: 44px"
-          />
-        </div>
-      </div>
-      <!-- Tabella The Watcher's Artifact-->
-      <div class="tabella">
-        <!-- Riquadro 1 -->
-        <div class="riquadro-green">
-          <div class="testo-nome">The Watcher's Rusty Artifact</div>
-          <div class="box-pic">
-            <div class="pic">
+
+        <!-- Dismantle System Note -->
+        <div class="note-section mt-3">
+          <p class="mb-2">
+            *Dismantle System: You Can Dismantle Green/Blue/Purple Artifacts
+            <img
+              src="icon/The Watcher s Rusty War Goddess Statue.png"
+              alt="Rusty"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            <img
+              src="icon/The Watcher s War Goddess Statue.png"
+              alt="Normal"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            <img
+              src="icon/The Watcher s Shining War Goddess Statue.png"
+              alt="Shiny"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            + Fragments
+            <img
+              src="icon/Space Time Fragment The Watcher's Temple.png"
+              alt="Fragments"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            To Get Magic Power
+            <img
+              src="icon/Magic Power The Watcher's Temple.png"
+              alt="Magic Power"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+          </p>
+          <div class="dismantle-details mt-2">
+            <p class="mb-1">
               <img
                 src="icon/The Watcher s Rusty War Goddess Statue.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
+                alt="Rusty"
+                style="width: 25px; height: 25px; vertical-align: middle"
               />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-green">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Balance</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+500</div>
-              <div class="testo">+1</div>
-              <div class="testo">+0</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-green">
-            <div>
-              <img
-                src="icon/Magic Power The Watcher's Temple.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Magic Power The Watcher's Temple x 25
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Green To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 2 -->
-        <div class="riquadro-blue">
-          <div class="testo-nome">The Watcher's Artifact</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/The Watcher s War Goddess Statue.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-blue">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Balance</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+500</div>
-              <div class="testo">+3</div>
-              <div class="testo">+0</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-blue">
-            <div>
-              <img
-                src="icon/Magic Power The Watcher's Temple.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Magic Power The Watcher's Temple x 20
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Blue To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 3 -->
-        <div class="riquadro-purple">
-          <div class="testo-nome">The Watcher's Shining Artifact</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/The Watcher s Shining War Goddess Statue.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-purple">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Balance</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+1000</div>
-              <div class="testo">+3</div>
-              <div class="testo">+150</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-purple">
-            <div>
-              <img
-                src="icon/Magic Power The Watcher's Temple.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Magic Power The Watcher's Temple x 16
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Purple To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 4 -->
-        <div class="riquadro-orange">
-          <div class="testo-nome">The Watcher's Complete Artifact</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/The Watcher's Complete Artifact.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-orange">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Balance</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+1000</div>
-              <div class="testo">+5</div>
-              <div class="testo">+300</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Passive Bonus</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-orange">
-            <div>
+              + 5x
               <img
                 src="icon/Space Time Fragment The Watcher's Temple.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
+                alt="Fragments"
+                style="width: 25px; height: 25px; vertical-align: middle"
               />
-            </div>
-            <div class="testo-costo-upgrade">
-              Equip Or Have It In Your Inventory Guarantees + 2 Space Time
-              Fragment The Watcher's Temple And + 1 Extra Departure For The
-              Watcher's Temple
-            </div>
+              = 1x
+              <img
+                src="icon/Magic Power The Watcher's Temple.png"
+                alt="Magic Power"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+            </p>
+            <p class="mb-1">
+              <img
+                src="icon/The Watcher s War Goddess Statue.png"
+                alt="Normal"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              + 5x
+              <img
+                src="icon/Space Time Fragment The Watcher's Temple.png"
+                alt="Fragments"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              = 3x
+              <img
+                src="icon/Magic Power The Watcher's Temple.png"
+                alt="Magic Power"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+            </p>
+            <p class="mb-1">
+              <img
+                src="icon/The Watcher s Shining War Goddess Statue.png"
+                alt="Shiny"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              + 5x
+              <img
+                src="icon/Space Time Fragment The Watcher's Temple.png"
+                alt="Fragments"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              = 10x
+              <img
+                src="icon/Magic Power The Watcher's Temple.png"
+                alt="Magic Power"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+            </p>
           </div>
         </div>
       </div>
-      <p style="font-size: 20px">
-        *Dismantle System: You Can Dismantle Green/Blue/Purple Artifacts
-        <img
-          src="icon/The Watcher s Rusty War Goddess Statue.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        <img
-          src="icon/The Watcher s War Goddess Statue.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        <img
-          src="icon/The Watcher s Shining War Goddess Statue.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + Fragments
-        <img
-          src="icon/Space Time Fragment The Watcher's Temple.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        To Get Magic Power
-        <img
-          src="icon/Magic Power The Watcher's Temple.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        In The Following Amount =
-      </p>
-      <p style="font-size: 18px">
-        -
-        <img
-          src="icon/The Watcher s Rusty War Goddess Statue.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + 5x
-        <img
-          src="icon/Space Time Fragment The Watcher's Temple.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        = 1x
-        <img
-          src="icon/Magic Power The Watcher's Temple.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img
-          src="icon/The Watcher s War Goddess Statue.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + 5x
-        <img
-          src="icon/Space Time Fragment The Watcher's Temple.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        = 3x
-        <img
-          src="icon/Magic Power The Watcher's Temple.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img
-          src="icon/The Watcher s Shining War Goddess Statue.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + 5x
-        <img
-          src="icon/Space Time Fragment The Watcher's Temple.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        = 10x
-        <img
-          src="icon/Magic Power The Watcher's Temple.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-      </p>
-    </div>
-    <div class="box-container">
-      <!-- Intestazione Fallen One's Rhod Compass -->
-      <div class="intestazione">
-        <div class="int-sinistra">
-          <img
-            class="pic"
-            src="icon/Fallen One's Rusty Rhod Compass.png"
-            alt="Item Image"
-            style="width: 44px; height: 44px"
-          />
+
+      <!-- Fallen One's Rhod Compass Section -->
+      <div class="rhod-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>Fallen One's Rhod Compass</h2>
         </div>
-        <div class="int-centro">
-          <p class="titolo">Fallen One's Rhod Compass</p>
+
+        <div class="row g-3">
+          <!-- Card Rusty -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(70, 143, 58)"
+              >
+                <img
+                  src="icon/Fallen One's Rusty Rhod Compass.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Fallen One's Rusty Rhod Compass</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+1000</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+5</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+300</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-rusty-fallen"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-rusty-fallen" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power Hall of Fallen Knights.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power Hall of Fallen Knights x 25 (From Green To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Normal -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(66, 125, 231)"
+              >
+                <img
+                  src="icon/Fallen One's Rhod Compass.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Fallen One's Rhod Compass</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+1000</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+7</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+300</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-normal-fallen"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-normal-fallen" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power Hall of Fallen Knights.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power Hall of Fallen Knights x 20 (From Blue To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Shiny -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(178, 94, 198)"
+              >
+                <img
+                  src="icon/Fallen One's Shiny Rhod Compass.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Fallen One's Shiny Rhod Compass</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+1000</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+7</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+450</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-shiny-fallen"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-shiny-fallen" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power Hall of Fallen Knights.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power Hall of Fallen Knights x 16 (From Purple To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Complete -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(205, 87, 69)"
+              >
+                <img
+                  src="icon/Fallen One's Complete Rhod Compass.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Fallen One's Complete Rhod Compass</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+2000</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+10</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+600</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#passive-fallen"
+                >
+                  Show Passive Bonus
+                </button>
+
+                <div id="passive-fallen" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Space Time Fragment Hall of Fallen Knights.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Equip Or Have It In Your Inventory Guarantees + 2 Space
+                      Time Fragment Hall of Fallen Knights And + 1 Extra
+                      Departure For Hall of Fallen Knights</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="int-destra">
-          <img
-            class="pic"
-            src="icon/Fallen One's Complete Rhod Compass.png"
-            alt="Item Image"
-            style="width: 44px; height: 44px"
-          />
-        </div>
-      </div>
-      <!-- Tabella Fallen One's Rhod Compass-->
-      <div class="tabella">
-        <!-- Riquadro 1 -->
-        <div class="riquadro-green">
-          <div class="testo-nome">Fallen One's Rusty Rhod Compass</div>
-          <div class="box-pic">
-            <div class="pic">
+
+        <!-- Dismantle System Note -->
+        <div class="note-section mt-3">
+          <p class="mb-2">
+            *Dismantle System: You Can Dismantle Green/Blue/Purple Rhods
+            <img
+              src="icon/Fallen One's Rusty Rhod Compass.png"
+              alt="Rusty"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            <img
+              src="icon/Fallen One's Rhod Compass.png"
+              alt="Normal"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            <img
+              src="icon/Fallen One's Shiny Rhod Compass.png"
+              alt="Shiny"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            + Fragments
+            <img
+              src="icon/Space Time Fragment Hall of Fallen Knights.png"
+              alt="Fragments"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            To Get Magic Power
+            <img
+              src="icon/Magic Power Hall of Fallen Knights.png"
+              alt="Magic Power"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+          </p>
+          <div class="dismantle-details mt-2">
+            <p class="mb-1">
               <img
                 src="icon/Fallen One's Rusty Rhod Compass.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
+                alt="Rusty"
+                style="width: 25px; height: 25px; vertical-align: middle"
               />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-green">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+1000</div>
-              <div class="testo">+5</div>
-              <div class="testo">+300</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-green">
-            <div>
-              <img
-                src="icon/Magic Power Hall of Fallen Knights.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Magic Power Hall of Fallen Knights x 25
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Green To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 2 -->
-        <div class="riquadro-blue">
-          <div class="testo-nome">Fallen One's Rhod Compass</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/Fallen One's Rhod Compass.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-blue">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+1000</div>
-              <div class="testo">+7</div>
-              <div class="testo">+300</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-blue">
-            <div>
-              <img
-                src="icon/Magic Power Hall of Fallen Knights.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Magic Power Hall of Fallen Knights x 20
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Blue To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 3 -->
-        <div class="riquadro-purple">
-          <div class="testo-nome">Fallen One's Shiny Rhod Compass</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/Fallen One's Shiny Rhod Compass.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-purple">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+1000</div>
-              <div class="testo">+7</div>
-              <div class="testo">+450</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-purple">
-            <div>
-              <img
-                src="icon/Magic Power Hall of Fallen Knights.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Magic Power Hall of Fallen Knights x 16
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Purple To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 4 -->
-        <div class="riquadro-orange">
-          <div class="testo-nome">Fallen One's Complete Rhod Compass</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/Fallen One's Complete Rhod Compass.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-orange">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+2000</div>
-              <div class="testo">+10</div>
-              <div class="testo">+600</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Passive Bonus</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-orange">
-            <div>
+              + 5x
               <img
                 src="icon/Space Time Fragment Hall of Fallen Knights.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
+                alt="Fragments"
+                style="width: 25px; height: 25px; vertical-align: middle"
               />
-            </div>
-            <div class="testo-costo-upgrade">
-              Equip Or Have It In Your Inventory Guarantees + 2 Space Time
-              Fragment Hall of Fallen Knights And + 1 Extra Departure For Hall
-              of Fallen Knights
-            </div>
+              = 1x
+              <img
+                src="icon/Magic Power Hall of Fallen Knights.png"
+                alt="Magic Power"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+            </p>
+            <p class="mb-1">
+              <img
+                src="icon/Fallen One's Rhod Compass.png"
+                alt="Normal"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              + 5x
+              <img
+                src="icon/Space Time Fragment Hall of Fallen Knights.png"
+                alt="Fragments"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              = 3x
+              <img
+                src="icon/Magic Power Hall of Fallen Knights.png"
+                alt="Magic Power"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+            </p>
+            <p class="mb-1">
+              <img
+                src="icon/Fallen One's Shiny Rhod Compass.png"
+                alt="Shiny"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              + 5x
+              <img
+                src="icon/Space Time Fragment Hall of Fallen Knights.png"
+                alt="Fragments"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              = 10x
+              <img
+                src="icon/Magic Power Hall of Fallen Knights.png"
+                alt="Magic Power"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+            </p>
           </div>
         </div>
       </div>
-      <p style="font-size: 20px">
-        *Dismantle System: You Can Dismantle Green/Blue/Purple Rhods
-        <img
-          src="icon/Fallen One's Rusty Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        <img
-          src="icon/Fallen One's Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        <img
-          src="icon/Fallen One's Shiny Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + Fragments
-        <img
-          src="icon/Space Time Fragment Hall of Fallen Knights.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        To Get Magic Power
-        <img
-          src="icon/Magic Power Hall of Fallen Knights.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        In The Following Amount =
-      </p>
-      <p style="font-size: 18px">
-        -
-        <img
-          src="icon/Fallen One's Rusty Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + 5x
-        <img
-          src="icon/Space Time Fragment Hall of Fallen Knights.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        = 1x
-        <img
-          src="icon/Magic Power Hall of Fallen Knights.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img
-          src="icon/Fallen One's Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + 5x
-        <img
-          src="icon/Space Time Fragment Hall of Fallen Knights.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        = 3x
-        <img
-          src="icon/Magic Power Hall of Fallen Knights.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img
-          src="icon/Fallen One's Shiny Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + 5x
-        <img
-          src="icon/Space Time Fragment Hall of Fallen Knights.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        = 10x
-        <img
-          src="icon/Magic Power Hall of Fallen Knights.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-      </p>
-    </div>
-    <div class="box-container">
-      <!-- Intestazione Usurper's Rhod Compass -->
-      <div class="intestazione">
-        <div class="int-sinistra">
-          <img
-            class="pic"
-            src="icon/Usurper's Rusty Rhod Compass.png"
-            alt="Item Image"
-            style="width: 44px; height: 44px"
-          />
+
+      <!-- Usurper's Rhod Compass Section -->
+      <div class="rhod-section mb-5">
+        <div class="header-with-button-raid">
+          <h2>Usurper's Rhod Compass</h2>
         </div>
-        <div class="int-centro">
-          <p class="titolo">Usurper's Rhod Compass</p>
+
+        <div class="row g-3">
+          <!-- Card Rusty -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(70, 143, 58)"
+              >
+                <img
+                  src="icon/Usurper's Rusty Rhod Compass.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Usurper's Rusty Rhod Compass</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+500</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+1</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+0</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-rusty-usurper"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-rusty-usurper" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power Usurper's Fortress.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power Usurper's Fortress x 25 (From Green To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Normal -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(66, 125, 231)"
+              >
+                <img
+                  src="icon/Usurper's Rhod Compass.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Usurper's Rhod Compass</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+500</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+3</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+0</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-normal-usurper"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-normal-usurper" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power Usurper's Fortress.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power Usurper's Fortress x 20 (From Blue To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Shiny -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(178, 94, 198)"
+              >
+                <img
+                  src="icon/Usurper's Shiny Rhod Compass.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Usurper's Shiny Rhod Compass</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+500</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+3</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+150</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#upgrade-shiny-usurper"
+                >
+                  Show Upgrade Cost
+                </button>
+
+                <div id="upgrade-shiny-usurper" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Magic Power Usurper's Fortress.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Magic Power Usurper's Fortress x 16 (From Purple To
+                      Orange)</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Complete -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card gear-card rhod-card">
+              <div
+                class="card-header d-flex align-items-center"
+                style="background-color: rgb(205, 87, 69)"
+              >
+                <img
+                  src="icon/Usurper's Complete Rhod Compass.png"
+                  alt="Item"
+                  class="gear-icon me-2"
+                />
+                <h6 class="mb-0">Usurper's Complete Rhod Compass</h6>
+              </div>
+              <div class="card-body">
+                <div class="stats-grid">
+                  <div class="stat-item">
+                    <span class="stat-label">ATT / M.ATT:</span>
+                    <span class="stat-value">+1000</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Critical Rate:</span>
+                    <span class="stat-value">+5</span>
+                  </div>
+                  <div class="stat-item">
+                    <span class="stat-label">Destruction:</span>
+                    <span class="stat-value">+300</span>
+                  </div>
+                </div>
+
+                <button
+                  class="accordion w-100 mt-3"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#passive-usurper"
+                >
+                  Show Passive Bonus
+                </button>
+
+                <div id="passive-usurper" class="collapse mt-2">
+                  <div class="item-details">
+                    <img
+                      src="icon/Space Time Fragment Usurper's Fortress.png"
+                      alt="Item"
+                      class="item-icon me-2"
+                    />
+                    <span
+                      >Equip Or Have It In Your Inventory Guarantees + 2 Space
+                      Time Fragment Usurper's Fortress And + 1 Extra Departure
+                      For Usurper's Fortress</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="int-destra">
-          <img
-            class="pic"
-            src="icon/Usurper's Complete Rhod Compass.png"
-            alt="Item Image"
-            style="width: 44px; height: 44px"
-          />
-        </div>
-      </div>
-      <!-- Tabella Usurper's Rhod Compass-->
-      <div class="tabella">
-        <!-- Riquadro 1 -->
-        <div class="riquadro-green">
-          <div class="testo-nome">Usurper's Rusty Rhod Compass</div>
-          <div class="box-pic">
-            <div class="pic">
+
+        <!-- Dismantle System Note -->
+        <div class="note-section mt-3">
+          <p class="mb-2">
+            *Dismantle System: You Can Dismantle Green/Blue/Purple Rhods
+            <img
+              src="icon/Usurper's Rusty Rhod Compass.png"
+              alt="Rusty"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            <img
+              src="icon/Usurper's Rhod Compass.png"
+              alt="Normal"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            <img
+              src="icon/Usurper's Shiny Rhod Compass.png"
+              alt="Shiny"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            + Fragments
+            <img
+              src="icon/Space Time Fragment Usurper's Fortress.png"
+              alt="Fragments"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+            To Get Magic Power
+            <img
+              src="icon/Magic Power Usurper's Fortress.png"
+              alt="Magic Power"
+              style="
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+                margin: 0 2px;
+              "
+            />
+          </p>
+          <div class="dismantle-details mt-2">
+            <p class="mb-1">
               <img
                 src="icon/Usurper's Rusty Rhod Compass.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
+                alt="Rusty"
+                style="width: 25px; height: 25px; vertical-align: middle"
               />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-green">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+500</div>
-              <div class="testo">+1</div>
-              <div class="testo">+0</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-green">
-            <div>
-              <img
-                src="icon/Magic Power Usurper's Fortress.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Magic Power Usurper's Fortress x 25
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Green To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 2 -->
-        <div class="riquadro-blue">
-          <div class="testo-nome">Usurper's Rhod Compass</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/Usurper's Rhod Compass.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-blue">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+500</div>
-              <div class="testo">+3</div>
-              <div class="testo">+0</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-blue">
-            <div>
-              <img
-                src="icon/Magic Power Usurper's Fortress.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Magic Power Usurper's Fortress x 20
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Blue To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 3 -->
-        <div class="riquadro-purple">
-          <div class="testo-nome">Usurper's Shiny Rhod Compass</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/Usurper's Shiny Rhod Compass.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-purple">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+500</div>
-              <div class="testo">+3</div>
-              <div class="testo">+150</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Upgrade Cost</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-purple">
-            <div>
-              <img
-                src="icon/Magic Power Usurper's Fortress.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-            <div class="testo-costo-upgrade">
-              Magic Power Usurper's Fortress x 16
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(From
-              Purple To Orange)
-            </div>
-          </div>
-        </div>
-        <!-- Riquadro 4 -->
-        <div class="riquadro-orange">
-          <div class="testo-nome">Usurper's Complete Rhod Compass</div>
-          <div class="box-pic">
-            <div class="pic">
-              <img
-                src="icon/Usurper's Complete Rhod Compass.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
-              />
-            </div>
-          </div>
-          <div class="testo-statistics">Statistics</div>
-          <!-- Statistiche -->
-          <div class="box-statistics-orange">
-            <div class="posizione-2">
-              <div class="testo">ATT / M.ATT</div>
-              <div class="testo">Critical Rate</div>
-              <div class="testo">Destruction</div>
-            </div>
-            <div class="posizione-3">
-              <div class="testo">+1000</div>
-              <div class="testo">+5</div>
-              <div class="testo">+300</div>
-            </div>
-          </div>
-          <div class="testo-statistics">Passive Bonus</div>
-          <!-- Upgrade Cost -->
-          <div class="box-cost-orange">
-            <div>
+              + 5x
               <img
                 src="icon/Space Time Fragment Usurper's Fortress.png"
-                alt="Item Image"
-                style="width: 44px; height: 44px"
+                alt="Fragments"
+                style="width: 25px; height: 25px; vertical-align: middle"
               />
-            </div>
-            <div class="testo-costo-upgrade">
-              Equip Or Have It In Your Inventory Guarantees + 2 Space Time
-              Fragment Usurper's Fortress And + 1 Extra Departure For Usurper's
-              Fortress
-            </div>
+              = 1x
+              <img
+                src="icon/Magic Power Usurper's Fortress.png"
+                alt="Magic Power"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+            </p>
+            <p class="mb-1">
+              <img
+                src="icon/Usurper's Rhod Compass.png"
+                alt="Normal"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              + 5x
+              <img
+                src="icon/Space Time Fragment Usurper's Fortress.png"
+                alt="Fragments"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              = 3x
+              <img
+                src="icon/Magic Power Usurper's Fortress.png"
+                alt="Magic Power"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+            </p>
+            <p class="mb-1">
+              <img
+                src="icon/Usurper's Shiny Rhod Compass.png"
+                alt="Shiny"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              + 5x
+              <img
+                src="icon/Space Time Fragment Usurper's Fortress.png"
+                alt="Fragments"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+              = 10x
+              <img
+                src="icon/Magic Power Usurper's Fortress.png"
+                alt="Magic Power"
+                style="width: 25px; height: 25px; vertical-align: middle"
+              />
+            </p>
           </div>
         </div>
       </div>
-      <p style="font-size: 20px">
-        *Dismantle System: You Can Dismantle Green/Blue/Purple Rhods
-        <img
-          src="icon/Usurper's Rusty Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        <img
-          src="icon/Usurper's Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        <img
-          src="icon/Usurper's Shiny Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + Fragments
-        <img
-          src="icon/Space Time Fragment Usurper's Fortress.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        To Get Magic Power
-        <img
-          src="icon/Magic Power Usurper's Fortress.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        In The Following Amount =
-      </p>
-      <p style="font-size: 18px">
-        -
-        <img
-          src="icon/Usurper's Rusty Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + 5x
-        <img
-          src="icon/Space Time Fragment Usurper's Fortress.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        = 1x
-        <img
-          src="icon/Magic Power Usurper's Fortress.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img
-          src="icon/Usurper's Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + 5x
-        <img
-          src="icon/Space Time Fragment Usurper's Fortress.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        = 3x
-        <img
-          src="icon/Magic Power Usurper's Fortress.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <img
-          src="icon/Usurper's Shiny Rhod Compass.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        + 5x
-        <img
-          src="icon/Space Time Fragment Usurper's Fortress.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-        = 10x
-        <img
-          src="icon/Magic Power Usurper's Fortress.png"
-          alt="Item Image"
-          style="width: 30px; height: 30px; vertical-align: middle"
-        />
-      </p>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -4,418 +4,568 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eriu Weapon Destruction</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
     <style>
-        body {
-          background-color: #1c1c1c;
-          color: white;
-          font-family: Arial, sans-serif;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-          margin: 0;
-          flex-direction: column;
+      body {
+        background-color: rgb(40, 40, 40);
+        color: white;
+        font-family: Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .destruction-container {
+        max-width: 600px;
+        margin: 20px auto;
+      }
+
+      .destruction-card {
+        background-color: rgb(40, 40, 40);
+        border: 2px solid purple;
+        border-radius: 10px;
+        padding: 25px;
+      }
+
+      .return-button {
+        background-color: darkred;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        margin-bottom: 15px;
+        width: auto;
+      }
+
+      .return-button:hover {
+        background-color: purple;
+      }
+
+      .tuning-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .tuning-icon {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .tuning-header h1 {
+        color: rgb(255, 190, 77);
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .main-content {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .main-image {
+        width: 90px;
+        height: 90px;
+        border: 2px solid purple;
+        border-radius: 10px;
+        padding: 5px;
+        background-color: rgb(80, 27, 80);
+      }
+
+      .item-name {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: rgb(255, 190, 77);
+      }
+
+      .stats {
+        margin-bottom: 20px;
+      }
+
+      .stat {
+        background-color: rgba(80, 27, 80, 0.3);
+        border: 1px solid purple;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .stat-left {
+        display: flex;
+        align-items: center;
+        flex: 2;
+        min-width: 150px;
+      }
+
+      .stat-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+      }
+
+      .stat-label {
+        font-weight: bold;
+        color: white;
+      }
+
+      .stat-value {
+        font-weight: bold;
+        color: rgb(255, 190, 77);
+        font-size: 1.1rem;
+        min-width: 60px;
+        text-align: center;
+      }
+
+      .stat-buttons {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        flex: 1;
+      }
+
+      .stat-buttons button {
+        background-color: rgb(80, 27, 80);
+        color: white;
+        border: 1px solid purple;
+        border-radius: 5px;
+        padding: 8px 15px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s;
+        min-width: 45px;
+      }
+
+      .stat-buttons button:hover:not(:disabled) {
+        background-color: purple;
+        border-color: rgb(255, 190, 77);
+      }
+
+      .stat-buttons button:disabled {
+        background-color: #333;
+        border-color: #555;
+        color: #777;
+        cursor: not-allowed;
+      }
+
+      .stat-buttons .max-btn {
+        background-color: rgb(80, 27, 80);
+        min-width: 60px;
+      }
+
+      .materials-container {
+        background-color: rgb(80, 27, 80);
+        border: 2px solid purple;
+        border-radius: 8px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .materials-container h2 {
+        color: rgb(255, 190, 77);
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .material {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 6px;
+        margin-bottom: 8px;
+        border-left: 3px solid purple;
+      }
+
+      .material img {
+        width: 30px;
+        height: 30px;
+        margin-right: 12px;
+        object-fit: contain;
+      }
+
+      .material span:first-of-type {
+        flex: 1;
+        font-weight: bold;
+        color: white;
+      }
+
+      .material span:last-of-type {
+        font-weight: bold;
+        color: rgb(255, 190, 77);
+        font-size: 1.1rem;
+        min-width: 80px;
+        text-align: right;
+      }
+
+      .note-section {
+        background-color: rgba(80, 27, 80, 0.5);
+        border: 1px solid purple;
+        border-radius: 8px;
+        padding: 12px 15px;
+        margin: 20px 0 10px;
+        color: rgb(255, 190, 77);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      .note-section p {
+        margin: 0;
+      }
+
+      .made-by-me {
+        text-align: center;
+        color: rgb(255, 190, 77);
+        font-weight: bold;
+        margin: 20px 0 10px;
+        font-size: 1.2rem;
+      }
+
+      @media (max-width: 576px) {
+        .destruction-container {
+          margin: 10px;
         }
-  
-        .container {
-          text-align: center;
-          background-color: #333;
-          padding: 20px;
-          border-radius: 10px;
-          width: 500px;
-        }
-  
-        .tuning-header {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-  
-        .tuning-icon {
-          width: 30px;
-          height: 30px;
-          margin-right: 10px;
-        }
-  
-        .main-content {
-          margin-top: 20px;
-        }
-  
-        .main-image {
-          width: 100px;
-          height: 100px;
-        }
-  
-        .item-name {
-          margin-top: 10px;
-          font-size: 18px;
-          font-weight: bold;
-        }
-  
-        .stats {
-          margin-top: 20px;
-        }
-  
+        
         .stat {
-          display: flex;
-          align-items: center;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        
+        .stat-left {
+          width: 100%;
+        }
+        
+        .stat-value {
+          text-align: left;
+          margin-left: 34px;
+        }
+        
+        .stat-buttons {
+          width: 100%;
           justify-content: space-between;
-          margin-bottom: 15px;
+          margin-top: 10px;
         }
-  
-        .stat-icon {
-          width: 20px;
-          height: 20px;
-          margin-right: 5px;
-        }
-  
-        .stat span {
+        
+        .stat-buttons button {
           flex: 1;
-          text-align: left;
         }
-  
-        button {
-          background-color: #555;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          padding: 5px 10px;
-          cursor: pointer;
-          margin-left: 5px;
+        
+        .tuning-header h1 {
+          font-size: 1.5rem;
         }
-  
-        button:hover {
-          background-color: #777;
-        }
-  
-        .return-button {
-          background-color: darkred;
-          color: white;
-          border: none;
-          border-radius: 5px;
-          padding: 10px 20px;
-          font-size: 14px;
-          cursor: pointer;
-          margin-bottom: 10px;
-          font-weight: bold;
-        }
-  
-        .return-button:hover {
-          background-color: purple;
-        }
-  
-        .materials-container {
-          margin-top: 20px;
-          background-color: #2b2b2b;
-          padding: 10px;
-          border-radius: 10px;
-          display: none;
-        }
-  
-        .material {
-          display: flex;
-          align-items: center;
-          margin-bottom: 10px;
-          font-weight: bold;
-        }
-  
-        .material img {
-          width: 20px;
-          height: 20px;
-          margin-right: 10px;
-        }
-  
-        .material span {
-          flex: 1;
-          text-align: left;
-        }
-  
-        .disabled {
-          background-color: #333;
-          cursor: not-allowed;
-        }
-      </style>
-    </head>
-    <body>
-      <div class="made-by-me">
-        <p>&#9733 Made By Smary &#9733</p>
-      </div>
-      <div class="container">
-        <button
-          class="return-button"
-          onclick="location.href='EriuGearTable.html'"
-        >&#9664 &#9664 Return To Eriu Gear
-        </button>
+      }
+    </style>
+  </head>
+  <body>
+    <div class="made-by-me">
+      <p>&#9733 Made By Smary &#9733</p>
+    </div>
+    
+    <div class="container destruction-container">
+      <button
+        class="return-button"
+        onclick="location.href='EriuGearTable.html'"
+      >&#9664 &#9664 Return To Eriu Gear
+      </button>
+      
+      <div class="destruction-card">
         <div class="tuning-header">
           <img
             src="icon/Tuning.png"
             alt="Tuning Icon"
             class="tuning-icon"
-            style="width: 40px; height: 40px"
           />
           <h1>Destruction</h1>
         </div>
+        
         <div class="main-content">
           <img
             src="icon/e_weapon_1.png"
             alt="Main Image"
             class="main-image"
-            style="width: 90px; height: 90px"
           />
           <p class="item-name">Eriu Weapon</p>
         </div>
+        
         <div class="stats">
+          <!-- Destruction I -->
           <div class="stat">
-            <img
-              src="icon/att_surplus.png"
-              alt="Surplus I Icon"
-              class="stat-icon"
-              style="width: 20px; height: 20px"
-            />
-            <span style="font-weight: bold">Destruction I</span>
-            <span style="font-weight: bold" id="surplus1-value">0</span>
-            <button class="minus" onclick="decreaseValue('surplus1', 50, 0)">
-              -
-            </button>
-            <button id="surplus1-plus" onclick="increaseValue('surplus1', 50, 5400)">
-              +
-            </button>
-            <button id="surplus1-max" onclick="setMaxValue('surplus1', 5400)">
-              Max
-            </button>
+            <div class="stat-left">
+              <img
+                src="icon/att_surplus.png"
+                alt="Surplus I Icon"
+                class="stat-icon"
+              />
+              <span class="stat-label">Destruction I</span>
+            </div>
+            <span class="stat-value" id="surplus1-value">0</span>
+            <div class="stat-buttons">
+              <button class="minus" onclick="decreaseValue('surplus1', 50, 0)">-</button>
+              <button id="surplus1-plus" onclick="increaseValue('surplus1', 50, 5400)">+</button>
+              <button id="surplus1-max" class="max-btn" onclick="setMaxValue('surplus1', 5400)">Max</button>
+            </div>
           </div>
+          
+          <!-- Destruction II -->
           <div class="stat">
-            <img
-              src="icon/att_surplus.png"
-              alt="Surplus II Icon"
-              class="stat-icon"
-              style="width: 20px; height: 20px"
-            />
-            <span style="font-weight: bold">Destruction II</span>
-            <span style="font-weight: bold" id="surplus2-value">0</span>
-            <button class="minus" onclick="decreaseValue('surplus2', 45, 0)">
-              -
-            </button>
-            <button id="surplus2-plus" onclick="increaseValue('surplus2', 45, 9000)">
-              +
-            </button>
-            <button id="surplus2-max" onclick="setMaxValue('surplus2', 9000)">
-              Max
-            </button>
+            <div class="stat-left">
+              <img
+                src="icon/att_surplus.png"
+                alt="Surplus II Icon"
+                class="stat-icon"
+              />
+              <span class="stat-label">Destruction II</span>
+            </div>
+            <span class="stat-value" id="surplus2-value">0</span>
+            <div class="stat-buttons">
+              <button class="minus" onclick="decreaseValue('surplus2', 45, 0)">-</button>
+              <button id="surplus2-plus" onclick="increaseValue('surplus2', 45, 9000)">+</button>
+              <button id="surplus2-max" class="max-btn" onclick="setMaxValue('surplus2', 9000)">Max</button>
+            </div>
           </div>
-        <div class="materials-container" id="materials-container">
+        </div>
+        
+        <!-- Materials Container -->
+        <div class="materials-container" id="materials-container" style="display: none;">
           <h2>Required Materials</h2>
-          <div class="material">
+          
+          <div class="material" id="material-gold" style="display: none;">
             <img src="icon/Gold.png" alt="Gold Icon" />
             <span>Gold</span>
             <span id="gold-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/Mysterious Shard Grade 3.png" alt="myst Icon" />
+          
+          <div class="material" id="material-myst" style="display: none;">
+            <img src="icon/Mysterious Shard Grade 3.png" alt="Mysterious Shard Icon" />
             <span>Mysterious Shard Grade 3</span>
             <span id="myst-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/nore.png" alt="nore Icon" />
+          
+          <div class="material" id="material-nore" style="display: none;">
+            <img src="icon/nore.png" alt="New Era Ore Icon" />
             <span>New Era Ore</span>
             <span id="nore-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/norb.png" alt="norb Icon" />
+          
+          <div class="material" id="material-norb" style="display: none;">
+            <img src="icon/norb.png" alt="New Era Orb Icon" />
             <span>New Era Orb</span>
             <span id="norb-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/Mysterious Crystal.png" alt="mcrystal Icon" />
+          
+          <div class="material" id="material-mcrystal" style="display: none;">
+            <img src="icon/Mysterious Crystal.png" alt="Mysterious Crystal Icon" />
             <span>Mysterious Crystal</span>
             <span id="mcrystal-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/Ore.png" alt="Ore Icon" />
+          
+          <div class="material" id="material-ore" style="display: none;">
+            <img src="icon/Ore.png" alt="Enhanced Ore Icon" />
             <span>Enhanced New Era Ore</span>
             <span id="ore-value">0</span>
           </div>
-          <div class="material">
-            <img src="icon/Orb.png" alt="Orb Icon" />
+          
+          <div class="material" id="material-orb" style="display: none;">
+            <img src="icon/Orb.png" alt="Enhanced Orb Icon" />
             <span>Enhanced New Era Orb</span>
             <span id="orb-value">0</span>
           </div>
         </div>
+        
+        <!-- Note -->
+        <div class="note-section">
+          <p>*Note: To Unlock Destruction II You Need To Complete Destruction I + Max Tuning</p>
+        </div>
       </div>
-      </div>
-      <div>
-        <p>*Note: To Unlock Destruction II You Need To Complete Destruction I + Max Tuning</p>
-      </div>
-      <script src="script.js"></script>
-      <script>
-        let materialValues = {
-            gold: 0,
-            myst: 0,
-            nore: 0,
-            norb: 0,
-            mcrystal: 0,
-            ore: 0,
-            orb: 0,
-        };
+    </div>
 
-        function formatInteger(number) {
-    return number.toLocaleString("en-US");
-}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let materialValues = {
+        gold: 0,
+        myst: 0,
+        nore: 0,
+        norb: 0,
+        mcrystal: 0,
+        ore: 0,
+        orb: 0,
+      };
 
-function updateMaterialValues() {
-    document.getElementById("gold-value").textContent = formatInteger(materialValues.gold);
-    document.getElementById("myst-value").textContent = formatInteger(materialValues.myst);
-    document.getElementById("nore-value").textContent = formatInteger(materialValues.nore);
-    document.getElementById("norb-value").textContent = formatInteger(materialValues.norb);
-    document.getElementById("mcrystal-value").textContent = formatInteger(materialValues.mcrystal);
-    document.getElementById("ore-value").textContent = formatInteger(materialValues.ore);
-    document.getElementById("orb-value").textContent = formatInteger(materialValues.orb);
-}
+      function formatInteger(number) {
+        return number.toLocaleString("en-US");
+      }
 
-function updateButtons(stat, value, max) {
-    const plusButton = document.getElementById(`${stat}-plus`);
-    const maxButton = document.getElementById(`${stat}-max`);
+      function updateMaterialValues() {
+        // Update text values
+        document.getElementById("gold-value").textContent = formatInteger(materialValues.gold);
+        document.getElementById("myst-value").textContent = formatInteger(materialValues.myst);
+        document.getElementById("nore-value").textContent = formatInteger(materialValues.nore);
+        document.getElementById("norb-value").textContent = formatInteger(materialValues.norb);
+        document.getElementById("mcrystal-value").textContent = formatInteger(materialValues.mcrystal);
+        document.getElementById("ore-value").textContent = formatInteger(materialValues.ore);
+        document.getElementById("orb-value").textContent = formatInteger(materialValues.orb);
 
-    if (value >= max) {
-        plusButton.disabled = true;
-        plusButton.classList.add("disabled");
-    } else {
-        plusButton.disabled = false;
-        plusButton.classList.remove("disabled");
-    }
+        // Show/hide material containers
+        const materials = [
+          { id: "gold", value: materialValues.gold },
+          { id: "myst", value: materialValues.myst },
+          { id: "nore", value: materialValues.nore },
+          { id: "norb", value: materialValues.norb },
+          { id: "mcrystal", value: materialValues.mcrystal },
+          { id: "ore", value: materialValues.ore },
+          { id: "orb", value: materialValues.orb },
+        ];
 
-    if (value >= max) {
-        maxButton.disabled = true;
-        maxButton.classList.add("disabled");
-    } else {
-        maxButton.disabled = false;
-        maxButton.classList.remove("disabled");
-    }
-}
+        materials.forEach((material) => {
+          const materialElement = document.getElementById(`material-${material.id}`);
+          if (material.value > 0) {
+            materialElement.style.display = "flex";
+          } else {
+            materialElement.style.display = "none";
+          }
+        });
 
-function decreaseValue(stat, decrement, min) {
-    const valueElement = document.getElementById(`${stat}-value`);
-    let currentValue = parseInt(valueElement.textContent);
-
-    if (currentValue <= min) return;
-
-    currentValue -= decrement;
-    if (currentValue < min) currentValue = min;
-
-    valueElement.textContent = currentValue;
-
-    if (stat === "surplus1") {
-        materialValues.gold = Math.max(materialValues.gold - 700000, 0);
-        materialValues.myst = Math.max(materialValues.myst - 3, 0);
-        materialValues.nore = Math.max(materialValues.nore - 25, 0);
-        materialValues.norb = Math.max(materialValues.norb - 20, 0);
-    } else if (stat === "surplus2") {
-        materialValues.gold = Math.max(materialValues.gold - 2100000, 0);
-        materialValues.mcrystal = Math.max(materialValues.mcrystal - 3, 0);
-        materialValues.ore = Math.max(materialValues.ore - 35, 0);
-        materialValues.orb = Math.max(materialValues.orb - 35, 0);
-    }
-    updateMaterialValues();
-
-if (currentValue === min) {
-    document.getElementById("materials-container").style.display = "none";
-}
-
-updateButtons(stat, currentValue, parseInt(valueElement.getAttribute('max')));
-}
-
-function increaseValue(stat, increment, max) {
-    const valueElement = document.getElementById(`${stat}-value`);
-    let currentValue = parseInt(valueElement.textContent);
-
-    if (currentValue >= max) return;
-
-    currentValue += increment;
-    if (currentValue > max) currentValue = max;
-
-    valueElement.textContent = currentValue;
-
-    if (stat === "surplus1") {
-        materialValues.gold += 700000;
-        materialValues.myst += 3;
-        materialValues.nore += 25;
-        materialValues.norb += 20;
-    } else if (stat === "surplus2") {
-        materialValues.gold += 2100000;
-        materialValues.mcrystal += 3;
-        materialValues.ore += 35;
-        materialValues.orb += 35;
-    }
-
-    updateMaterialValues();
-
-    if (materialValues.gold > 0) {
-        document.getElementById("materials-container").style.display = "block";
-    }
-
-    updateButtons(stat, currentValue, max);
-}
-function setMaxValue(stat, max) {
-    const valueElement = document.getElementById(`${stat}-value`);
-    let currentValue = parseInt(valueElement.textContent);
-
-    if (currentValue >= max) return;
-
-    const increment = max - currentValue;
-
-    if (stat === "surplus1") {
-        const numberOfIncrements = increment / 50;
-
-        materialValues.gold += 700000 * numberOfIncrements;
-        materialValues.myst += 3 * numberOfIncrements;
-        materialValues.nore += 25 * numberOfIncrements;
-        materialValues.norb += 20 * numberOfIncrements;
-    } else if (stat === "surplus2") {
-        const numberOfIncrements = increment / 45;
-        materialValues.gold += 2100000 * numberOfIncrements;
-        materialValues.mcrystal += 3 * numberOfIncrements;
-        materialValues.ore += 35 * numberOfIncrements;
-        materialValues.orb += 35 * numberOfIncrements;
-    }
-
-    updateMaterialValues();
-
-    if (materialValues.gold > 0) {
-        document.getElementById("materials-container").style.display = "block";
-    }
-
-    valueElement.textContent = max;
-
-    updateButtons(stat, max, max);
-}
-
-updateButtons("surplus1", parseInt(document.getElementById("surplus1-value").textContent), 5400);
-updateButtons("surplus2", parseInt(document.getElementById("surplus2-value").textContent), 1500);
-
-function updateMaterialValues() {
-    const materials = [
-        { id: "gold", value: materialValues.gold },
-        { id: "myst", value: materialValues.myst },
-        { id: "nore", value: materialValues.nore },
-        { id: "norb", value: materialValues.norb },
-        { id: "mcrystal", value: materialValues.mcrystal },
-        { id: "ore", value: materialValues.ore },
-        { id: "orb", value: materialValues.orb },
-    ];
-
-    materials.forEach((material) => {
-        const materialElement = document.getElementById(`${material.id}-value`);
-        materialElement.textContent = formatInteger(material.value);
-
-        const materialContainer = materialElement.closest(".material");
-        if (material.value === 0) {
-            materialContainer.style.display = "none";
+        // Show/hide main container
+        const materialsContainer = document.getElementById("materials-container");
+        if (materialValues.gold > 0 || materialValues.myst > 0 || materialValues.nore > 0 || 
+            materialValues.norb > 0 || materialValues.mcrystal > 0 || materialValues.ore > 0 || 
+            materialValues.orb > 0) {
+          materialsContainer.style.display = "block";
         } else {
-            materialContainer.style.display = "flex";
+          materialsContainer.style.display = "none";
         }
-    });
-}
-        </script>
-    </body>
+      }
+
+      function updateButtons(stat, value, max) {
+        const plusButton = document.getElementById(`${stat}-plus`);
+        const maxButton = document.getElementById(`${stat}-max`);
+
+        if (value >= max) {
+          plusButton.disabled = true;
+        } else {
+          plusButton.disabled = false;
+        }
+
+        if (value >= max) {
+          maxButton.disabled = true;
+        } else {
+          maxButton.disabled = false;
+        }
+      }
+
+      function decreaseValue(stat, decrement, min) {
+        const valueElement = document.getElementById(`${stat}-value`);
+        let currentValue = parseInt(valueElement.textContent);
+
+        if (currentValue <= min) return;
+
+        currentValue -= decrement;
+        if (currentValue < min) currentValue = min;
+
+        valueElement.textContent = currentValue;
+
+        if (stat === "surplus1") {
+          materialValues.gold = Math.max(materialValues.gold - 700000, 0);
+          materialValues.myst = Math.max(materialValues.myst - 3, 0);
+          materialValues.nore = Math.max(materialValues.nore - 25, 0);
+          materialValues.norb = Math.max(materialValues.norb - 20, 0);
+        } else if (stat === "surplus2") {
+          materialValues.gold = Math.max(materialValues.gold - 2100000, 0);
+          materialValues.mcrystal = Math.max(materialValues.mcrystal - 3, 0);
+          materialValues.ore = Math.max(materialValues.ore - 35, 0);
+          materialValues.orb = Math.max(materialValues.orb - 35, 0);
+        }
+        
+        updateMaterialValues();
+
+        if (currentValue === min) {
+          document.getElementById("materials-container").style.display = "none";
+        }
+
+        updateButtons(stat, currentValue, parseInt(valueElement.getAttribute('max')));
+      }
+
+      function increaseValue(stat, increment, max) {
+        const valueElement = document.getElementById(`${stat}-value`);
+        let currentValue = parseInt(valueElement.textContent);
+
+        if (currentValue >= max) return;
+
+        currentValue += increment;
+        if (currentValue > max) currentValue = max;
+
+        valueElement.textContent = currentValue;
+
+        if (stat === "surplus1") {
+          materialValues.gold += 700000;
+          materialValues.myst += 3;
+          materialValues.nore += 25;
+          materialValues.norb += 20;
+        } else if (stat === "surplus2") {
+          materialValues.gold += 2100000;
+          materialValues.mcrystal += 3;
+          materialValues.ore += 35;
+          materialValues.orb += 35;
+        }
+
+        updateMaterialValues();
+
+        if (materialValues.gold > 0) {
+          document.getElementById("materials-container").style.display = "block";
+        }
+
+        updateButtons(stat, currentValue, max);
+      }
+
+      function setMaxValue(stat, max) {
+        const valueElement = document.getElementById(`${stat}-value`);
+        let currentValue = parseInt(valueElement.textContent);
+
+        if (currentValue >= max) return;
+
+        const increment = max - currentValue;
+
+        if (stat === "surplus1") {
+          const numberOfIncrements = increment / 50;
+          materialValues.gold += 700000 * numberOfIncrements;
+          materialValues.myst += 3 * numberOfIncrements;
+          materialValues.nore += 25 * numberOfIncrements;
+          materialValues.norb += 20 * numberOfIncrements;
+        } else if (stat === "surplus2") {
+          const numberOfIncrements = increment / 45;
+          materialValues.gold += 2100000 * numberOfIncrements;
+          materialValues.mcrystal += 3 * numberOfIncrements;
+          materialValues.ore += 35 * numberOfIncrements;
+          materialValues.orb += 35 * numberOfIncrements;
+        }
+
+        valueElement.textContent = max;
+        updateMaterialValues();
+
+        if (materialValues.gold > 0) {
+          document.getElementById("materials-container").style.display = "block";
+        }
+
+        updateButtons(stat, max, max);
+      }
+
+      // Initialize buttons - nota: surplus1 max è 5400, surplus2 max è 9000
+      updateButtons("surplus1", parseInt(document.getElementById("surplus1-value").textContent), 5400);
+      updateButtons("surplus2", parseInt(document.getElementById("surplus2-value").textContent), 9000);
+    </script>
+  </body>
 </html>
