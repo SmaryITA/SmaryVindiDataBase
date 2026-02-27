@@ -3,12 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eriu Gear Table</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <title>Eriu Gear Table</title>
+    <style>
+      /* Stili aggiuntivi specifici per Eriu Gear Table */
+      .gear-section {
+        background-color: rgba(80, 27, 80, 0.2);
+        border-radius: 10px;
+        padding: 15px;
+        transition: all 0.3s ease;
+        margin-bottom: 20px;
+      }
+
+      .gear-section:hover {
+        background-color: rgba(80, 27, 80, 0.3);
+      }
+
+      .toggle-section {
+        background-color: rgb(80, 27, 80) !important;
+        color: rgb(255, 190, 77) !important;
+        border: 2px solid purple !important;
+        font-weight: bold !important;
+        padding: 8px 20px !important;
+        border-radius: 6px !important;
+        transition: all 0.3s ease !important;
+        min-width: 100px;
+      }
+
+      .toggle-section:hover {
+        background-color: purple !important;
+        color: white !important;
+        border-color: rgb(255, 190, 77) !important;
+      }
+
+      .toggle-section .toggle-icon {
+        margin-left: 8px;
+        font-size: 0.9rem;
+        transition: transform 0.3s ease;
+        display: inline-block;
+      }
+
+      .toggle-section[aria-expanded="true"] .toggle-icon {
+        transform: rotate(180deg);
+      }
+
+      /* Stili per i bottoni di navigazione delle sezioni */
+      .section-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .section-buttons .tuning-button,
+      .section-buttons .surplus-button,
+      .section-buttons .advance-button {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      @media (max-width: 768px) {
+        .header-with-button-raid {
+          flex-direction: column;
+          align-items: flex-start !important;
+          gap: 10px;
+        }
+
+        .header-with-button-raid > div {
+          width: 100%;
+        }
+
+        .section-buttons {
+          width: 100%;
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .section-buttons button {
+          width: 100%;
+          margin: 2px 0 !important;
+          padding: 10px !important;
+          font-size: 1rem !important;
+        }
+
+        .toggle-section {
+          width: 100%;
+          padding: 12px !important;
+        }
+
+        .d-flex.gap-2 {
+          width: 100%;
+          flex-direction: column;
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="nav-buttons">
@@ -88,359 +180,373 @@
     </div>
 
     <div class="container-fluid mt-3">
-      <!-- Eriu Weapon Section -->
-      <div class="gear-section mb-5">
+      <!-- Eriu Weapon Section - Sezione collassabile -->
+      <div class="gear-section mb-4">
         <div
           class="header-with-button-raid d-flex justify-content-between align-items-center"
         >
           <h2>Eriu Weapon</h2>
-          <div>
+          <div class="d-flex align-items-center gap-2">
+            <div class="section-buttons">
+              <button
+                class="tuning-button"
+                onclick="location.href = 'EriuWeaponTuning.html'"
+              >
+                Tuning &#9654;
+              </button>
+              <button
+                class="surplus-button"
+                onclick="location.href = 'EriuWeaponSurplus.html'"
+              >
+                Destruction &#9654;
+              </button>
+              <button
+                class="advance-button"
+                onclick="location.href = 'EriuAdvanceStone.html'"
+              >
+                Craft Advance Stone - Table &#9654;
+              </button>
+            </div>
             <button
-              class="tuning-button me-2"
-              onclick="location.href = 'EriuWeaponTuning.html'"
+              class="btn btn-outline-warning toggle-section"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#eriu-weapon-content"
+              aria-expanded="true"
             >
-              Tuning &#9654;
-            </button>
-            <button
-              class="surplus-button me-2"
-              onclick="location.href = 'EriuWeaponSurplus.html'"
-            >
-              Destruction &#9654;
-            </button>
-            <button
-              class="advance-button"
-              onclick="location.href = 'EriuAdvanceStone.html'"
-            >
-              Craft Advance Stone - Table &#9654;
+              <span class="toggle-text">Show/Hide</span>
+              <span class="toggle-icon">▼</span>
             </button>
           </div>
         </div>
 
-        <div class="row g-3">
-          <!-- Card Eriu Weapon (Regular) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_weapon_1.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Weapon (Regular)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Attack:</span>
-                    <span class="stat-value">+0</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Balance:</span>
-                    <span class="stat-value">+8</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical:</span>
-                    <span class="stat-value">+8</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+0</span>
-                  </div>
+        <div class="collapse show" id="eriu-weapon-content">
+          <div class="row g-3 mt-2">
+            <!-- Card Eriu Weapon (Regular) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_weapon_1.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Weapon (Regular)</h5>
                 </div>
-
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-weapon-1"
-                >
-                  Show/Hide Items
-                </button>
-
-                <div id="items-eriu-weapon-1" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/weapon_6.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span>Legendary Uaithne Weapon</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Lucian's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x4</span>
-                      <span>Lucian's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Weapon.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Fragment: Weapon</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Keen Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Keen Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x15</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card Eriu Weapon (Beginner) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_weapon_2.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Weapon (Beginner)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Attack:</span>
-                    <span class="stat-value">+1.250</span>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Attack:</span>
+                      <span class="stat-value">+0</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Balance:</span>
+                      <span class="stat-value">+8</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical:</span>
+                      <span class="stat-value">+8</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+0</span>
+                    </div>
                   </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Balance:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+150</span>
-                  </div>
-                </div>
 
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-weapon-2"
-                >
-                  Show/Hide Items
-                </button>
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-weapon-1"
+                  >
+                    Show/Hide Items
+                  </button>
 
-                <div id="items-eriu-weapon-2" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1.500.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Weapon.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Advancement Stone Weapon</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Lucian's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Lucian's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Weapon.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment Weapon</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Keen Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Keen Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Premium Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x15</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
+                  <div id="items-eriu-weapon-1" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/weapon_6.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span>Legendary Uaithne Weapon</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Lucian's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x4</span>
+                        <span>Lucian's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Weapon.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Fragment: Weapon</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Keen Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Keen Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x15</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Card Eriu Weapon (Fine) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_weapon_3.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Weapon (Fine)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Attack:</span>
-                    <span class="stat-value">+1.250</span>
+            <!-- Card Eriu Weapon (Beginner) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_weapon_2.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Weapon (Beginner)</h5>
+                </div>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Attack:</span>
+                      <span class="stat-value">+1.250</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Balance:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+150</span>
+                    </div>
                   </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Balance:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+150</span>
+
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-weapon-2"
+                  >
+                    Show/Hide Items
+                  </button>
+
+                  <div id="items-eriu-weapon-2" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1.500.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Weapon.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Advancement Stone Weapon</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Lucian's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Lucian's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Weapon.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment Weapon</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Keen Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Keen Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Premium Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x15</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-weapon-3"
-                >
-                  Show/Hide Items
-                </button>
+            <!-- Card Eriu Weapon (Fine) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_weapon_3.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Weapon (Fine)</h5>
+                </div>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Attack:</span>
+                      <span class="stat-value">+1.250</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Balance:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+150</span>
+                    </div>
+                  </div>
 
-                <div id="items-eriu-weapon-3" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2.250.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Weapon.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Advancement Stone Weapon</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Semias's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Semias's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Weapon.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Fragment Weapon</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Keen Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Keen Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Lightweight Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Lightweight Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Premium Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x33</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-weapon-3"
+                  >
+                    Show/Hide Items
+                  </button>
+
+                  <div id="items-eriu-weapon-3" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2.250.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Weapon.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Advancement Stone Weapon</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Semias's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Semias's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Weapon.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Fragment Weapon</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Keen Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Keen Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Lightweight Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Lightweight Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Premium Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x33</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -448,677 +554,691 @@
         </div>
       </div>
 
-      <!-- Eriu Helm Section -->
-      <div class="gear-section mb-5">
+      <!-- Eriu Helm Section - Sezione collassabile -->
+      <div class="gear-section mb-4">
         <div
           class="header-with-button-raid d-flex justify-content-between align-items-center"
         >
           <h2>Eriu Helm</h2>
-          <div>
+          <div class="d-flex align-items-center gap-2">
+            <div class="section-buttons">
+              <button
+                class="tuning-button"
+                onclick="location.href = 'EriuHelmTuning.html'"
+              >
+                Tuning &#9654;
+              </button>
+              <button
+                class="surplus-button"
+                onclick="location.href = 'EriuHelmSurplus.html'"
+              >
+                Destruction &#9654;
+              </button>
+            </div>
             <button
-              class="tuning-button me-2"
-              onclick="location.href = 'EriuHelmTuning.html'"
+              class="btn btn-outline-warning toggle-section"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#eriu-helm-content"
+              aria-expanded="false"
             >
-              Tuning &#9654;
-            </button>
-            <button
-              class="surplus-button"
-              onclick="location.href = 'EriuHelmSurplus.html'"
-            >
-              Destruction &#9654;
+              <span class="toggle-text">Show/Hide</span>
+              <span class="toggle-icon">▶</span>
             </button>
           </div>
         </div>
 
-        <div class="row g-3">
-          <!-- Card Eriu Helm (Regular) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_helm_1.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Helm (Regular)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+0</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+3</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+0</span>
-                  </div>
+        <div class="collapse" id="eriu-helm-content">
+          <div class="row g-3 mt-2">
+            <!-- Card Eriu Helm (Regular) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_helm_1.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Helm (Regular)</h5>
                 </div>
-
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-helm-1"
-                >
-                  Show/Hide Items
-                </button>
-
-                <div id="items-eriu-helm-1" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Helm_6.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span>Legendary Uaithne Helm</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Lucian's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x4</span>
-                      <span>Lucian's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Fragment: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Solid Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Solid Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x15</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card Eriu Helm (Beginner) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_helm_2.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Helm (Beginner)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+230</span>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+0</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+3</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+0</span>
+                    </div>
                   </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+45</span>
-                  </div>
-                </div>
 
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-helm-2"
-                >
-                  Show/Hide Items
-                </button>
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-helm-1"
+                  >
+                    Show/Hide Items
+                  </button>
 
-                <div id="items-eriu-helm-2" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x750.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Advancement Stone: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Lucian's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Lucian's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Solid Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x5</span>
-                      <span>Solid Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Armor Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Premium Armor Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
+                  <div id="items-eriu-helm-1" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Helm_6.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span>Legendary Uaithne Helm</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Lucian's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x4</span>
+                        <span>Lucian's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Fragment: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Solid Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Solid Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x15</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Card Eriu Helm (Fine) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_helm_3.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Helm (Fine)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+230</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+45</span>
-                  </div>
+            <!-- Card Eriu Helm (Beginner) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_helm_2.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Helm (Beginner)</h5>
                 </div>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+230</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+45</span>
+                    </div>
+                  </div>
 
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-helm-3"
-                >
-                  Show/Hide Items
-                </button>
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-helm-2"
+                  >
+                    Show/Hide Items
+                  </button>
 
-                <div id="items-eriu-helm-3" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1.125.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Advancement Stone: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Lucian's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Lucian's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Solid Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x5</span>
-                      <span>Solid Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Armor Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Premium Armor Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x8</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
+                  <div id="items-eriu-helm-2" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x750.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Advancement Stone: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Lucian's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Lucian's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Solid Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x5</span>
+                        <span>Solid Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Armor Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Premium Armor Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Card Eriu Helm (Superior) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_helm_4.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Helm (Superior)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+230</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+45</span>
-                  </div>
+            <!-- Card Eriu Helm (Fine) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_helm_3.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Helm (Fine)</h5>
                 </div>
-
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-helm-4"
-                >
-                  Show/Hide Items
-                </button>
-
-                <div id="items-eriu-helm-4" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1.725.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Advancement Stone: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Lucian's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Lucian's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Solid Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Solid Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Armor Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Premium Armor Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x16</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x4</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card Eriu Helm (Rare) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_helm_5.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Helm (Rare)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+230</span>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+230</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+45</span>
+                    </div>
                   </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+45</span>
-                  </div>
-                </div>
 
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-helm-5"
-                >
-                  Show/Hide Items
-                </button>
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-helm-3"
+                  >
+                    Show/Hide Items
+                  </button>
 
-                <div id="items-eriu-helm-5" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2.550.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Advancement Stone: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Lucian's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Lucian's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Solid Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Solid Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Armor Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Premium Armor Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x24</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x8</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
+                  <div id="items-eriu-helm-3" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1.125.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Advancement Stone: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Lucian's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Lucian's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Solid Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x5</span>
+                        <span>Solid Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Armor Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Premium Armor Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x8</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Card Eriu Helm (Legendary) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_helm_6.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Helm (Legendary)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+350</span>
+            <!-- Card Eriu Helm (Superior) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_helm_4.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Helm (Superior)</h5>
+                </div>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+230</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+45</span>
+                    </div>
                   </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+45</span>
+
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-helm-4"
+                  >
+                    Show/Hide Items
+                  </button>
+
+                  <div id="items-eriu-helm-4" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1.725.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Advancement Stone: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Lucian's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Lucian's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Solid Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Solid Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Armor Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Premium Armor Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x16</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x4</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-helm-6"
-                >
-                  Show/Hide Items
-                </button>
+            <!-- Card Eriu Helm (Rare) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_helm_5.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Helm (Rare)</h5>
+                </div>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+230</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+45</span>
+                    </div>
+                  </div>
 
-                <div id="items-eriu-helm-6" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x3.750.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Advancement Stone: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Lucian's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Lucian's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Head Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment: Head Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Solid Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Solid Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Armor Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Premium Armor Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x48</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x16</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-helm-5"
+                  >
+                    Show/Hide Items
+                  </button>
+
+                  <div id="items-eriu-helm-5" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2.550.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Advancement Stone: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Lucian's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Lucian's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Solid Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Solid Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Armor Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Premium Armor Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x24</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x8</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Eriu Helm (Legendary) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_helm_6.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Helm (Legendary)</h5>
+                </div>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+350</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+45</span>
+                    </div>
+                  </div>
+
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-helm-6"
+                  >
+                    Show/Hide Items
+                  </button>
+
+                  <div id="items-eriu-helm-6" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x3.750.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Advancement Stone: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Lucian's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Lucian's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Head Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment: Head Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Solid Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Solid Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Armor Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Premium Armor Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x48</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x16</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1126,677 +1246,691 @@
         </div>
       </div>
 
-      <!-- Eriu Greaves Section -->
-      <div class="gear-section mb-5">
+      <!-- Eriu Greaves Section - Sezione collassabile -->
+      <div class="gear-section mb-4">
         <div
           class="header-with-button-raid d-flex justify-content-between align-items-center"
         >
           <h2>Eriu Greaves</h2>
-          <div>
+          <div class="d-flex align-items-center gap-2">
+            <div class="section-buttons">
+              <button
+                class="tuning-button"
+                onclick="location.href = 'EriuGreavesTuning.html'"
+              >
+                Tuning &#9654;
+              </button>
+              <button
+                class="surplus-button"
+                onclick="location.href = 'EriuGreavesSurplus.html'"
+              >
+                Destruction &#9654;
+              </button>
+            </div>
             <button
-              class="tuning-button me-2"
-              onclick="location.href = 'EriuGreavesTuning.html'"
+              class="btn btn-outline-warning toggle-section"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#eriu-greaves-content"
+              aria-expanded="false"
             >
-              Tuning &#9654;
-            </button>
-            <button
-              class="surplus-button"
-              onclick="location.href = 'EriuGreavesSurplus.html'"
-            >
-              Destruction &#9654;
+              <span class="toggle-text">Show/Hide</span>
+              <span class="toggle-icon">▶</span>
             </button>
           </div>
         </div>
 
-        <div class="row g-3">
-          <!-- Card Eriu Greaves (Regular) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_greaves_1.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Greaves (Regular)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+0</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+5</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+0</span>
-                  </div>
+        <div class="collapse" id="eriu-greaves-content">
+          <div class="row g-3 mt-2">
+            <!-- Card Eriu Greaves (Regular) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_greaves_1.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Greaves (Regular)</h5>
                 </div>
-
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-greaves-1"
-                >
-                  Show/Hide Items
-                </button>
-
-                <div id="items-eriu-greaves-1" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Greaves_6.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span>Legendary Uaithne Greaves</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Semias's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x4</span>
-                      <span>Semias's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Fragment: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Smooth Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Smooth Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x15</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card Eriu Greaves (Beginner) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_greaves_2.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Greaves (Beginner)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+250</span>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+0</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+5</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+0</span>
+                    </div>
                   </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+45</span>
-                  </div>
-                </div>
 
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-greaves-2"
-                >
-                  Show/Hide Items
-                </button>
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-greaves-1"
+                  >
+                    Show/Hide Items
+                  </button>
 
-                <div id="items-eriu-greaves-2" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x750.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Advancement Stone: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Semias's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Semias's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Smooth Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x5</span>
-                      <span>Smooth Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Armor Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Premium Armor Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
+                  <div id="items-eriu-greaves-1" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Greaves_6.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span>Legendary Uaithne Greaves</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Semias's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x4</span>
+                        <span>Semias's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Fragment: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Smooth Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Smooth Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x15</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Card Eriu Greaves (Fine) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_greaves_3.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Greaves (Fine)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+250</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+1</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+45</span>
-                  </div>
+            <!-- Card Eriu Greaves (Beginner) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_greaves_2.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Greaves (Beginner)</h5>
                 </div>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+250</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+45</span>
+                    </div>
+                  </div>
 
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-greaves-3"
-                >
-                  Show/Hide Items
-                </button>
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-greaves-2"
+                  >
+                    Show/Hide Items
+                  </button>
 
-                <div id="items-eriu-greaves-3" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1.125.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Advancement Stone: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Semias's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Semias's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Smooth Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x5</span>
-                      <span>Smooth Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Armor Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Premium Armor Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x8</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
+                  <div id="items-eriu-greaves-2" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x750.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Advancement Stone: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Semias's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Semias's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Smooth Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x5</span>
+                        <span>Smooth Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Armor Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Premium Armor Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Card Eriu Greaves (Superior) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_greaves_4.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Greaves (Superior)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+300</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+2</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+45</span>
-                  </div>
+            <!-- Card Eriu Greaves (Fine) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_greaves_3.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Greaves (Fine)</h5>
                 </div>
-
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-greaves-4"
-                >
-                  Show/Hide Items
-                </button>
-
-                <div id="items-eriu-greaves-4" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1.725.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Advancement Stone: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Semias's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Semias's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Smooth Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Smooth Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Armor Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Premium Armor Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x16</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x4</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card Eriu Greaves (Rare) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_greaves_5.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Greaves (Rare)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+300</span>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+250</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+1</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+45</span>
+                    </div>
                   </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+2</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+45</span>
-                  </div>
-                </div>
 
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-greaves-5"
-                >
-                  Show/Hide Items
-                </button>
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-greaves-3"
+                  >
+                    Show/Hide Items
+                  </button>
 
-                <div id="items-eriu-greaves-5" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2.550.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Advancement Stone: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Semias's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Semias's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Smooth Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Smooth Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Armor Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Premium Armor Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x24</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x8</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
+                  <div id="items-eriu-greaves-3" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1.125.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Advancement Stone: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Semias's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Semias's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Smooth Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x5</span>
+                        <span>Smooth Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Armor Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Premium Armor Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x8</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Card Eriu Greaves (Legendary) -->
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="card gear-card">
-              <div class="card-header d-flex align-items-center">
-                <img
-                  src="icon/e_greaves_6.png"
-                  alt="Gear Image"
-                  class="gear-icon me-2"
-                />
-                <h5 class="mb-0">Eriu Greaves (Legendary)</h5>
-              </div>
-              <div class="card-body">
-                <div class="stats-grid">
-                  <div class="stat-item">
-                    <span class="stat-label">Defence:</span>
-                    <span class="stat-value">+300</span>
+            <!-- Card Eriu Greaves (Superior) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_greaves_4.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Greaves (Superior)</h5>
+                </div>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+300</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+2</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+45</span>
+                    </div>
                   </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Critical Resistance:</span>
-                    <span class="stat-value">+3</span>
-                  </div>
-                  <div class="stat-item">
-                    <span class="stat-label">Additional Damage:</span>
-                    <span class="stat-value">+45</span>
+
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-greaves-4"
+                  >
+                    Show/Hide Items
+                  </button>
+
+                  <div id="items-eriu-greaves-4" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1.725.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Advancement Stone: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Semias's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Semias's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Smooth Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Smooth Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Armor Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Premium Armor Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x16</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x4</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
+              </div>
+            </div>
 
-                <button
-                  class="accordion w-100 mt-3"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#items-eriu-greaves-6"
-                >
-                  Show/Hide Items
-                </button>
+            <!-- Card Eriu Greaves (Rare) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_greaves_5.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Greaves (Rare)</h5>
+                </div>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+300</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+2</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+45</span>
+                    </div>
+                  </div>
 
-                <div id="items-eriu-greaves-6" class="collapse mt-2">
-                  <ul class="list-unstyled">
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Gold.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x3.750.000</span>
-                      <span>Gold</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Advancement Stone Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Eriu Advancement Stone: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Semias's Essence.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Semias's Essence</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Eriu Fragment Leg Armor.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x1</span>
-                      <span>Eriu Fragment: Leg Armor</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Smooth Eriu Crystal.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x10</span>
-                      <span>Smooth Eriu Crystal</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Premium Armor Enhancement Rune.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x2</span>
-                      <span>Premium Armor Enhancement Rune</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Elixir.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x48</span>
-                      <span>Superior Enhancement Elixir</span>
-                    </li>
-                    <li class="item-details mb-2">
-                      <img
-                        src="icon/Tarian Steel.png"
-                        alt="Item"
-                        class="item-icon me-2"
-                      />
-                      <span class="item-quantity me-2">x16</span>
-                      <span>Tarian Steel</span>
-                    </li>
-                  </ul>
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-greaves-5"
+                  >
+                    Show/Hide Items
+                  </button>
+
+                  <div id="items-eriu-greaves-5" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2.550.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Advancement Stone: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Semias's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Semias's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Smooth Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Smooth Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Armor Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Premium Armor Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x24</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x8</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Eriu Greaves (Legendary) -->
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card gear-card">
+                <div class="card-header d-flex align-items-center">
+                  <img
+                    src="icon/e_greaves_6.png"
+                    alt="Gear Image"
+                    class="gear-icon me-2"
+                  />
+                  <h5 class="mb-0">Eriu Greaves (Legendary)</h5>
+                </div>
+                <div class="card-body">
+                  <div class="stats-grid">
+                    <div class="stat-item">
+                      <span class="stat-label">Defence:</span>
+                      <span class="stat-value">+300</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Critical Resistance:</span>
+                      <span class="stat-value">+3</span>
+                    </div>
+                    <div class="stat-item">
+                      <span class="stat-label">Additional Damage:</span>
+                      <span class="stat-value">+45</span>
+                    </div>
+                  </div>
+
+                  <button
+                    class="accordion w-100 mt-3"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#items-eriu-greaves-6"
+                  >
+                    Show/Hide Items
+                  </button>
+
+                  <div id="items-eriu-greaves-6" class="collapse mt-2">
+                    <ul class="list-unstyled">
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Gold.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x3.750.000</span>
+                        <span>Gold</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Advancement Stone Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Eriu Advancement Stone: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Semias's Essence.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Semias's Essence</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Eriu Fragment Leg Armor.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x1</span>
+                        <span>Eriu Fragment: Leg Armor</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Smooth Eriu Crystal.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x10</span>
+                        <span>Smooth Eriu Crystal</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Premium Armor Enhancement Rune.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x2</span>
+                        <span>Premium Armor Enhancement Rune</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Elixir.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x48</span>
+                        <span>Superior Enhancement Elixir</span>
+                      </li>
+                      <li class="item-details mb-2">
+                        <img
+                          src="icon/Tarian Steel.png"
+                          alt="Item"
+                          class="item-icon me-2"
+                        />
+                        <span class="item-quantity me-2">x16</span>
+                        <span>Tarian Steel</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1807,5 +1941,47 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+    <!-- Script per gestire lo stato iniziale delle sezioni -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Su mobile, lascia solo la prima sezione aperta
+        const isMobile = window.innerWidth < 768;
+        const eriuSections = [
+          "eriu-weapon-content",
+          "eriu-helm-content",
+          "eriu-greaves-content",
+        ];
+
+        eriuSections.forEach((sectionId, index) => {
+          const section = document.getElementById(sectionId);
+          const button = document.querySelector(
+            `[data-bs-target="#${sectionId}"]`,
+          );
+
+          if (section && button) {
+            if (isMobile) {
+              // Su mobile: solo la prima sezione aperta (Weapon), le altre chiuse
+              if (index === 0) {
+                section.classList.add("show");
+                button.setAttribute("aria-expanded", "true");
+                button.querySelector(".toggle-text").textContent = "Show/Hide";
+                button.querySelector(".toggle-icon").innerHTML = "▶";
+              } else {
+                section.classList.remove("show");
+                button.setAttribute("aria-expanded", "false");
+                button.querySelector(".toggle-text").textContent = "Show/Hide";
+                button.querySelector(".toggle-icon").innerHTML = "▶";
+              }
+            } else {
+              // Su desktop: tutte aperte
+              section.classList.add("show");
+              button.setAttribute("aria-expanded", "true");
+              button.querySelector(".toggle-text").textContent = "Show/Hide";
+              button.querySelector(".toggle-icon").innerHTML = "▼";
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
