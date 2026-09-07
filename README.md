@@ -1,5 +1,6 @@
 # SmaryVindiDataBase
 
+https://smaryita.github.io/SmaryVindiDataBase/EriuGearTable.html
 A complete database for Vindictus with all the necessary tables for Raid, Redeemer, Space-Time, Accessories, Uaithne/Eriu Gear, Tuning and Surplus.
 
 ## Content
