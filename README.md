@@ -4,7 +4,7 @@ A complete database for Vindictus with all the necessary tables for:
 
 - Raid
 - Redeemer
-- Space-TimeScrolls
+- Space-Time
 - Artifacts
 - Scrolls
 - Accessories
